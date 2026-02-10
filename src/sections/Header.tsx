@@ -38,7 +38,7 @@ export function Header() {
             href="#aplica"
             className="inline-flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-xl hover:bg-gray-800 transition-all hover:-translate-y-0.5 shadow-button hover:shadow-button-hover"
           >
-            Rezerva Loc
+            Vreau Propunerile Mele
             <ArrowRight className="w-4 h-4" />
           </a>
         </nav>
@@ -64,7 +64,7 @@ export function Header() {
             Investitie
           </a>
           <a href="#aplica" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
-            Rezerva Loc
+            Vreau Propunerile Mele
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

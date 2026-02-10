@@ -42,7 +42,7 @@ export function HeroSection({ remainingSpots, totalSpots }: HeroSectionProps) {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a href="#aplica" className="btn-primary text-base md:text-lg px-10 py-4">
-            Rezerva-ti Locul
+            Vreau Propunerile Mele de Automatizare
             <ArrowRight className="w-5 h-5" />
           </a>
           <a href="#ce-este" className="btn-secondary text-base md:text-lg px-10 py-4">

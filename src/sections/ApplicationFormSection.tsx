@@ -57,10 +57,20 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
 
       if (insertError) throw insertError;
 
+      // Fire-and-forget email notification — don't block UX if it fails
+      supabase.functions.invoke('notify-pilot-application', {
+        body: {
+          contact_name: formData.contact_name,
+          email: formData.email,
+          company_name: formData.company_name,
+          pain_points: formData.pain_points,
+        },
+      }).catch(err => console.error('Email notification failed:', err));
+
       setSubmitted(true);
       onSubmitSuccess();
     } catch (err) {
-      setError('A aparut o eroare. Te rugam sa incerci din nou sau sa ne contactezi la hello@ezfuture.ai');
+      setError('A aparut o eroare. Te rugam sa incerci din nou sau sa ne contactezi la contact@ezfuture.ai');
       console.error('Submission error:', err);
     } finally {
       setSubmitting(false);
@@ -71,7 +81,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
     <section id="aplica" className="py-20 md:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <span className="section-label">Rezerva-ti Locul</span>
+          <span className="section-label">Aplica Acum</span>
           <h2 className="section-title">Inscrie-te in programul pilot</h2>
           <p className="section-desc">Dureaza sub 2 minute. Primesti un raspuns in 48 de ore.</p>
         </div>
@@ -101,8 +111,8 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
               <h3 className="text-xl font-bold text-gray-900 mb-2">Toate locurile au fost ocupate</h3>
               <p className="text-gray-600">
                 Programul pilot a fost completat. Contacteaza-ne la{' '}
-                <a href="mailto:hello@ezfuture.ai" className="text-primary font-semibold hover:underline">
-                  hello@ezfuture.ai
+                <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
+                  contact@ezfuture.ai
                 </a>{' '}
                 pentru urmatoarele oportunitati.
               </p>
@@ -116,14 +126,14 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
               </p>
               <p className="text-sm text-gray-500">
                 Daca ai intrebari, scrie-ne la{' '}
-                <a href="mailto:hello@ezfuture.ai" className="text-primary font-semibold hover:underline">
-                  hello@ezfuture.ai
+                <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
+                  contact@ezfuture.ai
                 </a>
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl border-2 border-gray-200 p-8 md:p-10 shadow-soft">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Rezerva-ti locul in pilot</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Vreau propunerile mele de automatizare</h3>
 
               <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div>
@@ -203,9 +213,9 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                   />
                   <span className="text-sm text-gray-600">
                     Sunt de acord cu prelucrarea datelor personale conform{' '}
-                    <span className="text-primary">
+                    <a href="/legal/confidentialitate.html" target="_blank" className="text-primary hover:underline">
                       Politicii de Confidentialitate
-                    </span>
+                    </a>
                     . *
                   </span>
                 </label>
@@ -230,7 +240,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                   </>
                 ) : (
                   <>
-                    Trimite si Rezerva Locul
+                    Vreau Propunerile Mele de Automatizare
                     <Send className="w-5 h-5" />
                   </>
                 )}

@@ -4,19 +4,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-extrabold text-xs">EZ</span>
-            </div>
-            <span className="text-sm font-semibold text-gray-300">
-              ezfuture<span className="text-primary-light">.ai</span>
-            </span>
+            <img src="/ezfuture-logo.png" alt="EZFuture.ai" className="h-6" />
           </div>
 
           <div className="flex items-center gap-6 text-sm text-gray-400">
-            <span className="text-gray-400">Confidentialitate</span>
-            <span className="text-gray-400">Termeni</span>
-            <a href="mailto:hello@ezfuture.ai" className="hover:text-white transition-colors">
-              hello@ezfuture.ai
+            <a href="/legal/confidentialitate.html" className="hover:text-white transition-colors">Confidentialitate</a>
+            <a href="/legal/termeni.html" className="hover:text-white transition-colors">Termeni</a>
+            <a href="mailto:contact@ezfuture.ai" className="hover:text-white transition-colors">
+              contact@ezfuture.ai
             </a>
           </div>
 

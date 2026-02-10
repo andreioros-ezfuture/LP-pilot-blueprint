@@ -58,7 +58,7 @@ export function InvestmentSection() {
             </ul>
 
             <a href="#aplica" className="btn-primary w-full text-lg py-4 justify-center">
-              Rezerva-ti Locul Acum
+              Vreau Propunerile Mele de Automatizare
               <ArrowRight className="w-5 h-5" />
             </a>
 
