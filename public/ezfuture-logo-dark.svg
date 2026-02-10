@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 36" fill="none">
-  <text x="0" y="27" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="800" fill="white" letter-spacing="-0.5">ezfuture</text>
+  <text x="0" y="27" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="800" fill="#111827" letter-spacing="-0.5">ezfuture</text>
   <rect x="105" y="4" width="50" height="28" rx="8" fill="#5B6AE8"/>
   <text x="130" y="25" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">.ai</text>
 </svg>

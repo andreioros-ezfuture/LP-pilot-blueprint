@@ -21,7 +21,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-          <img src="/ezfuture-logo.png" alt="EZFuture.ai" className="h-10" />
+          <img src="/ezfuture-logo-dark.svg" alt="ezfuture.ai" className="h-9" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

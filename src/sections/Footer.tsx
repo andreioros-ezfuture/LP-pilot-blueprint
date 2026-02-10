@@ -3,9 +3,8 @@ export function Footer() {
     <footer className="py-10 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-xl font-extrabold tracking-tight text-white">ezfuture</span>
-            <span className="bg-primary text-white text-sm font-bold px-2 py-0.5 rounded-lg">.ai</span>
+          <div className="flex items-center">
+            <img src="/ezfuture-logo-white.svg" alt="ezfuture.ai" className="h-8" />
           </div>
 
           <div className="flex items-center gap-6 text-sm text-gray-400">
