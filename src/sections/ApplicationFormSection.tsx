@@ -10,6 +10,7 @@ interface ApplicationFormSectionProps {
 interface FormData {
   contact_name: string;
   email: string;
+  phone: string;
   company_name: string;
   pain_points: string;
   gdpr_consent: boolean;
@@ -18,6 +19,7 @@ interface FormData {
 const initialFormData: FormData = {
   contact_name: '',
   email: '',
+  phone: '',
   company_name: '',
   pain_points: '',
   gdpr_consent: false,
@@ -50,6 +52,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
         .insert({
           contact_name: formData.contact_name,
           email: formData.email,
+          phone: formData.phone,
           company_name: formData.company_name,
           pain_points: formData.pain_points,
           gdpr_consent: formData.gdpr_consent,
@@ -62,6 +65,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
         body: {
           contact_name: formData.contact_name,
           email: formData.email,
+          phone: formData.phone,
           company_name: formData.company_name,
           pain_points: formData.pain_points,
         },
@@ -168,20 +172,37 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                 </div>
               </div>
 
-              <div className="mb-5">
-                <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Numele companiei *
-                </label>
-                <input
-                  type="text"
-                  id="company_name"
-                  name="company_name"
-                  required
-                  value={formData.company_name}
-                  onChange={handleChange}
-                  className="input-field"
-                  placeholder="Compania SRL"
-                />
+              <div className="grid md:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Numar de telefon *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="input-field"
+                    placeholder="07XX XXX XXX"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Numele companiei *
+                  </label>
+                  <input
+                    type="text"
+                    id="company_name"
+                    name="company_name"
+                    required
+                    value={formData.company_name}
+                    onChange={handleChange}
+                    className="input-field"
+                    placeholder="Compania SRL"
+                  />
+                </div>
               </div>
 
               <div className="mb-5">

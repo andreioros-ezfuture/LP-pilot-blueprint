@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { LogOut, CheckCircle, XCircle, Clock, RefreshCw, Mail } from 'lucide-react';
+import { LogOut, CheckCircle, XCircle, Clock, RefreshCw, Mail, Phone } from 'lucide-react';
 
 interface Application {
   id: string;
   contact_name: string;
   email: string;
+  phone: string | null;
   company_name: string;
   pain_points: string;
   status: string;
@@ -162,10 +163,18 @@ export function AdminDashboard() {
                         {statusLabel(app.status)}
                       </div>
                     </div>
-                    <a href={`mailto:${app.email}`} className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline mb-3">
-                      <Mail className="w-3.5 h-3.5" />
-                      {app.email}
-                    </a>
+                    <div className="flex flex-wrap items-center gap-4 mb-3">
+                      <a href={`mailto:${app.email}`} className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
+                        <Mail className="w-3.5 h-3.5" />
+                        {app.email}
+                      </a>
+                      {app.phone && (
+                        <a href={`tel:${app.phone}`} className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
+                          <Phone className="w-3.5 h-3.5" />
+                          {app.phone}
+                        </a>
+                      )}
+                    </div>
                     <p className="text-sm text-gray-600 whitespace-pre-line leading-relaxed">{app.pain_points}</p>
                     <p className="text-xs text-gray-400 mt-2">{formatDate(app.created_at)}</p>
                   </div>
