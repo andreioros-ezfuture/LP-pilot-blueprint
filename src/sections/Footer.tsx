@@ -4,7 +4,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src="/ezfuture-logo.png" alt="EZFuture.ai" className="h-6 brightness-0 invert" />
+            <span className="text-xl font-extrabold tracking-tight text-white">ezfuture</span>
+            <span className="bg-primary text-white text-sm font-bold px-2 py-0.5 rounded-lg">.ai</span>
           </div>
 
           <div className="flex items-center gap-6 text-sm text-gray-400">
