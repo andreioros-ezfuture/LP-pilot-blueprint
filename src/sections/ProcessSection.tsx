@@ -36,6 +36,9 @@ export function ProcessSection() {
           <p className="section-desc">
             3 sesiuni cu tine, restul e treaba noastra. Timpul tau total: 8-13 ore in 21 de zile.
           </p>
+          <p className="text-base text-gray-500 max-w-2xl mx-auto mt-2 mb-4 italic">
+            Stim ca ai mai trecut prin &ldquo;proiecte de analiza&rdquo; care s-au transformat in sedinte interminabile si documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit sa fie exact opusul.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">

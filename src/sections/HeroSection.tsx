@@ -30,6 +30,10 @@ export function HeroSection({ remainingSpots, totalSpots }: HeroSectionProps) {
           <span className="text-primary">Afla exact cat — si cum recuperezi!</span>
         </h1>
 
+        <p className="text-base text-gray-500 max-w-xl mx-auto mb-4 italic">
+          Stii deja ca pierzi timp. Stii ca exista solutii. Dar nu stii cu care sa incepi si cat te costa de fapt fiecare ora pierduta.
+        </p>
+
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
           In 21 de zile, primesti un plan complet de automatizare — cu preturi fixe si ROI calculat.
         </p>

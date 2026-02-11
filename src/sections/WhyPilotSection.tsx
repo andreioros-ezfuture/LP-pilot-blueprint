@@ -67,6 +67,9 @@ export function WhyPilotSection() {
             Intr-o echipa de 10 persoane, asta inseamna peste <strong className="text-white">€35.000/an</strong> in productivitate pierduta.
             <br />Blueprint-ul iti arata exact unde se duc aceste ore — si cum le recuperezi.
           </p>
+          <p className="text-gray-500 text-[14px] mt-2 italic">
+            Nu sunt cifre teoretice. Sunt orele in care echipa ta face copy-paste intre sisteme, trimite emailuri manuale si completeaza rapoarte pe care nimeni nu le citeste.
+          </p>
         </div>
 
         {/* Ce cerem in schimb */}
