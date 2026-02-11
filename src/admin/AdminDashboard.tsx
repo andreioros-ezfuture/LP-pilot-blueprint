@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { LogOut, CheckCircle, XCircle, Clock, RefreshCw, Mail, Phone } from 'lucide-react';
+import { LogOut, CheckCircle, XCircle, Clock, RefreshCw, Mail, Phone, Trash2 } from 'lucide-react';
 
 interface Application {
   id: string;
@@ -69,6 +69,20 @@ export function AdminDashboard() {
       setApplications(prev =>
         prev.map(app => app.id === id ? { ...app, status, reviewed_at: new Date().toISOString() } : app)
       );
+    }
+    setUpdating(null);
+  };
+
+  const deleteApplication = async (id: string, companyName: string) => {
+    if (!confirm(`Sigur vrei sa stergi aplicatia de la "${companyName}"?`)) return;
+    setUpdating(id);
+    const { error } = await supabase
+      .from('pilot_applications')
+      .delete()
+      .eq('id', id);
+
+    if (!error) {
+      setApplications(prev => prev.filter(app => app.id !== id));
     }
     setUpdating(null);
   };
@@ -210,6 +224,14 @@ export function AdminDashboard() {
                         Anuleaza
                       </button>
                     )}
+                    <button
+                      onClick={() => deleteApplication(app.id, app.company_name)}
+                      disabled={updating === app.id}
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-red-400 text-xs font-medium rounded-lg border border-red-100 hover:bg-red-50 hover:text-red-600 transition-colors disabled:opacity-50"
+                      title="Sterge aplicatia"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
               </div>
