@@ -6,7 +6,7 @@ interface CTABannerProps {
   href?: string;
 }
 
-export function CTABanner({ text, buttonText = 'Vreau Propunerile Mele', href = '#aplica' }: CTABannerProps) {
+export function CTABanner({ text, buttonText = 'Vreau Planul Meu', href = '#aplica' }: CTABannerProps) {
   return (
     <div className="py-10 md:py-14">
       <div className="max-w-3xl mx-auto px-6">
@@ -16,6 +16,7 @@ export function CTABanner({ text, buttonText = 'Vreau Propunerile Mele', href = 
             {buttonText}
             <ArrowRight className="w-5 h-5" />
           </a>
+          <p className="text-xs text-gray-500 mt-3">Sub 2 minute. Fara angajament.</p>
         </div>
       </div>
     </div>

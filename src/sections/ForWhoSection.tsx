@@ -7,7 +7,7 @@ export function ForWhoSection() {
     'Ai incercat solutii punctuale, dar nu ai o strategie coerenta de automatizare',
     'Vrei sa intelegi impactul real — timp recuperat, bani economisiti, erori eliminate — inainte de a investi',
     'Ai nevoie de un plan clar pe care sa-l prezinti echipei de management',
-    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de discovery',
+    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de analiza',
     'Ai buget realist pentru implementarea ulterioara (minim €10.000 pentru primele automatizari)',
   ];
 

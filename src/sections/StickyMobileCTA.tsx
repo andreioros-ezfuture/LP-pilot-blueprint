@@ -32,7 +32,7 @@ export function StickyMobileCTA() {
           href="#aplica"
           className="btn-primary w-full text-center"
         >
-          Vreau Propunerile Mele
+          Vreau Planul Meu
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>

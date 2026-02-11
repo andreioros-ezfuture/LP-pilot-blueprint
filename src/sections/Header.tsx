@@ -34,11 +34,14 @@ export function Header() {
           <a href="#investitie" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
             Investitie
           </a>
+          <a href="#garantie" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+            Nu pierzi
+          </a>
           <a
             href="#aplica"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-xl hover:bg-gray-800 transition-all hover:-translate-y-0.5 shadow-button hover:shadow-button-hover"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-cta text-white text-sm font-bold rounded-xl hover:bg-cta-dark transition-all hover:-translate-y-0.5 shadow-button hover:shadow-button-hover"
           >
-            Vreau Propunerile Mele
+            Vreau Planul Meu
             <ArrowRight className="w-4 h-4" />
           </a>
         </nav>
@@ -63,8 +66,11 @@ export function Header() {
           <a href="#investitie" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
             Investitie
           </a>
+          <a href="#garantie" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
+            Nu pierzi
+          </a>
           <a href="#aplica" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
-            Vreau Propunerile Mele
+            Vreau Planul Meu
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

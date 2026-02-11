@@ -9,7 +9,7 @@ const team = [
     photo: '/iuliana.png',
     name: 'Iuliana Ghioca',
     role: 'Chief Automation Officer',
-    bio: 'Analiza de procese, discovery si livrabile. Transforma complexitatea operationala in planuri clare de actiune.',
+    bio: 'Analiza de procese, analiza si livrabile. Transforma complexitatea operationala in planuri clare de actiune.',
   },
 ];
 

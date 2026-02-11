@@ -52,8 +52,8 @@ export default {
         'soft': '0 2px 8px rgba(91, 106, 232, 0.08)',
         'card': '0 4px 20px rgba(91, 106, 232, 0.1)',
         'card-hover': '0 8px 30px rgba(91, 106, 232, 0.15)',
-        'button': '0 2px 8px rgba(91, 106, 232, 0.15)',
-        'button-hover': '0 4px 16px rgba(91, 106, 232, 0.25)',
+        'button': '0 2px 8px rgba(255, 107, 53, 0.25)',
+        'button-hover': '0 4px 16px rgba(255, 107, 53, 0.35)',
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',

@@ -30,7 +30,7 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-gray-900 text-white font-bold text-base rounded-2xl transition-all duration-200 shadow-button hover:bg-gray-800 hover:-translate-y-1 hover:shadow-button-hover min-h-[52px];
+    @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-cta text-white font-bold text-base rounded-2xl transition-all duration-200 shadow-button hover:bg-cta-dark hover:-translate-y-1 hover:shadow-button-hover min-h-[52px];
   }
 
   .btn-secondary {

@@ -2,17 +2,17 @@ import { GraduationCap, Clock } from 'lucide-react';
 
 const sessions = [
   {
-    name: 'Discovery Readiness Training',
+    name: 'Pregatire pentru Analiza',
     duration: '2h',
-    desc: 'Cum sa se pregateasca echipa pentru sesiunile de discovery, ce documente sa furnizeze',
+    desc: 'Cum sa se pregateasca echipa pentru sesiunile de analiza, ce documente sa furnizeze',
   },
   {
-    name: 'Internal Discovery Enablement #1',
+    name: 'Pregatire Interna #1',
     duration: '2h',
     desc: 'Cum sa identifice singuri procese automatizabile, cum sa le documenteze',
   },
   {
-    name: 'Internal Discovery Enablement #2',
+    name: 'Pregatire Interna #2',
     duration: '2h',
     desc: 'Cum sa masoare si sa raporteze rezultatele automatizarilor',
   },

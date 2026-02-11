@@ -6,7 +6,7 @@ export function WhatIsBlueprintSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="section-label">Ce este Blueprint</span>
-          <h2 className="section-title">Discovery si planificare strategica a automatizarilor</h2>
+          <h2 className="section-title">Analiza si planificare strategica a automatizarilor</h2>
           <p className="section-desc">
             In 21 de zile, analizam procesele tale operationale, identificam oportunitatile
             de automatizare si livram un plan complet — cu preturi fixe, timpi estimati

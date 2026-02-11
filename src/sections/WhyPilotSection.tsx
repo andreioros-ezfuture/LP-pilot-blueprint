@@ -2,6 +2,8 @@ import { Star, UserCheck, MessageCircle, Check } from 'lucide-react';
 
 const weNeed = [
   'Disponibilitate — cele 3 sesiuni programate si raspunsuri in maximum 48 de ore',
+  'Lucru intern — echipa ta colecteaza date si documenteaza procesele (8+ ore, cu tool-urile noastre)',
+  'Folosirea platformei noastre — completati datele direct in tool-urile pe care vi le punem la dispozitie',
   'Feedback sincer — ne spui ce functioneaza si ce nu',
   'Permisiunea de a folosi rezultatele ca studiu de caz — datele pot fi anonimizate',
 ];
@@ -39,8 +41,8 @@ export function WhyPilotSection() {
             },
             {
               icon: MessageCircle,
-              title: 'Feedback Loop',
-              desc: 'Sugestiile tale influenteaza direct produsul final. Esti co-creator, nu doar client.',
+              title: 'Imbunatatire Continua',
+              desc: 'Sugestiile tale influenteaza direct rezultatul final. Esti partener, nu doar client.',
             },
           ].map((item, i) => (
             <div
@@ -54,6 +56,17 @@ export function WhyPilotSection() {
               <p className="text-gray-400 text-[15px] leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Cost of inaction */}
+        <div className="max-w-3xl mx-auto bg-cta/10 border border-cta/20 rounded-2xl px-8 py-6 mb-8 text-center">
+          <p className="text-2xl md:text-3xl font-extrabold text-white mb-2">
+            ~15 ore/saptamana pierdute pe taskuri repetitive
+          </p>
+          <p className="text-gray-400 text-[15px]">
+            Intr-o echipa de 10 persoane, asta inseamna peste <strong className="text-white">€35.000/an</strong> in productivitate pierduta.
+            <br />Blueprint-ul iti arata exact unde se duc aceste ore — si cum le recuperezi.
+          </p>
         </div>
 
         {/* Ce cerem in schimb */}

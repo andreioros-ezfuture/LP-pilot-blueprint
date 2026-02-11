@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 export function SelectionCriteriaSection() {
   const criteria = [
     'Ai minim 3 procese repetitive pe care le-ai vrea automatizate',
-    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de discovery',
+    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de analiza',
     'Folosesti deja sisteme digitale (CRM, ERP, Google Workspace, contabilitate online etc.)',
     'Ai buget realist pentru implementarea ulterioara (minim €10.000-€30.000 pentru primele automatizari)',
     'Intelegi ca Blueprint este faza de planificare, nu implementarea propriu-zisa',

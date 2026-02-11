@@ -21,7 +21,7 @@ const deliverables = [
   },
   {
     icon: Route,
-    title: 'Roadmap de Implementare',
+    title: 'Plan de Implementare',
     desc: 'Ordinea recomandata, dependinte, timeline pe 90 zile si 12 luni, ROI agregat pe etape.',
   },
   {
@@ -63,6 +63,7 @@ const deliverables = [
     icon: ShieldAlert,
     title: 'Ghid de Exceptii',
     desc: 'Scenarii de exceptie documentate: ce se intampla cand ceva nu merge si cum trateaza automatizarea fiecare caz.',
+    fullWidth: true,
   },
 ];
 
@@ -85,7 +86,9 @@ export function DeliverablesSection() {
               className={`rounded-2xl border-2 p-6 transition-all duration-300 hover:-translate-y-1 ${
                 item.highlight
                   ? 'border-primary bg-gradient-to-br from-primary/5 to-primary/[0.02] md:col-span-2'
-                  : 'border-gray-200 bg-white hover:border-primary/50'
+                  : item.fullWidth
+                    ? 'border-gray-200 bg-white hover:border-primary/50 md:col-span-2'
+                    : 'border-gray-200 bg-white hover:border-primary/50'
               }`}
             >
               <div className="flex items-start gap-4">

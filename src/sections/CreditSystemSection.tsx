@@ -48,19 +48,20 @@ export function CreditSystemSection() {
               <h3 className="font-bold text-gray-900">Exemplu concret</h3>
             </div>
             <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-              Primesti Blueprint-ul pe 1 martie. Unul dintre cardurile de automatizare are pret BUILD de €11.200.
+              Blueprint-ul se livreaza pe 1 martie (dupa cele 21 de zile). Unul dintre cardurile de automatizare are pret BUILD de €10.000. Creditul se calculeaza din momentul livrarii:
             </p>
-            <div className="space-y-2">
+            <div className="space-y-3">
               {[
-                { label: 'Semnezi pana pe 15 martie', value: 'Platesti doar €7.450', savings: '(credit €3.750)', highlight: true },
-                { label: 'Semnezi pana pe 31 martie', value: 'Platesti €9.325', savings: '(credit €1.875)', highlight: false },
-                { label: 'Semnezi pe 5 aprilie', value: 'Platesti pretul integral, €11.200', savings: '', highlight: false },
+                { label: 'Semnezi in 14 zile (pana pe 15 martie)', credit: '€3.750', total: '€10.000', result: '€6.250', highlight: true },
+                { label: 'Semnezi in 15-30 zile (pana pe 31 martie)', credit: '€1.875', total: '€10.000', result: '€8.125', highlight: false },
+                { label: 'Semnezi dupa 30 zile (dupa 31 martie)', credit: '€0', total: '€10.000', result: '€10.000', highlight: false },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm">
                   <ArrowRight className={`w-4 h-4 flex-shrink-0 ${item.highlight ? 'text-success' : 'text-gray-400'}`} />
                   <span className="text-gray-700">
-                    <strong>{item.label}</strong> — {item.value}{' '}
-                    {item.savings && <span className="text-success font-medium">{item.savings}</span>}
+                    <strong>{item.label}:</strong>{' '}
+                    <span className="font-mono text-[13px]">{item.total} − <span className={item.highlight ? 'text-success font-semibold' : ''}>{item.credit} credit</span> = </span>
+                    mai platesti <strong className="text-gray-900">{item.result}</strong>
                   </span>
                 </div>
               ))}

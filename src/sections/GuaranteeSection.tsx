@@ -2,7 +2,7 @@ import { Shield, Check, ArrowRight, RefreshCw, CreditCard } from 'lucide-react';
 
 export function GuaranteeSection() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section id="garantie" className="py-20 md:py-28 bg-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="section-label">Garantie Dubla</span>

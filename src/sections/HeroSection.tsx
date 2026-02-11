@@ -25,14 +25,13 @@ export function HeroSection({ remainingSpots, totalSpots }: HeroSectionProps) {
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-gray-900 mb-6 max-w-4xl mx-auto leading-[1.1]">
-          Stii ca pierzi bani pe procese manuale.
+          Procesele manuale te costa mai mult decat crezi.
           <br />
-          <span className="text-primary">Dar nu stii cat te costa — si nici de unde sa incepi.</span>
+          <span className="text-primary">Afla exact cat — si cum recuperezi!</span>
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-          In 21 de zile, iti aratam exact unde, cat si cum poti recupera
-          — cu preturi fixe si ROI calculat pentru fiecare automatizare.
+          In 21 de zile, primesti un plan complet de automatizare — cu preturi fixe si ROI calculat.
         </p>
 
         <p className="text-base font-bold text-cta mb-10">
@@ -40,15 +39,16 @@ export function HeroSection({ remainingSpots, totalSpots }: HeroSectionProps) {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
           <a href="#aplica" className="btn-primary text-base md:text-lg px-10 py-4">
-            Vreau Propunerile Mele de Automatizare
+            Vreau Planul Meu de Automatizare
             <ArrowRight className="w-5 h-5" />
           </a>
           <a href="#ce-este" className="btn-secondary text-base md:text-lg px-10 py-4">
             Vezi Ce Primesti
           </a>
         </div>
+        <p className="text-sm text-gray-500 mb-10">Fara angajament. Raspuns in 48 de ore.</p>
 
         {/* Spots counter */}
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border-2 border-gray-100 shadow-soft">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, FileText, Phone, Clock, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, FileText, Phone, Clock, ArrowRight, Lock, Shield } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 interface ApplicationFormSectionProps {
@@ -96,7 +96,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
             { step: '1', icon: FileText, text: 'Completeaza formularul' },
             { step: '2', icon: Clock, text: 'Raspuns in 48 de ore' },
             { step: '3', icon: Phone, text: 'Call scurt (15 min)' },
-            { step: '4', icon: ArrowRight, text: 'Pornim Kick-off-ul' },
+            { step: '4', icon: ArrowRight, text: 'Incepem colaborarea' },
           ].map((item, i) => (
             <div key={i} className="text-center">
               <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">
@@ -125,11 +125,31 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
             <div className="bg-success/5 border-2 border-success/20 rounded-3xl p-10 text-center">
               <CheckCircle className="w-14 h-14 text-success mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Locul tau a fost rezervat!</h3>
-              <p className="text-gray-600 mb-2 leading-relaxed">
-                Multumim pentru interes. Analizam cererea ta si revenim cu un raspuns in maximum 48 de ore.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Multumim pentru interes. Iata ce urmeaza:
               </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6">
+                {[
+                  { step: '1', text: 'Analizam cererea ta', time: '24-48 ore' },
+                  { step: '2', text: 'Call scurt de cunoastere', time: '15 minute' },
+                  { step: '3', text: 'Incepem Blueprint-ul', time: 'Saptamana 1' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    {i > 0 && <ArrowRight className="hidden sm:block w-4 h-4 text-gray-300 -ml-4" />}
+                    <div className="text-center">
+                      <div className="w-8 h-8 bg-success text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-1">
+                        {item.step}
+                      </div>
+                      <p className="text-sm font-semibold text-gray-900">{item.text}</p>
+                      <p className="text-xs text-gray-500">{item.time}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <p className="text-sm text-gray-500">
-                Daca ai intrebari, scrie-ne la{' '}
+                Intrebari? Scrie-ne la{' '}
                 <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
                   contact@ezfuture.ai
                 </a>
@@ -137,7 +157,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl border-2 border-gray-200 p-8 md:p-10 shadow-soft">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Vreau propunerile mele de automatizare</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Vreau planul meu de automatizare</h3>
 
               <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div>
@@ -261,11 +281,23 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                   </>
                 ) : (
                   <>
-                    Vreau Propunerile Mele de Automatizare
+                    Vreau Planul Meu de Automatizare
                     <Send className="w-5 h-5" />
                   </>
                 )}
               </button>
+
+              <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+                <span className="flex items-center gap-1.5">
+                  <Lock className="w-3.5 h-3.5" /> Date securizate
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Shield className="w-3.5 h-3.5" /> Fara spam
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5" /> Raspuns in 48h
+                </span>
+              </div>
             </form>
           )}
         </div>

@@ -40,10 +40,10 @@ export function InvestmentSection() {
             <ul className="space-y-3 mb-8">
               {[
                 'Toate cele 10 livrabile profesionale',
-                '21 de zile, engagement structurat',
+                '21 de zile, colaborare structurata',
                 '3 sesiuni (4 ore cu tine, 8+ ore intern)',
                 'Minim 5 carduri de automatizare cu pret fix',
-                'Roadmap 90 zile + 12 luni',
+                'Plan de actiune 90 zile + 12 luni',
                 'ROI calculat pentru fiecare automatizare',
                 'Garantie 100% money back',
                 '100% credit catre BUILD — Blueprint devine gratuit',
@@ -58,7 +58,7 @@ export function InvestmentSection() {
             </ul>
 
             <a href="#aplica" className="btn-primary w-full text-lg py-4 justify-center">
-              Vreau Propunerile Mele de Automatizare
+              Vreau Planul Meu de Automatizare
               <ArrowRight className="w-5 h-5" />
             </a>
 

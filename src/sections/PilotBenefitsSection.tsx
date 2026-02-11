@@ -5,12 +5,14 @@ export function PilotBenefitsSection() {
     'Pret preferential — conditii pe care nu le vom replica dupa pilot',
     'Atentie dedicata — echipa senior lucreaza direct, fara delegare',
     'Acces direct la fondator — comunicare fara intermediari',
-    'Feedback loop — sugestiile tale influenteaza produsul final',
+    'Imbunatatire continua — sugestiile tale influenteaza rezultatul final',
     'Prioritate la implementare — daca continui cu BUILD, ai prioritate in calendar',
   ];
 
   const weNeed = [
     'Disponibilitate — cele 3 sesiuni programate si raspunsuri in maximum 48 de ore',
+    'Lucru intern — echipa ta colecteaza date si documenteaza procesele (8+ ore, cu tool-urile noastre)',
+    'Folosirea platformei noastre — completati datele direct in tool-urile pe care vi le punem la dispozitie',
     'Feedback sincer — ne spui ce functioneaza si ce nu',
     'Permisiunea de a folosi rezultatele ca studiu de caz — datele pot fi anonimizate',
   ];

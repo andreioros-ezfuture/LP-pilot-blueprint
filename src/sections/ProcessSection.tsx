@@ -3,25 +3,25 @@ import { CheckCircle, Clock } from 'lucide-react';
 const phases = [
   {
     week: 'Saptamana 1',
-    title: 'Kick-off si Discovery',
+    title: 'Start si Analiza',
     sessions: [
-      { name: 'Sesiunea 1: Kick-off', duration: '1 ora', desc: 'Aliniem asteptarile, stabilim echipa, planificam sesiunile de discovery.' },
-      { name: 'Sesiunea 2: Discovery profund', duration: '2 ore', desc: 'Analizam fiecare proces: pasi, decizii, date, sisteme, exceptii.' },
+      { name: 'Sesiunea 1: Start', duration: '1 ora', desc: 'Aliniem asteptarile, stabilim echipa, planificam sesiunile de analiza.' },
+      { name: 'Sesiunea 2: Analiza detaliata', duration: '2 ore', desc: 'Analizam fiecare proces: pasi, decizii, date, sisteme, exceptii.' },
     ],
   },
   {
     week: 'Saptamana 2',
-    title: 'Analiza Offline',
+    title: 'Lucru Intern',
     sessions: [
-      { name: 'Echipa noastra lucreaza', duration: '8+ ore intern', desc: 'Audit tehnic, process mining, analiza logs, evaluare candidati, creare livrabile.' },
+      { name: 'Echipa ta lucreaza', duration: '8+ ore intern', desc: 'Pe baza tool-urilor si directiilor primite, echipa ta colecteaza date, documenteaza procesele si pregateste materialele.' },
     ],
-    note: 'Fara implicarea ta in aceasta saptamana',
+    note: 'Noi oferim structura si tool-urile, voi executati intern',
   },
   {
     week: 'Saptamana 3',
     title: 'Validare si Livrare',
     sessions: [
-      { name: 'Sesiunea 3: Validare', duration: '1 ora', desc: 'Prezentam livrabilele, validam cu stakeholderii, ajustam prioritatile, stabilim pasii urmatori.' },
+      { name: 'Sesiunea 3: Validare', duration: '1 ora', desc: 'Prezentam livrabilele, validam cu decidenții, ajustam prioritatile, stabilim pasii urmatori.' },
     ],
   },
 ];
@@ -34,7 +34,7 @@ export function ProcessSection() {
           <span className="section-label">Procesul in 21 de Zile</span>
           <h2 className="section-title">Structurat, eficient, fara pierderi de timp</h2>
           <p className="section-desc">
-            3 sesiuni cu tine, restul e treaba noastra. Commitment-ul tau total: 8-13 ore in 21 de zile.
+            3 sesiuni cu tine, restul e treaba noastra. Timpul tau total: 8-13 ore in 21 de zile.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function ProcessSection() {
         <div className="text-center mt-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-xl border border-gray-200 shadow-soft">
             <Clock className="w-4 h-4 text-primary" />
-            <span className="text-sm font-bold text-gray-900">Commitment-ul tau total: 8-13 ore</span>
+            <span className="text-sm font-bold text-gray-900">Timpul tau total: 8-13 ore</span>
             <span className="text-sm text-gray-500">in 21 de zile</span>
           </div>
         </div>
