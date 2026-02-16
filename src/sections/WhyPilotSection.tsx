@@ -28,7 +28,7 @@ export function ExclusiveProgramSection() {
           <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-12 shadow-soft">
             <div className="text-center mb-12">
               <span className="section-label">DE CE DOAR 10 LOCURI</span>
-              <h2 className="section-title">Un program exclusiv, nu un produs de masă</h2>
+              <h2 className="section-title">Un program exclusiv,<br />nu un produs de masă</h2>
               <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
                 Cât de serioși am fi dacă am da „la liber" o reducere atât de mare pentru un serviciu cu un asemenea impact? 10 studii de caz sunt suficiente ca să demonstrăm ce putem face. În plus:
               </p>
