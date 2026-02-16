@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, FileText, Phone, Clock, ArrowRight, Lock, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Shield, Clock, Lock, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 interface ApplicationFormSectionProps {
   spotsAvailable: boolean;
   onSubmitSuccess: () => void;
+  id?: string;
 }
 
 interface FormData {
@@ -25,7 +26,20 @@ const initialFormData: FormData = {
   gdpr_consent: false,
 };
 
-export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: ApplicationFormSectionProps) {
+const steps = [
+  { number: '1', text: 'Completează formularul' },
+  { number: '2', text: 'Răspuns în 48 de ore' },
+  { number: '3', text: 'Apel scurt (15 min)' },
+  { number: '4', text: 'Începem colaborarea' },
+];
+
+const successTimeline = [
+  { label: 'Analiză', time: '24-48h' },
+  { label: 'Apel', time: '15 min' },
+  { label: 'Start Blueprint', time: 'Săptămâna 1' },
+];
+
+export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = 'aplica' }: ApplicationFormSectionProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -74,7 +88,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
       setSubmitted(true);
       onSubmitSuccess();
     } catch (err) {
-      setError('A aparut o eroare. Te rugam sa incerci din nou sau sa ne contactezi la contact@ezfuture.ai');
+      setError('A apărut o eroare. Te rugăm să încerci din nou sau să ne contactezi la contact@ezfuture.ai');
       console.error('Submission error:', err);
     } finally {
       setSubmitting(false);
@@ -82,87 +96,91 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
   };
 
   return (
-    <section id="aplica" className="py-20 md:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id={id} className="py-12 md:py-16 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Section header */}
         <div className="text-center mb-12">
-          <span className="section-label">Aplica Acum</span>
-          <h2 className="section-title">Inscrie-te in programul pilot</h2>
-          <p className="section-desc">Dureaza sub 2 minute. Primesti un raspuns in 48 de ore.</p>
+          <span className="section-label">APLICĂ ACUM</span>
+          <h2 className="section-title">Înscrie-te în Programul Pilot</h2>
+          <p className="section-desc">
+            Durează sub 2 minute să te înscrii. <span className="underline text-primary font-semibold">Fără angajament</span>. Primești un răspuns în 48 de ore.
+          </p>
         </div>
 
-        {/* How to apply steps */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
-          {[
-            { step: '1', icon: FileText, text: 'Completeaza formularul' },
-            { step: '2', icon: Clock, text: 'Raspuns in 48 de ore' },
-            { step: '3', icon: Phone, text: 'Call scurt (15 min)' },
-            { step: '4', icon: ArrowRight, text: 'Incepem colaborarea' },
-          ].map((item, i) => (
-            <div key={i} className="text-center">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">
-                {item.step}
+        {/* 4-step progress bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
+          {steps.map((step, i) => (
+            <div key={i} className="flex flex-col items-center text-center gap-2">
+              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                {step.number}
               </div>
-              <item.icon className="w-5 h-5 text-gray-400 mx-auto mb-1" />
-              <span className="text-xs font-medium text-gray-600">{item.text}</span>
+              <span className="text-sm font-medium text-gray-700">{step.text}</span>
             </div>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          {!spotsAvailable && !submitted ? (
-            <div className="bg-gray-100 border-2 border-gray-200 rounded-3xl p-10 text-center">
-              <AlertCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Toate locurile au fost ocupate</h3>
-              <p className="text-gray-600">
-                Programul pilot a fost completat. Contacteaza-ne la{' '}
-                <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
-                  contact@ezfuture.ai
-                </a>{' '}
-                pentru urmatoarele oportunitati.
-              </p>
-            </div>
-          ) : submitted ? (
-            <div className="bg-success/5 border-2 border-success/20 rounded-3xl p-10 text-center">
-              <CheckCircle className="w-14 h-14 text-success mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Locul tau a fost rezervat!</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Multumim pentru interes. Iata ce urmeaza:
-              </p>
+        {/* Spots full state */}
+        {!spotsAvailable && !submitted ? (
+          <div className="bg-gray-50 border-2 border-gray-200 rounded-3xl p-10 text-center">
+            <AlertCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Toate locurile au fost ocupate</h3>
+            <p className="text-gray-600">
+              Programul pilot a fost completat. Contactează-ne la{' '}
+              <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
+                contact@ezfuture.ai
+              </a>{' '}
+              pentru următoarele oportunități.
+            </p>
+          </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6">
-                {[
-                  { step: '1', text: 'Analizam cererea ta', time: '24-48 ore' },
-                  { step: '2', text: 'Call scurt de cunoastere', time: '15 minute' },
-                  { step: '3', text: 'Incepem Blueprint-ul', time: 'Saptamana 1' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    {i > 0 && <ArrowRight className="hidden sm:block w-4 h-4 text-gray-300 -ml-4" />}
-                    <div className="text-center">
-                      <div className="w-8 h-8 bg-success text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-1">
-                        {item.step}
-                      </div>
-                      <p className="text-sm font-semibold text-gray-900">{item.text}</p>
-                      <p className="text-xs text-gray-500">{item.time}</p>
-                    </div>
+        ) : submitted ? (
+          /* Success state */
+          <div className="bg-green-50 border-2 border-green-200 rounded-3xl p-10 text-center">
+            <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Locul tău e rezervat!</h3>
+
+            {/* 3-step timeline */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3 mb-8">
+              {successTimeline.map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  {i > 0 && (
+                    <ArrowRight className="hidden sm:block w-5 h-5 text-gray-300" />
+                  )}
+                  <div className="text-center min-w-[100px]">
+                    <p className="text-sm font-bold text-gray-900">{item.label}</p>
+                    <p className="text-xs text-gray-500">({item.time})</p>
                   </div>
-                ))}
-              </div>
-
-              <p className="text-sm text-gray-500">
-                Intrebari? Scrie-ne la{' '}
-                <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
-                  contact@ezfuture.ai
-                </a>
-              </p>
+                </div>
+              ))}
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="bg-white rounded-3xl border-2 border-gray-200 p-8 md:p-10 shadow-soft">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Vreau planul meu de automatizare</h3>
 
+            <p className="text-sm text-gray-500">
+              Dacă nu primești răspuns, scrie-ne la{' '}
+              <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
+                contact@ezfuture.ai
+              </a>
+            </p>
+          </div>
+
+        ) : (
+          /* Form card */
+          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 md:p-10 shadow-soft">
+            {/* Form title */}
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center mb-4">
+              Vreau planul meu de automatizare
+            </h3>
+
+            {/* Red notice */}
+            <p className="text-sm text-red-600 italic text-center mb-8">
+              Doar 10 locuri în Programul Pilot cu 50% reducere. Aplicările sunt procesate în ordinea primirii.
+            </p>
+
+            <form onSubmit={handleSubmit}>
+              {/* Row 1: Name + Email */}
               <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div>
                   <label htmlFor="contact_name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nume si prenume *
+                    Nume și prenume *
                   </label>
                   <input
                     type="text"
@@ -172,7 +190,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                     value={formData.contact_name}
                     onChange={handleChange}
                     className="input-field"
-                    placeholder="Ion Popescu"
+                    placeholder="Mihai Popescu"
                   />
                 </div>
                 <div>
@@ -187,15 +205,16 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                     value={formData.email}
                     onChange={handleChange}
                     className="input-field"
-                    placeholder="ion@companie.ro"
+                    placeholder="mihai@companie.ro"
                   />
                 </div>
               </div>
 
+              {/* Row 2: Phone + CUI */}
               <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Numar de telefon *
+                    Număr de telefon *
                   </label>
                   <input
                     type="tel"
@@ -205,12 +224,12 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                     value={formData.phone}
                     onChange={handleChange}
                     className="input-field"
-                    placeholder="07XX XXX XXX"
+                    placeholder="07xx xxx xxx"
                   />
                 </div>
                 <div>
                   <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Numele companiei *
+                    CUI companie *
                   </label>
                   <input
                     type="text"
@@ -220,14 +239,15 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                     value={formData.company_name}
                     onChange={handleChange}
                     className="input-field"
-                    placeholder="Compania SRL"
+                    placeholder="RO12345678"
                   />
                 </div>
               </div>
 
+              {/* Full width textarea */}
               <div className="mb-5">
                 <label htmlFor="pain_points" className="block text-sm font-medium text-gray-700 mb-2">
-                  Ce procese va consuma cel mai mult timp? *
+                  Descrie în câteva propoziții: Ce procese vă consumă cel mai mult timp? *
                 </label>
                 <textarea
                   id="pain_points"
@@ -237,7 +257,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                   value={formData.pain_points}
                   onChange={handleChange}
                   className="textarea-field"
-                  placeholder="Descrie procesele repetitive care consuma cele mai multe resurse din echipa ta..."
+                  placeholder="Descrie pe scurt ce procese repetitive consumă cele mai multe resurse în compania pe care o conduci."
                 />
               </div>
 
@@ -255,13 +275,14 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                   <span className="text-sm text-gray-600">
                     Sunt de acord cu prelucrarea datelor personale conform{' '}
                     <a href="/legal/confidentialitate.html" target="_blank" className="text-primary hover:underline">
-                      Politicii de Confidentialitate
+                      Politicii de Confidențialitate
                     </a>
                     . *
                   </span>
                 </label>
               </div>
 
+              {/* Error message */}
               {error && (
                 <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
@@ -269,6 +290,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                 </div>
               )}
 
+              {/* Submit button */}
               <button
                 type="submit"
                 disabled={submitting}
@@ -282,25 +304,26 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess }: Appl
                 ) : (
                   <>
                     Vreau Planul Meu de Automatizare
-                    <Send className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5" />
                   </>
                 )}
               </button>
 
-              <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+              {/* Trust badges */}
+              <div className="flex flex-wrap justify-center gap-6 mt-5 text-xs text-gray-400">
                 <span className="flex items-center gap-1.5">
                   <Lock className="w-3.5 h-3.5" /> Date securizate
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5" /> Fara spam
+                  <Shield className="w-3.5 h-3.5" /> Fără spam
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5" /> Raspuns in 48h
+                  <Clock className="w-3.5 h-3.5" /> Răspuns în 48h
                 </span>
               </div>
             </form>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,84 +1,122 @@
-import { CheckCircle, Clock } from 'lucide-react';
-
-const phases = [
-  {
-    week: 'Saptamana 1',
-    title: 'Start si Analiza',
-    sessions: [
-      { name: 'Sesiunea 1: Start', duration: '1 ora', desc: 'Aliniem asteptarile, stabilim echipa, planificam sesiunile de analiza.' },
-      { name: 'Sesiunea 2: Analiza detaliata', duration: '2 ore', desc: 'Analizam fiecare proces: pasi, decizii, date, sisteme, exceptii.' },
-    ],
-  },
-  {
-    week: 'Saptamana 2',
-    title: 'Lucru Intern',
-    sessions: [
-      { name: 'Echipa ta lucreaza', duration: '8+ ore intern', desc: 'Pe baza tool-urilor si directiilor primite, echipa ta colecteaza date, documenteaza procesele si pregateste materialele.' },
-    ],
-    note: 'Noi oferim structura si tool-urile, voi executati intern',
-  },
-  {
-    week: 'Saptamana 3',
-    title: 'Validare si Livrare',
-    sessions: [
-      { name: 'Sesiunea 3: Validare', duration: '1 ora', desc: 'Prezentam livrabilele, validam cu decidenții, ajustam prioritatile, stabilim pasii urmatori.' },
-    ],
-  },
-];
-
 export function ProcessSection() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="section-label">Procesul in 21 de Zile</span>
-          <h2 className="section-title">Structurat, eficient, fara pierderi de timp</h2>
-          <p className="section-desc">
-            3 sesiuni cu tine, restul e treaba noastra. Timpul tau total: 8-13 ore in 21 de zile.
-          </p>
-          <p className="text-base text-gray-500 max-w-2xl mx-auto mt-2 mb-4 italic">
-            Stim ca ai mai trecut prin &ldquo;proiecte de analiza&rdquo; care s-au transformat in sedinte interminabile si documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit sa fie exact opusul.
-          </p>
-        </div>
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Main bordered card */}
+        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <span className="section-label">PROCESUL ÎN 21 DE ZILE</span>
+            <h2 className="section-title">Structurat, eficient, fără pierderi de timp</h2>
+            <p className="text-lg text-gray-600 mb-1">
+              3 sesiuni cu tine, restul e treaba noastră.
+            </p>
+            <p className="text-lg text-gray-600">
+              Timpul vostru total: <span className="font-bold text-gray-900">maxim 8-13 ore în 21 de zile.</span>
+            </p>
+            <p className="text-base text-gray-500 max-w-2xl mx-auto mt-5 italic leading-relaxed">
+              Știm că ai mai trecut prin &bdquo;proiecte de analiză&rdquo; care s-au transformat în ședințe interminabile și documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit să fie exact opusul.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {phases.map((phase, i) => (
-            <div key={i} className="bg-white rounded-3xl border-2 border-gray-200 p-7 relative">
-              <div className="text-sm font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-full w-fit mb-5">
-                {phase.week}
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-5">{phase.title}</h3>
+          {/* 3-column week table */}
+          <div className="grid md:grid-cols-3 border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
+            {/* Week 1 */}
+            <div className="p-6 border-b-2 md:border-b-0 md:border-r-2 border-gray-200">
+              <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">Săptămâna 1</p>
+              <p className="text-base font-bold text-gray-900 mb-5">&ldquo;Start și Analiză&rdquo;</p>
 
-              <div className="space-y-4">
-                {phase.sessions.map((session, j) => (
-                  <div key={j}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                      <span className="text-sm font-semibold text-gray-900">{session.name}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 ml-6 mb-1">
-                      <Clock className="w-3.5 h-3.5 text-gray-400" />
-                      <span className="text-xs font-medium text-gray-500">{session.duration}</span>
-                    </div>
-                    <p className="text-sm text-gray-500 leading-relaxed ml-6">{session.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              {phase.note && (
-                <div className="mt-5 px-3 py-2 bg-primary/5 rounded-xl">
-                  <p className="text-xs font-medium text-primary">{phase.note}</p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-sm font-bold text-gray-900 mb-0.5">Sesiunea 1: Start</p>
+                  <p className="text-sm text-gray-500 mb-1">1 oră</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Aliniem așteptările, stabilim echipa, planificăm sesiunile de analiză.
+                  </p>
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
 
-        <div className="text-center mt-10">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-xl border border-gray-200 shadow-soft">
-            <Clock className="w-4 h-4 text-primary" />
-            <span className="text-sm font-bold text-gray-900">Timpul tau total: 8-13 ore</span>
-            <span className="text-sm text-gray-500">in 21 de zile</span>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 mb-0.5">Sesiunea 2: Analiză detaliată</p>
+                  <p className="text-sm text-gray-500 mb-1">2 ore</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Analizăm fiecare proces: pași, decizii, date, sisteme, excepții.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Week 2 */}
+            <div className="p-6 border-b-2 md:border-b-0 md:border-r-2 border-gray-200">
+              <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">Săptămâna 2</p>
+              <p className="text-base font-bold text-gray-900 mb-5">&ldquo;Colectare date&rdquo;</p>
+
+              <div className="mb-5">
+                <p className="text-sm font-bold text-gray-900 mb-0.5">Echipa ta colectează date</p>
+                <p className="text-sm text-gray-500 mb-1">4-9 ore (intern)</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Pe baza tool-urilor și direcțiilor primite de la noi, echipa ta colectează date, documentează procesele și pregătește materialele.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="bg-primary/10 rounded-xl px-4 py-3">
+                  <p className="text-xs font-medium text-primary leading-relaxed">
+                    Noi oferim structura și tool-urile, iar ulterior facem analiza și mapăm automatizările.
+                  </p>
+                </div>
+                <div className="bg-primary/10 rounded-xl px-4 py-3">
+                  <p className="text-xs font-medium text-primary leading-relaxed">
+                    Echipa ta doar colectează date interne și ni le transmite.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Week 3 */}
+            <div className="p-6">
+              <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">Săptămâna 3</p>
+              <p className="text-base font-bold text-gray-900 mb-5">&ldquo;Validare și Livrare&rdquo;</p>
+
+              <div>
+                <p className="text-sm font-bold text-gray-900 mb-0.5">Sesiunea 3: Validare</p>
+                <p className="text-sm text-gray-500 mb-1">1 oră</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Prezentăm livrabilele, validăm cu decidenții, ajustăm prioritățile, stabilim pașii următori.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Time summary below the table */}
+          <div className="text-center mb-10">
+            <p className="text-base text-gray-900 font-medium">
+              Timpul vostru total: <span className="font-bold">maxim 8-13 ore în 21 de zile</span>
+            </p>
+            <p className="text-sm text-gray-400 mt-1">
+              (4 ore pentru cele trei sesiuni + posibil alte 4-9 ore ca să ne dați offline rapoarte, exemple, acces la date etc)
+            </p>
+          </div>
+
+          {/* CONSTRUIM CU section */}
+          <div className="border-2 border-gray-200 rounded-2xl p-6">
+            <p className="text-center font-bold text-gray-900 uppercase tracking-wide text-sm mb-5">
+              CONSTRUIM CU
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-0 border-2 border-gray-200 rounded-xl overflow-hidden mb-4">
+              {['n8n', 'Make', 'OpenAI', 'Supabase', 'Google Workspace'].map((tech, i) => (
+                <div
+                  key={i}
+                  className={`px-5 py-3 text-sm font-semibold text-gray-700 ${
+                    i < 4 ? 'border-r-2 border-gray-200' : ''
+                  } flex-1 text-center min-w-[120px]`}
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-sm text-gray-500 leading-relaxed">
+              Și (aproape) orice altă soluție tehnică necesară ca să automatizăm procesele manuale.
+            </p>
           </div>
         </div>
       </div>

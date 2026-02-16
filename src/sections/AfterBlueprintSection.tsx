@@ -1,49 +1,61 @@
-import { Wrench, Building2, Brain } from 'lucide-react';
-
 export function AfterBlueprintSection() {
   return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="section-label">Dupa Blueprint</span>
-          <h2 className="section-title">Blueprint iti da claritate. Ce faci cu ea, e decizia ta.</h2>
-        </div>
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10 bg-white">
+          <div className="text-center mb-10">
+            <span className="section-label">DUPĂ BLUEPRINT</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 leading-tight">
+              Blueprint îți dă claritate.
+              <br />
+              Ce faci cu ea, e decizia ta.
+            </h2>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            {
-              icon: Wrench,
-              title: 'Implementezi cu noi (BUILD)',
-              desc: 'Fiecare card are pret fix, garantie 30 zile pe bug fixes si documentatie completa. Creditul Blueprint reduce costul.',
-              tag: 'Cel mai ales',
-              tagColor: 'bg-success/10 text-success',
-            },
-            {
-              icon: Building2,
-              title: 'Implementezi intern sau cu alt vendor',
-              desc: 'Livrabilele sunt ale tale, complete si suficient de detaliate pentru oricine le-ar implementa.',
-              tag: 'Flexibil',
-              tagColor: 'bg-gray-100 text-gray-600',
-            },
-            {
-              icon: Brain,
-              title: 'Treci la AI Strategy',
-              desc: 'Daca ai nevoie de un partener strategic pe termen lung, Blueprint devine fundatia programului. Creditul se aplica si aici.',
-              tag: 'Enterprise',
-              tagColor: 'bg-primary/10 text-primary',
-            },
-          ].map((item, i) => (
-            <div key={i} className="card relative">
-              <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 ${item.tagColor}`}>
-                {item.tag}
+          <div className="grid md:grid-cols-3 border-2 border-gray-200 rounded-2xl overflow-hidden">
+            {/* Column 1 */}
+            <div className="p-6 md:border-r-2 border-b-2 md:border-b-0 border-gray-200">
+              <span className="text-xs font-bold text-primary uppercase tracking-wide">
+                Recomandat
               </span>
-              <div className="icon-box-light mb-5">
-                <item.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3">
+                Implementezi cu noi (<span className="text-primary">BUILD</span>)
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Fiecare card (automatizare mapată la nivel de proces) are preț fix, suport garantat 30 zile pe bug fixes și documentație completă.{' '}
+                <span className="text-primary font-semibold">EZ CREDIT</span> aplicat pe{' '}
+                <span className="text-primary font-semibold">BLUEPRINT</span> reduce costul.
+              </p>
             </div>
-          ))}
+
+            {/* Column 2 */}
+            <div className="p-6 md:border-r-2 border-b-2 md:border-b-0 border-gray-200">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">
+                Flexibil
+              </span>
+              <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3">
+                Implementezi intern sau cu alt vendor
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Livrabilele sunt ale tale, complete și suficient de detaliate pentru oricine le-ar implementa.
+              </p>
+            </div>
+
+            {/* Column 3 */}
+            <div className="p-6">
+              <span className="text-xs font-bold text-primary uppercase tracking-wide">
+                Enterprise
+              </span>
+              <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3">
+                Treci la <span className="text-primary font-extrabold">AI STRATEGY</span>
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Dacă ai nevoie de un partener strategic pe termen lung,{' '}
+                <span className="text-primary font-semibold">BLUEPRINT</span> devine fundația programului.{' '}
+                <span className="text-primary font-semibold">EZ CREDIT</span> se aplică și aici.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

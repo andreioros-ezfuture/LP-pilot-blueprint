@@ -2,18 +2,18 @@ import { Gift, Handshake, Check } from 'lucide-react';
 
 export function PilotBenefitsSection() {
   const youGet = [
-    'Pret preferential — conditii pe care nu le vom replica dupa pilot',
-    'Atentie dedicata — echipa senior lucreaza direct, fara delegare',
-    'Acces direct la fondator — comunicare fara intermediari',
-    'Imbunatatire continua — sugestiile tale influenteaza rezultatul final',
-    'Prioritate la implementare — daca continui cu BUILD, ai prioritate in calendar',
+    'Preț preferențial — condiții pe care nu le vom replica după pilot',
+    'Atenție dedicată — echipa senior lucrează direct, fără delegare',
+    'Acces direct la fondator — comunicare fără intermediari',
+    'Îmbunătățire continuă — sugestiile tale influențează rezultatul final',
+    'Prioritate la implementare — dacă continui cu BUILD, ai prioritate în calendar',
   ];
 
   const weNeed = [
-    'Disponibilitate — cele 3 sesiuni programate si raspunsuri in maximum 48 de ore',
-    'Lucru intern — echipa ta colecteaza date si documenteaza procesele (8+ ore, cu tool-urile noastre)',
-    'Folosirea platformei noastre — completati datele direct in tool-urile pe care vi le punem la dispozitie',
-    'Feedback sincer — ne spui ce functioneaza si ce nu',
+    'Disponibilitate — cele 3 sesiuni programate și răspunsuri în maximum 48 de ore',
+    'Lucru intern — echipa ta colectează date și documentează procesele (8+ ore, cu tool-urile noastre)',
+    'Folosirea platformei noastre — completați datele direct în tool-urile pe care vi le punem la dispoziție',
+    'Feedback sincer — ne spui ce funcționează și ce nu',
     'Permisiunea de a folosi rezultatele ca studiu de caz — datele pot fi anonimizate',
   ];
 
@@ -27,7 +27,7 @@ export function PilotBenefitsSection() {
             Beneficii Pilot
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
-            Ce primesti si ce cerem in schimb
+            Ce primești și ce cerem în schimb
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export function PilotBenefitsSection() {
               <div className="w-10 h-10 bg-cta/20 rounded-xl flex items-center justify-center">
                 <Gift className="w-5 h-5 text-cta" />
               </div>
-              <h3 className="text-lg font-bold">Ce primesti tu</h3>
+              <h3 className="text-lg font-bold">Ce primești tu</h3>
             </div>
             <ul className="space-y-3">
               {youGet.map((item, i) => (
@@ -56,7 +56,7 @@ export function PilotBenefitsSection() {
               <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
                 <Handshake className="w-5 h-5 text-primary-light" />
               </div>
-              <h3 className="text-lg font-bold">Ce cerem in schimb</h3>
+              <h3 className="text-lg font-bold">Ce cerem în schimb</h3>
             </div>
             <ul className="space-y-3">
               {weNeed.map((item, i) => (

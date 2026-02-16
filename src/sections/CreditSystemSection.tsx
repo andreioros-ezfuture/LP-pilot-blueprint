@@ -1,75 +1,118 @@
-import { ArrowRight, TrendingUp } from 'lucide-react';
-
 export function CreditSystemSection() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="section-label">Sistemul de Credit</span>
-          <h2 className="section-title">Blueprint-ul devine gratuit daca implementezi</h2>
-          <p className="section-desc">
-            Intreaga suma investita in Blueprint se transforma in credit aplicat direct pe prima automatizare din BUILD.
-            Practic, platesti o data si primesti de doua ori.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          {/* Credit table */}
-          <div className="bg-white rounded-3xl border-2 border-gray-200 overflow-hidden mb-10">
-            <div className="grid grid-cols-2 bg-gray-900 text-white">
-              <div className="p-4 text-sm font-bold">Daca incepi implementarea in...</div>
-              <div className="p-4 text-sm font-bold text-center">Credit aplicat</div>
-            </div>
-            {[
-              { period: '14 zile de la livrare', credit: '100% din valoarea Blueprint', highlight: true },
-              { period: '15-30 zile de la livrare', credit: '50% din valoarea Blueprint', highlight: false },
-              { period: 'Dupa 30 de zile', credit: 'Creditul expira', highlight: false },
-            ].map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-2 border-t border-gray-100 ${
-                  row.highlight ? 'bg-success/5' : ''
-                }`}
-              >
-                <div className="p-4 text-sm text-gray-700">{row.period}</div>
-                <div className={`p-4 text-sm text-center font-bold ${
-                  row.highlight ? 'text-success' : 'text-gray-700'
-                }`}>
-                  {row.credit}
-                </div>
-              </div>
-            ))}
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Main bordered card */}
+        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10">
+          <div className="mb-8">
+            <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-4">
+              SISTEMUL EZ CREDIT
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
+              Blueprint-ul devine gratuit dacă implementezi cu noi
+            </h2>
+            <p className="text-lg text-gray-500 leading-relaxed">
+              Întreaga sumă investită în{' '}
+              <span className="text-primary font-semibold">BLUEPRINT</span> se
+              transformă în{' '}
+              <span className="text-primary font-semibold underline">
+                EZ CREDIT
+              </span>{' '}
+              <span className="text-gray-400 text-sm">(se citește &ldquo;easy credit&rdquo;)</span>{' '}
+              aplicat direct pe prima automatizare din{' '}
+              <span className="font-bold text-gray-900">BUILD</span>. Practic,
+              plătești o dată și primești de 2 ori.
+            </p>
           </div>
 
-          {/* Example */}
-          <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-2xl border border-primary/20 p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <TrendingUp className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-gray-900">Exemplu concret</h3>
+          {/* Credit table */}
+          <div className="border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
+            <div className="grid grid-cols-2 bg-gray-900 text-white">
+              <div className="p-4 text-sm font-bold">
+                Dacă începi implementarea cu noi în...
+              </div>
+              <div className="p-4 text-sm font-bold text-right">
+                Credit aplicat
+              </div>
             </div>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-              Blueprint-ul se livreaza pe 1 martie (dupa cele 21 de zile). Unul dintre cardurile de automatizare are pret BUILD de €10.000. Creditul se calculeaza din momentul livrarii:
+            <div className="grid grid-cols-2 border-b border-gray-200 bg-success/5">
+              <div className="p-4 text-sm text-gray-700">
+                14 zile de la livrare
+              </div>
+              <div className="p-4 text-sm text-right font-bold text-success">
+                100% din valoarea Blueprint
+              </div>
+            </div>
+            <div className="grid grid-cols-2 border-b border-gray-200">
+              <div className="p-4 text-sm text-gray-700">
+                15-30 zile de la livrare
+              </div>
+              <div className="p-4 text-sm text-right font-bold text-gray-900">
+                50% din valoarea Blueprint
+              </div>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="p-4 text-sm text-gray-700">Din ziua 31</div>
+              <div className="p-4 text-sm text-right font-bold text-gray-900">
+                Creditul expiră
+              </div>
+            </div>
+          </div>
+
+          {/* Exemplu concret */}
+          <div className="border-2 border-gray-200 rounded-2xl p-6 md:p-8 mb-6">
+            <h3 className="text-lg font-bold text-gray-900 mb-3">
+              Exemplu concret
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-5">
+              Să zicem că Blueprint-ul se livrează pe 31 martie (după cele 21 de
+              zile). Unul dintre cardurile de automatizare are preț de
+              implementare (<span className="font-bold">BUILD</span>) de
+              €10.000. Creditul se calculează din momentul livrării:
             </p>
             <div className="space-y-3">
-              {[
-                { label: 'Semnezi in 14 zile (pana pe 15 martie)', credit: '€3.750', total: '€10.000', result: '€6.250', highlight: true },
-                { label: 'Semnezi in 15-30 zile (pana pe 31 martie)', credit: '€1.875', total: '€10.000', result: '€8.125', highlight: false },
-                { label: 'Semnezi dupa 30 zile (dupa 31 martie)', credit: '€0', total: '€10.000', result: '€10.000', highlight: false },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm">
-                  <ArrowRight className={`w-4 h-4 flex-shrink-0 ${item.highlight ? 'text-success' : 'text-gray-400'}`} />
-                  <span className="text-gray-700">
-                    <strong>{item.label}:</strong>{' '}
-                    <span className="font-mono text-[13px]">{item.total} − <span className={item.highlight ? 'text-success font-semibold' : ''}>{item.credit} credit</span> = </span>
-                    mai platesti <strong className="text-gray-900">{item.result}</strong>
-                  </span>
-                </div>
-              ))}
+              <div className="flex items-start gap-2 text-sm text-gray-700">
+                <span className="text-primary mt-0.5">→</span>
+                <span>
+                  <strong>
+                    Semnezi în 14 zile (până pe 14 aprilie):
+                  </strong>{' '}
+                  €10.000 −{' '}
+                  <span className="text-success italic font-semibold">
+                    €3.750 credit
+                  </span>{' '}
+                  = mai plătești{' '}
+                  <strong className="text-gray-900">€6.250</strong>
+                </span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-gray-700">
+                <span className="text-primary mt-0.5">→</span>
+                <span>
+                  <strong>
+                    Semnezi în 15-30 zile (până pe 30 aprilie):
+                  </strong>{' '}
+                  €10.000 − €1.875 credit = mai plătești{' '}
+                  <strong className="text-gray-900">€8.125</strong>
+                </span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-gray-700">
+                <span className="text-primary mt-0.5">→</span>
+                <span>
+                  <strong>
+                    Semnezi după 30 de zile (din 1 mai):
+                  </strong>{' '}
+                  €10.000 − €0 credit = mai plătești{' '}
+                  <strong className="text-gray-900">€10.000</strong>
+                </span>
+              </div>
             </div>
-            <p className="text-sm text-primary font-medium mt-4">
-              Nu livram Blueprint-ul? Primesti 100% banii inapoi. Livram si continui cu BUILD? Blueprint-ul a fost gratuit.
-            </p>
           </div>
+
+          {/* Bottom note */}
+          <p className="text-sm text-primary italic font-medium leading-relaxed">
+            Nu livrăm Blueprint-ul? Primești 100% banii înapoi. Livrăm și
+            continui cu BUILD? Blueprint-ul a fost gratuit.
+          </p>
         </div>
       </div>
     </section>

@@ -1,63 +1,72 @@
-import { GraduationCap, Clock } from 'lucide-react';
-
-const sessions = [
-  {
-    name: 'Pregatire pentru Analiza',
-    duration: '2h',
-    desc: 'Cum sa se pregateasca echipa pentru sesiunile de analiza, ce documente sa furnizeze',
-  },
-  {
-    name: 'Pregatire Interna #1',
-    duration: '2h',
-    desc: 'Cum sa identifice singuri procese automatizabile, cum sa le documenteze',
-  },
-  {
-    name: 'Pregatire Interna #2',
-    duration: '2h',
-    desc: 'Cum sa masoare si sa raporteze rezultatele automatizarilor',
-  },
-];
-
 export function TrainingAddonSection() {
+  const sessions = [
+    {
+      name: 'Pregătire pentru Analiză',
+      duration: '2h',
+      desc: 'Cum să se pregătească echipa pentru sesiunile de analiză, ce documente să furnizeze pentru a maximiza valoarea planului de automatizări care rezultă.',
+    },
+    {
+      name: 'Pregătire Internă #1',
+      duration: '2h',
+      desc: 'Cum să identifice singuri procese automatizabile și cum să le documenteze.',
+    },
+    {
+      name: 'Pregătire Internă #2',
+      duration: '2h',
+      desc: 'Cum să măsoare și să raporteze rezultatele automatizărilor.',
+    },
+  ];
+
   return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-10 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(91,106,232,0.2)_0%,transparent_70%)] pointer-events-none" />
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10 bg-white">
+          {/* Header */}
+          <div className="mb-8">
+            <span className="section-label">ADD-ON OPȚIONAL</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-2">
+              Training Plan
+            </h2>
+            <p className="text-3xl md:text-4xl font-extrabold text-cta mb-4">€997</p>
+            <p className="text-gray-500 text-[15px] leading-relaxed">
+              Pentru companiile care vor să construiască și capabilități interne, de durată.
+            </p>
+            <p className="text-gray-500 text-[15px] leading-relaxed">
+              3 sesiuni, 6 ore total — maximizează valoarea Blueprint-ului și reduce rezistența la schimbare.
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5 text-primary-light" />
+          {/* Sessions table */}
+          <div className="border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
+            {sessions.map((session, i) => (
+              <div
+                key={i}
+                className={`p-5 ${i < sessions.length - 1 ? 'border-b-2 border-gray-200' : ''}`}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-gray-900">{session.name}</span>
+                  <span className="text-sm font-semibold text-gray-500 ml-4 flex-shrink-0">
+                    {session.duration}
+                  </span>
                 </div>
-                <span className="text-xs font-bold tracking-widest uppercase text-primary-light">
-                  Addon Optional
-                </span>
+                <p className="text-sm text-gray-500 leading-relaxed">{session.desc}</p>
               </div>
+            ))}
+          </div>
 
-              <h2 className="text-2xl md:text-3xl font-extrabold mb-2">Training Plan</h2>
-              <p className="text-3xl font-extrabold text-cta mb-4">€997</p>
-              <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
-                Pentru companiile care vor sa construiasca si capabilitati interne.
-                3 sesiuni, 6 ore total — maximizeaza valoarea Blueprint-ului si reduce rezistenta la schimbare.
-              </p>
-
-              <div className="space-y-4">
-                {sessions.map((session, i) => (
-                  <div key={i} className="bg-white/[0.05] border border-white/[0.08] rounded-xl p-4">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-semibold text-sm">{session.name}</span>
-                      <div className="flex items-center gap-1 text-gray-400">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span className="text-xs">{session.duration}</span>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-400">{session.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Bottom section */}
+          <div className="text-center">
+            <p className="font-bold text-gray-900 mb-2">
+              Toate sesiunile sunt ținute de oameni seniori, cu experiență și track record.
+            </p>
+            <p className="text-sm text-gray-500 mb-2">
+              <span className="text-primary font-semibold">EZ CREDIT</span> se aplică și aici.
+            </p>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Menționează că dorești și trainingul când discutăm —
+              <br />
+              fie când te înscrii, fie ulterior, la telefon sau prin e-mail.
+            </p>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ export function AdminDashboard() {
   };
 
   const deleteApplication = async (id: string, companyName: string) => {
-    if (!confirm(`Sigur vrei sa stergi aplicatia de la "${companyName}"?`)) return;
+    if (!confirm(`Sigur vrei să ștergi aplicația de la "${companyName}"?`)) return;
     setUpdating(id);
     const { error } = await supabase
       .from('pilot_applications')
@@ -108,7 +108,7 @@ export function AdminDashboard() {
     switch (status) {
       case 'accepted': return 'Aprobat';
       case 'rejected': return 'Respins';
-      default: return 'In asteptare';
+      default: return 'În așteptare';
     }
   };
 
@@ -124,19 +124,19 @@ export function AdminDashboard() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold text-gray-900">Blueprint Pilot — Aplicatii</h1>
+            <h1 className="text-lg font-bold text-gray-900">Blueprint Pilot — Aplicații</h1>
             <div className="flex gap-4 mt-1 text-sm">
               <span className="text-gray-500">{applications.length} total</span>
-              <span className="text-amber-600 font-medium">{pending} in asteptare</span>
+              <span className="text-amber-600 font-medium">{pending} în așteptare</span>
               <span className="text-green-600 font-medium">{approved} aprobate</span>
-              <span className="text-gray-900 font-bold">{remaining} locuri ramase</span>
+              <span className="text-gray-900 font-bold">{remaining} locuri rămase</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <button
               onClick={fetchApplications}
               className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
-              title="Reincarca"
+              title="Reîncarcă"
             >
               <RefreshCw className="w-5 h-5" />
             </button>
@@ -156,11 +156,11 @@ export function AdminDashboard() {
         {loading ? (
           <div className="text-center py-20">
             <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin mx-auto" />
-            <p className="text-sm text-gray-500 mt-3">Se incarca...</p>
+            <p className="text-sm text-gray-500 mt-3">Se încarcă...</p>
           </div>
         ) : applications.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-gray-500">Nicio aplicatie inca.</p>
+            <p className="text-gray-500">Nicio aplicație încă.</p>
           </div>
         ) : (
           <div className="space-y-3">
@@ -202,7 +202,7 @@ export function AdminDashboard() {
                           className="flex items-center gap-1.5 px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
                         >
                           <CheckCircle className="w-4 h-4" />
-                          Aproba
+                          Aprobă
                         </button>
                         <button
                           onClick={() => updateStatus(app.id, 'rejected')}
@@ -221,14 +221,14 @@ export function AdminDashboard() {
                         className="flex items-center gap-1.5 px-3 py-1.5 text-gray-500 text-xs font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
                       >
                         <RefreshCw className="w-3.5 h-3.5" />
-                        Anuleaza
+                        Anulează
                       </button>
                     )}
                     <button
                       onClick={() => deleteApplication(app.id, app.company_name)}
                       disabled={updating === app.id}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-red-400 text-xs font-medium rounded-lg border border-red-100 hover:bg-red-50 hover:text-red-600 transition-colors disabled:opacity-50"
-                      title="Sterge aplicatia"
+                      title="Șterge aplicația"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>

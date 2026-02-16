@@ -3,21 +3,21 @@ import { Check } from 'lucide-react';
 export function SelectionCriteriaSection() {
   const criteria = [
     'Ai minim 3 procese repetitive pe care le-ai vrea automatizate',
-    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de analiza',
-    'Folosesti deja sisteme digitale (CRM, ERP, Google Workspace, contabilitate online etc.)',
-    'Ai buget realist pentru implementarea ulterioara (minim €10.000-€30.000 pentru primele automatizari)',
-    'Intelegi ca Blueprint este faza de planificare, nu implementarea propriu-zisa',
-    'Esti dispus sa oferi feedback si sa contribui la un studiu de caz',
+    'Ai cel puțin un decision maker disponibil pentru cele 3 sesiuni de analiză',
+    'Folosești deja sisteme digitale (CRM, ERP, Google Workspace, contabilitate online etc.)',
+    'Ai buget realist pentru implementarea ulterioară (minim €10.000-€30.000 pentru primele automatizări)',
+    'Înțelegi că Blueprint este faza de planificare, nu implementarea propriu-zisă',
+    'Ești dispus să oferi feedback și să contribui la un studiu de caz',
   ];
 
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="section-label">Criterii de Selectie</span>
-          <h2 className="section-title">Nu orice companie se potriveste pentru pilot</h2>
+          <span className="section-label">Criterii de Selecție</span>
+          <h2 className="section-title">Nu orice companie se potrivește pentru pilot</h2>
           <p className="section-desc">
-            Cautam companii care indeplinesc aceste criterii. Aplicarile sunt procesate in ordinea primirii.
+            Căutăm companii care îndeplinesc aceste criterii. Aplicările sunt procesate în ordinea primirii.
           </p>
         </div>
 

@@ -1,72 +1,183 @@
-import { ArrowRight, Beaker, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-interface HeroSectionProps {
-  remainingSpots: number;
-  totalSpots: number;
+const examples = [
+  {
+    side: 'left' as const,
+    category: 'Vânzări & Marketing',
+    redTitle: 'O firma de servicii IT de 8 mil. \u20AC',
+    description: 'care face follow-up manual pe leaduri',
+    loss: '~50.000 \u20AC/an',
+    consequence: 'din oportunități necontactate la timp.',
+    link: '/exemplu/vanzari-marketing',
+  },
+  {
+    side: 'right' as const,
+    category: 'Customer Support',
+    redTitle: 'Un magazin online de 3,5 mil. \u20AC',
+    description: 'care răspunde manual la aceleași întrebări de la clienți',
+    loss: '~90.000 \u20AC/an',
+    consequence: 'prin timp consumat pe sarcini repetitive.',
+    link: '/exemplu/customer-support',
+  },
+  {
+    side: 'left' as const,
+    category: 'Operational / Delivery',
+    redTitle: 'Un distribuitor de 6 mil. \u20AC',
+    description:
+      'care urmărește livrările manual, verificând AWB-uri pe site-urile curierilor',
+    loss: '~90.000 \u20AC/an',
+    consequence: 'făcând zilnic o muncă aproape inutilă.',
+    link: '/exemplu/operational-delivery',
+  },
+  {
+    side: 'right' as const,
+    category: 'HR & Administrativ',
+    redTitle: 'O agenție de marketing (5 mil. \u20AC)',
+    description:
+      'care programează manual concediile pentru zeci de angajați',
+    loss: '~15.000 \u20AC/an',
+    consequence: 'doar din timp irosit intern.',
+    link: '/exemplu/hr-administrativ',
+  },
+  {
+    side: 'left' as const,
+    category: 'Management & Decision Intelligence',
+    redTitle: 'Un furnizor B2B de 10 mil. \u20AC',
+    description:
+      'care lucrează cu rapoarte de vânzări săptămânale, făcute manual,',
+    loss: '~65.000 \u20AC/an',
+    consequence: 'din decizii luate pe date întârziate.',
+    link: '/exemplu/management-decision',
+  },
+  {
+    side: 'right' as const,
+    category: 'Financiar & Contabilitate',
+    redTitle: 'Un producător de mobilă (7 mil. \u20AC)',
+    description: 'care face reconcilierea bancară manual, în Excel,',
+    loss: '~40.000 \u20AC/an',
+    consequence: 'din întârzieri, erori și bani încasați prea târziu.',
+    link: '/exemplu/financiar-contabilitate',
+  },
+];
+
+function ExampleCard({
+  redTitle,
+  description,
+  loss,
+  consequence,
+  link,
+}: {
+  redTitle: string;
+  description: string;
+  loss: string;
+  consequence: string;
+  link: string;
+}) {
+  return (
+    <div className="p-5 md:p-6 flex flex-col items-center justify-center text-center">
+      <p className="text-red-600 font-bold text-base md:text-lg mb-1">{redTitle}</p>
+      <p className="text-gray-600 text-sm mb-3">{description}</p>
+      <p className="text-red-600 font-extrabold text-2xl md:text-3xl leading-tight mb-1 whitespace-nowrap">
+        poate pierde {loss}
+      </p>
+      <p className="text-gray-600 text-sm mb-4">{consequence}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-all duration-200">
+        Vezi Exemplul Detaliat
+        <ArrowRight className="w-4 h-4" />
+      </a>
+    </div>
+  );
 }
 
-export function HeroSection({ remainingSpots, totalSpots }: HeroSectionProps) {
-  const filledPercent = ((totalSpots - remainingSpots) / totalSpots) * 100;
-
+function CategoryLabel({ label }: { label: string }) {
   return (
-    <section className="pt-28 pb-20 md:pt-40 md:pb-32 text-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
-      <div className="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle,rgba(91,106,232,0.06)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute top-[100px] right-[-200px] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(255,107,53,0.04)_0%,transparent_70%)] pointer-events-none" />
+    <div className="p-5 md:p-6 flex items-center justify-center h-full">
+      <p className="text-gray-400 font-medium text-base md:text-lg text-center">
+        {label}
+      </p>
+    </div>
+  );
+}
 
-      <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Pilot badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cta to-cta-dark rounded-full mb-8 shadow-lg shadow-cta/20">
-          <Beaker className="w-4 h-4 text-white" />
-          <span className="text-[13px] font-bold text-white tracking-wide uppercase">
-            Program Pilot — Locuri Limitate
-          </span>
+export function HeroSection() {
+  return (
+    <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.2] mb-0">
+            <span className="text-gray-900">Un business de</span>
+            <br />
+            <span className="relative inline-block">
+              <span className="relative z-10 text-gray-900">
+                2-10 milioane de euro/an
+              </span>
+              <span
+                className="absolute bottom-1 left-0 w-full h-3 md:h-4 bg-blue-200/60 -z-0 rounded-sm"
+                aria-hidden="true"
+              />
+            </span>
+            <br />
+            <span className="text-red-600">
+              care NU automatizează procesele manuale
+            </span>
+            <br />
+            <span className="text-gray-900">
+              ar putea la fel de bine
+            </span>
+            <br />
+            <span className="text-gray-900">
+              să dea foc unei valize cu &euro;100.000
+            </span>
+          </h1>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-gray-900 mb-6 max-w-4xl mx-auto leading-[1.1]">
-          Procesele manuale te costa mai mult decat crezi.
-          <br />
-          <span className="text-primary">Afla exact cat — si cum recuperezi!</span>
-        </h1>
-
-        <p className="text-base text-gray-500 max-w-xl mx-auto mb-4 italic">
-          Stii deja ca pierzi timp. Stii ca exista solutii. Dar nu stii cu care sa incepi si cat te costa de fapt fiecare ora pierduta.
-        </p>
-
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-          In 21 de zile, primesti un plan complet de automatizare — cu preturi fixe si ROI calculat.
-        </p>
-
-        <p className="text-base font-bold text-cta mb-10">
-          Blueprint by EZFuture — Program Pilot | €3.750 in loc de €7.500
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
-          <a href="#aplica" className="btn-primary text-base md:text-lg px-10 py-4">
-            Vreau Planul Meu de Automatizare
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          <a href="#ce-este" className="btn-secondary text-base md:text-lg px-10 py-4">
-            Vezi Ce Primesti
-          </a>
-        </div>
-        <p className="text-sm text-gray-500 mb-10">Fara angajament. Raspuns in 48 de ore.</p>
-
-        {/* Spots counter */}
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border-2 border-gray-100 shadow-soft">
-          <Users className="w-5 h-5 text-cta" />
-          <span className="text-sm font-bold text-gray-900">
-            {remainingSpots} din {totalSpots} locuri ramase
-          </span>
-          <div className="w-28 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+        {/* Grid of 6 business examples */}
+        <div className="border border-gray-200 rounded-2xl overflow-hidden mb-10">
+          {examples.map((item, idx) => (
             <div
-              className="h-full bg-gradient-to-r from-cta to-cta-dark rounded-full transition-all duration-1000 ease-out"
-              style={{ width: `${filledPercent}%` }}
-            />
-          </div>
+              key={idx}
+              className={`grid grid-cols-1 md:grid-cols-2 ${
+                idx !== examples.length - 1 ? 'border-b border-gray-200' : ''
+              }`}
+            >
+              {item.side === 'left' ? (
+                <>
+                  <div className="border-b md:border-b-0 md:border-r border-gray-200">
+                    <ExampleCard
+                      redTitle={item.redTitle}
+                      description={item.description}
+                      loss={item.loss}
+                      consequence={item.consequence}
+                      link={item.link}
+                    />
+                  </div>
+                  <CategoryLabel label={item.category} />
+                </>
+              ) : (
+                <>
+                  <div className="order-2 md:order-1 md:border-r border-gray-200">
+                    <CategoryLabel label={item.category} />
+                  </div>
+                  <div className="order-1 md:order-2 border-b md:border-b-0">
+                    <ExampleCard
+                      redTitle={item.redTitle}
+                      description={item.description}
+                      loss={item.loss}
+                      consequence={item.consequence}
+                      link={item.link}
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
         </div>
+
+        {/* Bottom text */}
+        <p className="text-center text-gray-600 text-base md:text-lg mx-auto leading-relaxed">
+          Când tragi linie s-ar putea să realizezi că arzi (prea) multe astfel de &bdquo;valize cu bani&rdquo;.
+        </p>
       </div>
     </section>
   );

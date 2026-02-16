@@ -32,7 +32,7 @@ export function AdminLogin() {
 
       if (roleError || roleData?.role !== 'super_admin') {
         await supabase.auth.signOut();
-        throw new Error('Acces interzis. Doar administratorii pot accesa aceasta pagina.');
+        throw new Error('Acces interzis. Doar administratorii pot accesa această pagină.');
       }
 
       navigate('/admin/dashboard');
@@ -88,7 +88,7 @@ export function AdminLogin() {
               disabled={loading}
               className="w-full py-3 bg-gray-900 text-white rounded-xl text-sm font-semibold hover:bg-gray-800 transition-colors disabled:opacity-50"
             >
-              {loading ? 'Se autentifica...' : 'Intra'}
+              {loading ? 'Se autentifică...' : 'Intră'}
             </button>
           </form>
         </div>

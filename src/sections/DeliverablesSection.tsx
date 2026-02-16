@@ -1,121 +1,126 @@
-import {
-  Layers,
-  Route,
-  GitBranch,
-  GitMerge,
-  FileText,
-  BookOpen,
-  Users,
-  AlertTriangle,
-  Compass,
-  ShieldAlert,
-} from 'lucide-react';
-
-const deliverables = [
-  {
-    icon: Layers,
-    title: 'Carduri de Automatizare',
-    subtitle: 'Minim 5 bucati',
-    desc: 'Descriere AS IS / TO BE, integratii necesare, calcul ROI, pret fix BUILD, timeline, garantii incluse.',
-    highlight: true,
-  },
-  {
-    icon: Route,
-    title: 'Plan de Implementare',
-    desc: 'Ordinea recomandata, dependinte, timeline pe 90 zile si 12 luni, ROI agregat pe etape.',
-  },
-  {
-    icon: GitBranch,
-    title: 'Process Map AS IS',
-    desc: 'Diagrame vizuale ale proceselor actuale — pasi, decizii, exceptii si bottleneck-uri.',
-  },
-  {
-    icon: GitMerge,
-    title: 'Process Map TO BE',
-    desc: 'Procesele automatizate — ce face automatizarea si unde ramane interventia umana.',
-  },
-  {
-    icon: FileText,
-    title: 'Documentatie Procese AS IS',
-    desc: 'Descriere detaliata: pasi, responsabili, frecventa, volume, inputuri, outputuri, exceptii.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Decision Log',
-    desc: 'Registru al deciziilor: ce am ales, de ce, ce alternative am exclus si pe ce baza.',
-  },
-  {
-    icon: Users,
-    title: 'Matrice RACI',
-    desc: 'Cine e Responsible, Accountable, Consulted si Informed pentru fiecare automatizare.',
-  },
-  {
-    icon: AlertTriangle,
-    title: 'Evaluare Impact Schimbare',
-    desc: 'Analiza impactului: ce se schimba, cine e afectat, training necesar, riscuri de rezistenta.',
-  },
-  {
-    icon: Compass,
-    title: 'Plan de Adoptie',
-    desc: 'Strategie de implementare: comunicare, training, timeline de tranzitie, indicatori de succes.',
-  },
-  {
-    icon: ShieldAlert,
-    title: 'Ghid de Exceptii',
-    desc: 'Scenarii de exceptie documentate: ce se intampla cand ceva nu merge si cum trateaza automatizarea fiecare caz.',
-    fullWidth: true,
-  },
-];
-
 export function DeliverablesSection() {
   return (
-    <section id="livrabile" className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="livrabile" className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-16">
-          <span className="section-label">10 Livrabile Profesionale</span>
-          <h2 className="section-title">Tot ce ai nevoie pentru a lua decizii informate</h2>
+          <span className="section-label">10 LIVRABILE PROFESIONALE</span>
+          <h2 className="section-title">
+            Tot ce ai nevoie ca să iei decizii informate
+          </h2>
           <p className="section-desc">
-            Fiecare Blueprint livreaza un pachet complet de 10 documente, personalizate pe compania ta.
+            Fiecare <span className="text-primary font-semibold">BLUEPRINT</span> livrează un pachet complet de 10 documente, personalizate pe compania ta.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {deliverables.map((item, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl border-2 p-6 transition-all duration-300 hover:-translate-y-1 ${
-                item.highlight
-                  ? 'border-primary bg-gradient-to-br from-primary/5 to-primary/[0.02] md:col-span-2'
-                  : item.fullWidth
-                    ? 'border-gray-200 bg-white hover:border-primary/50 md:col-span-2'
-                    : 'border-gray-200 bg-white hover:border-primary/50'
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {i + 1}
-                  </div>
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    item.highlight ? 'bg-primary/10' : 'bg-gray-100'
-                  }`}>
-                    <item.icon className={`w-5 h-5 ${item.highlight ? 'text-primary' : 'text-gray-500'}`} />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">{item.title}</h3>
-                    {item.subtitle && (
-                      <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                        {item.subtitle}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
+        {/* Deliverable 1 - Special / Highlighted */}
+        <div className="mb-8 rounded-2xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/[0.02] p-8">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+            1. Carduri de Automatizare{' '}
+            <span className="text-primary underline">Minim 5</span>
+          </h3>
+          <p className="text-gray-600 leading-relaxed">
+            Descriere AS IS / TO BE, integrări necesare, calcul ROI, preț fix și asumat prin contract pentru{' '}
+            <span className="font-bold">BUILD</span> (dacă implementezi cu noi), timeline și garanții incluse.
+          </p>
+
+          {/* Highlighted explanation box */}
+          <div className="mt-6 bg-white/70 border border-primary/20 rounded-xl p-6 space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              <span className="font-bold">Cardurile de Automatizare EZ Future AI</span>{' '}
+              nu sunt niște „cartonașe" cu design frumos, care-ți spun în cuvinte elocvente „că apa e udă".
+            </p>
+            <p>
+              <span className="font-bold">Sunt documente de lucru</span>{' '}
+              care includ minim 5 automatizări personalizate, mapate riguros la nivel de proces.
+            </p>
+            <p>
+              Pe baza lor pot fi construite soluții tehnice eficiente și sigure în etapa de implementare.
+            </p>
+            <p>
+              Și pot fi folosite atât de{' '}
+              <span className="font-bold">oamenii tehnici</span>, cât și de{' '}
+              <span className="font-bold">stakeholderi</span>{' '}
+              (owners, board members sau executivi care trebuie să ia deciziile de business chiar dacă nu sunt neapărat oameni tehnici).
+            </p>
+          </div>
+        </div>
+
+        {/* Deliverables 2-10 Grid Table */}
+        <div className="border border-gray-200 rounded-2xl overflow-hidden">
+          {/* Row 1: Deliverables 2 & 3 */}
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 border-b border-gray-200 md:border-r">
+              <h3 className="font-bold text-gray-900 mb-2">2. Plan de Implementare</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Ordinea recomandată, dependințe, timeline pe 90 de zile și 12 luni, ROI agregat pe etape.
+              </p>
             </div>
-          ))}
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-2">3. Process Map AS IS</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Diagrame vizuale ale proceselor actuale - pași, decizii, excepții și bottleneck-uri.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2: Deliverables 4 & 5 */}
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 border-b border-gray-200 md:border-r">
+              <h3 className="font-bold text-gray-900 mb-2">4. Process Map TO BE</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Procesele automatizate - ce face automatizarea și unde rămâne intervenția umană.
+              </p>
+            </div>
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-2">5. Documentație Procese AS IS</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Descriere detaliată: pași, responsabili, frecvență, volume, inputuri, outputuri, excepții.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 3: Deliverables 6 & 7 */}
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 border-b border-gray-200 md:border-r">
+              <h3 className="font-bold text-gray-900 mb-2">6. Decision Log</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Registru al deciziilor: ce am ales, de ce, ce alternative am exclus și pe ce bază.
+              </p>
+            </div>
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-2">7. Matrice RACI</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Cine e Responsible, Accountable, Consulted și Informed pentru fiecare automatizare.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 4: Deliverables 8 & 9 */}
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 border-b border-gray-200 md:border-r">
+              <h3 className="font-bold text-gray-900 mb-2">8. Evaluare Impact Schimbare</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Analiza impactului: ce se schimbă, cine e afectat, training necesar, riscuri de rezistență.
+              </p>
+            </div>
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-2">9. Plan de Adopție</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Strategie de implementare: comunicare, training, timeline de tranziție, indicatori de succes.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 5: Deliverable 10 (full width) */}
+          <div>
+            <div className="p-6">
+              <h3 className="font-bold text-gray-900 mb-2">10. Ghid de Excepții</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Scenarii de excepție documentate: ce se întâmplă când ceva nu merge și cum tratează automatizarea fiecare caz.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

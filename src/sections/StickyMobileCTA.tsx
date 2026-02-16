@@ -30,6 +30,7 @@ export function StickyMobileCTA() {
       <div className="bg-white/90 backdrop-blur-md border-t border-gray-200 px-4 py-3">
         <a
           href="#aplica"
+          onClick={(e) => { e.preventDefault(); document.getElementById('aplica')?.scrollIntoView({ behavior: 'smooth' }); }}
           className="btn-primary w-full text-center"
         >
           Vreau Planul Meu

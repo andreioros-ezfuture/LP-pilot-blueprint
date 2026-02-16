@@ -1,64 +1,84 @@
-import { Check, X } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 export function ForWhoSection() {
   const forYou = [
-    'Ai 3 sau mai multe procese pe care le-ai vrea automatizate, dar nu stii cu care sa incepi',
-    'Echipa ta pierde ore pe sarcini repetitive: data entry, raportare, procesare documente, sincronizare sisteme',
-    'Ai incercat solutii punctuale, dar nu ai o strategie coerenta de automatizare',
-    'Vrei sa intelegi impactul real — timp recuperat, bani economisiti, erori eliminate — inainte de a investi',
-    'Ai nevoie de un plan clar pe care sa-l prezinti echipei de management',
-    'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de analiza',
-    'Ai buget realist pentru implementarea ulterioara (minim €10.000 pentru primele automatizari)',
-  ];
-
-  const notForYou = [
-    'Ai un singur workflow simplu de automatizat — serviciul nostru Chat (€197/workflow) e mai potrivit',
-    'Cauti un parteneriat strategic pe termen lung — AI Strategy (CAO-as-a-Service) e solutia',
+    'Ai 3 sau mai multe procese pe care ai vrea să le automatizezi, dar nu știi cu care să începi sau cât de sigur poți fi că nu strici ce merge (chiar dacă e mai ineficient).',
+    'Echipa ta pierde ore întregi în fiecare săptămână pe sarcini repetitive: data entry, raportare, procesare documente, sincronizare sisteme etc.',
+    'Ai încercat soluții punctuale, dar nu ai o strategie coerentă de automatizare.',
+    'Vrei să înțelegi și să poți cuantifica impactul în mod realist - timp recuperat, bani economisiți, erori eliminate - ÎNAINTE să investești în implementare.',
+    'Ai nevoie de un plan clar pe care să-l prezinți echipei de management.',
+    'Ai cel puțin un decision maker disponibil pentru cele 3 sesiuni de analiză (4h în total).',
+    'Ai buget realist pentru implementarea ulterioară (minim €10.000 pentru primele automatizări).',
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="section-label">Pentru cine este Blueprint</span>
-          <h2 className="section-title">Te regasesti in cel putin una din aceste situatii?</h2>
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <span className="section-label">PENTRU CINE ESTE BLUEPRINT</span>
+          <h2 className="section-title">
+            Te regăsești
+            <br />
+            în cel puțin una dintre aceste situații?
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* For you */}
-          <div className="bg-white rounded-3xl border-2 border-success/20 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-success/10 rounded-xl flex items-center justify-center">
-                <Check className="w-5 h-5 text-success" />
+        <div className="border-2 border-gray-200 rounded-3xl overflow-hidden">
+          <div className="grid md:grid-cols-2 divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 divide-gray-200">
+            {/* Left column - For you */}
+            <div className="p-8">
+              <h3 className="text-lg font-bold text-gray-900 mb-6">
+                <CheckCircle2 className="w-5 h-5 text-success inline-block" /> Blueprint este pentru
+                tine dacă...
+              </h3>
+              <ul className="space-y-4">
+                {forYou.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed"
+                  >
+                    <span className="flex-shrink-0 mt-0.5">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 bg-primary/10 border border-primary/20 rounded-2xl px-5 py-4">
+                <p className="text-primary text-[15px] font-medium leading-relaxed">
+                  Banii investiți în Blueprint se scad din costul de
+                  implementare dacă decizi să continui cu noi.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-gray-900">Blueprint este pentru tine daca...</h3>
             </div>
-            <ul className="space-y-4">
-              {forYou.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 text-[15px] leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          {/* Not for you */}
-          <div className="bg-white rounded-3xl border-2 border-gray-200 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center">
-                <X className="w-5 h-5 text-gray-400" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900">Blueprint NU este pentru tine daca...</h3>
-            </div>
-            <ul className="space-y-4">
-              {notForYou.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <X className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-500 text-[15px] leading-relaxed">{item}</span>
+            {/* Right column - Not for you */}
+            <div className="p-8">
+              <h3 className="text-lg font-bold text-gray-900 mb-6">
+                <XCircle className="w-5 h-5 text-red-500 inline-block" /> Blueprint NU este
+                pentru tine dacă...
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed">
+                  <span className="flex-shrink-0 mt-0.5">→</span>
+                  <span>
+                    Ai un singur workflow simplu de automatizat - serviciul
+                    nostru{' '}
+                    <span className="text-primary font-semibold">CHAT</span>{' '}
+                    (€197/workflow) e mai potrivit.
+                  </span>
                 </li>
-              ))}
-            </ul>
+                <li className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed">
+                  <span className="flex-shrink-0 mt-0.5">→</span>
+                  <span>
+                    Cauți un parteneriat strategic pe termen lung -{' '}
+                    <span className="text-primary font-semibold">
+                      AI STRATEGY
+                    </span>{' '}
+                    (Chief-Automation-Officer-as-a-Service) e soluția. Putem
+                    discuta în orice moment.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

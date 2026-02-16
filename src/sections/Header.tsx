@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,30 +18,16 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        {/* Spacer for centering */}
+        <div className="hidden md:flex items-center gap-3 w-[180px]" />
+
+        {/* Logo centered */}
         <a href="#" className="flex items-center group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <img src="/ezfuture-logo-dark.svg" alt="ezfuture.ai" className="h-9" />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#ce-este" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
-            Ce este Blueprint
-          </a>
-          <a href="#livrabile" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
-            Livrabile
-          </a>
-          <a href="#investitie" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
-            Investitie
-          </a>
-          <a href="#garantie" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
-            Nu pierzi
-          </a>
-          <a
-            href="#aplica"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-cta text-white text-sm font-bold rounded-xl hover:bg-cta-dark transition-all hover:-translate-y-0.5 shadow-button hover:shadow-button-hover"
-          >
-            Vreau Planul Meu
-            <ArrowRight className="w-4 h-4" />
-          </a>
+        {/* Sign Up + Log In */}
+        <div className="flex items-center gap-3">
           <a
             href="https://ezfuture-app.vercel.app/signup"
             target="_blank"
@@ -60,57 +44,8 @@ export function Header() {
           >
             Log In
           </a>
-        </nav>
-
-        <button
-          className="md:hidden p-2 text-gray-700"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? 'Inchide meniu' : 'Deschide meniu'}
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 animate-fade-in">
-          <a href="#ce-este" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-            Ce este Blueprint
-          </a>
-          <a href="#livrabile" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-            Livrabile
-          </a>
-          <a href="#investitie" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-            Investitie
-          </a>
-          <a href="#garantie" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-            Nu pierzi
-          </a>
-          <a href="#aplica" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
-            Vreau Planul Meu
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          <div className="flex gap-3 pt-2">
-            <a
-              href="https://ezfuture-app.vercel.app/signup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center px-5 py-2.5 text-sm font-bold text-white bg-black rounded-xl hover:bg-gray-800 transition-all"
-              onClick={() => setMobileOpen(false)}
-            >
-              Sign Up
-            </a>
-            <a
-              href="https://ezfuture-app.vercel.app/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center px-5 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all"
-              onClick={() => setMobileOpen(false)}
-            >
-              Log In
-            </a>
-          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
