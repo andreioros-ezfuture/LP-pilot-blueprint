@@ -273,7 +273,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                     className="mt-1 w-5 h-5 rounded-lg border-2 border-gray-300 text-primary focus:ring-primary/20"
                   />
                   <span className="text-sm text-gray-600">
-                    Sunt de acord cu prelucrarea datelor personale conform{' '}
+                    Sunt de acord ca EZ Prime SRL (EZFuture.ai) să prelucreze datele furnizate în scopul evaluării aplicației mele pentru programul Blueprint Pilot și contactării ulterioare, conform{' '}
                     <a href="/legal/confidentialitate.html" target="_blank" className="text-primary hover:underline">
                       Politicii de Confidențialitate
                     </a>
