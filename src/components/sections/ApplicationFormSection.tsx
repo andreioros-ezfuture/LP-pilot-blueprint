@@ -301,7 +301,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
   /* ---- Default / Form State ---- */
   return (
     <SectionWrapper id={id} variant="white">
-      <div className="grid md:grid-cols-5 gap-16">
+      <div className="grid md:grid-cols-5 gap-8 md:gap-16">
         {/* Left Column */}
         <div className="md:col-span-2">
           <FadeInOnScroll>
@@ -351,7 +351,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
         {/* Right Column - Form Card */}
         <div className="md:col-span-3">
           <FadeInOnScroll>
-            <div className="bg-white border border-border rounded-2xl p-8 shadow-xl">
+            <div className="bg-white border border-border rounded-2xl p-5 md:p-8 shadow-xl">
               <h3 className="text-xl font-heading font-bold text-primary">
                 Vreau planul meu de automatizare
               </h3>

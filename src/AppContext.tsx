@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { FormValues, FormStatus } from './types';
-import { TOTAL_SPOTS, STORAGE_KEYS } from './lib/constants';
+import { TOTAL_SPOTS, SPOTS_REMAINING } from './lib/constants';
 
 interface AppContextType {
   spots: { remaining: number; total: number };
@@ -27,21 +27,14 @@ const defaultFormValues: FormValues = {
 const AppContext = createContext<AppContextType | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [remaining, setRemaining] = useState(() => {
-    const stored = localStorage.getItem(STORAGE_KEYS.SPOTS_REMAINING);
-    return stored !== null ? parseInt(stored, 10) : TOTAL_SPOTS;
-  });
+  const [remaining, setRemaining] = useState(SPOTS_REMAINING);
 
   const [formValues, setFormValuesState] = useState<FormValues>(defaultFormValues);
   const [formStatus, setFormStatusState] = useState<FormStatus>('idle');
   const [formErrors, setFormErrorsState] = useState<Partial<Record<keyof FormValues, string>>>({});
 
   const decrementSpot = useCallback(() => {
-    setRemaining((prev) => {
-      const next = Math.max(0, prev - 1);
-      localStorage.setItem(STORAGE_KEYS.SPOTS_REMAINING, String(next));
-      return next;
-    });
+    setRemaining((prev) => Math.max(0, prev - 1));
   }, []);
 
   const setFormValues = useCallback((values: Partial<FormValues>) => {

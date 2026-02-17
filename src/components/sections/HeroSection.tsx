@@ -99,8 +99,8 @@ export default function HeroSection() {
     <section id="hero" className="bg-gradient-to-b from-dark to-dark-end pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold leading-tight text-white text-center max-w-4xl mx-auto">
-          Un business de 2&ndash;10 milioane €/an<br />
-          <em className="not-italic md:whitespace-nowrap text-accent">care nu automatizeaza procesele manuale</em><br />
+          Un business de 2&ndash;10 milioane €/an<br className="hidden md:block" />
+          <em className="not-italic text-accent">care nu automatizeaza procesele manuale</em><br className="hidden md:block" />
           ar putea la fel de bine sa dea foc unei valize cu{' '}
           <span className="text-white">€100.000</span>
         </h1>

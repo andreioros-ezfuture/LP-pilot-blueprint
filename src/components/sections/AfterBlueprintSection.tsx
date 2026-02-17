@@ -17,7 +17,7 @@ export default function AfterBlueprintSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
         {/* Card 1 - Recomandat */}
         <FadeInOnScroll>
-          <div className="border-2 border-accent shadow-lg rounded-2xl p-8 bg-white h-full flex flex-col">
+          <div className="border-2 border-accent shadow-lg rounded-2xl p-6 md:p-8 bg-white h-full flex flex-col">
             <Badge variant="accent">Recomandat</Badge>
             <h3 className="text-lg font-heading font-bold text-primary mt-4">
               Implementezi cu noi (<strong>BUILD</strong>)
@@ -30,7 +30,7 @@ export default function AfterBlueprintSection() {
 
         {/* Card 2 - Flexibil */}
         <FadeInOnScroll delay={100}>
-          <div className="border border-border rounded-2xl p-8 bg-white h-full flex flex-col">
+          <div className="border border-border rounded-2xl p-6 md:p-8 bg-white h-full flex flex-col">
             <Badge variant="neutral">Flexibil</Badge>
             <h3 className="text-lg font-heading font-bold text-primary mt-4">
               Implementezi intern sau cu alt vendor
@@ -43,7 +43,7 @@ export default function AfterBlueprintSection() {
 
         {/* Card 3 - Enterprise */}
         <FadeInOnScroll delay={200}>
-          <div className="border border-border rounded-2xl p-8 bg-white h-full flex flex-col">
+          <div className="border border-border rounded-2xl p-6 md:p-8 bg-white h-full flex flex-col">
             <Badge variant="accent">Enterprise</Badge>
             <h3 className="text-lg font-heading font-bold text-primary mt-4">
               Treci la <strong>AI STRATEGY</strong>

@@ -56,7 +56,7 @@ export default function UseCasePage() {
       <Header showNav={false} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-dark to-dark-end py-24 text-center text-white">
+      <section className="bg-gradient-to-b from-dark to-dark-end pt-28 pb-14 md:pb-24 text-center text-white">
         <div className="max-w-4xl mx-auto px-6">
           <FadeInOnScroll>
             <Badge variant="accent" className="mb-6">
@@ -67,20 +67,20 @@ export default function UseCasePage() {
               {useCase.heroTitle}
             </h1>
 
-            <p className="text-xl md:text-2xl text-danger font-semibold mt-4">
+            <p className="text-lg md:text-2xl text-danger font-semibold mt-4">
               {useCase.heroHighlight}
             </p>
 
             <div className="mt-6 space-y-1">
-              <p className="text-success text-xl md:text-2xl font-semibold">{useCase.savingsLine1}</p>
-              <p className="text-success text-xl md:text-2xl font-semibold">{useCase.savingsLine2}</p>
+              <p className="text-success text-lg md:text-2xl font-semibold">{useCase.savingsLine1}</p>
+              <p className="text-success text-lg md:text-2xl font-semibold">{useCase.savingsLine2}</p>
             </div>
           </FadeInOnScroll>
         </div>
       </section>
 
       {/* Executive Summary */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-6">
           <FadeInOnScroll>
             <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-primary">
@@ -104,9 +104,9 @@ export default function UseCasePage() {
 
       {/* Automation Card (embedded HTML) */}
       {htmlSrc && (
-        <section className="bg-light-gray py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <FadeInOnScroll>
+        <section className="bg-light-gray py-10 md:py-16">
+          <div className="max-w-4xl mx-auto px-4 md:px-6">
+            <FadeInOnScroll threshold={0.01}>
               <iframe
                 src={htmlSrc}
                 title="Card de Automatizare"

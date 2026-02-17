@@ -50,7 +50,7 @@ export default function TrainingAddonSection() {
       <FadeInOnScroll>
         <div className="rounded-2xl overflow-hidden border border-border mt-8">
           {/* Header */}
-          <div className="bg-dark text-white px-6 py-4 font-semibold grid grid-cols-[1fr_80px_2fr] gap-4 text-sm">
+          <div className="bg-dark text-white px-6 py-4 font-semibold hidden md:grid grid-cols-[1fr_80px_2fr] gap-4 text-sm">
             <span>Sesiune</span>
             <span>Durata</span>
             <span>Descriere</span>
@@ -58,12 +58,12 @@ export default function TrainingAddonSection() {
           {sessions.map((session, index) => (
             <div
               key={session.name}
-              className={`px-6 py-4 grid grid-cols-[1fr_80px_2fr] gap-4 text-sm ${
+              className={`px-6 py-4 flex flex-col gap-1 md:grid md:grid-cols-[1fr_80px_2fr] md:gap-4 text-sm ${
                 index % 2 === 0 ? 'bg-white' : 'bg-light-gray'
               }`}
             >
               <span className="font-semibold text-primary">{session.name}</span>
-              <span className="text-body">{session.duration}</span>
+              <span className="text-xs text-muted md:text-sm md:text-body">{session.duration}</span>
               <span className="text-body">{session.description}</span>
             </div>
           ))}

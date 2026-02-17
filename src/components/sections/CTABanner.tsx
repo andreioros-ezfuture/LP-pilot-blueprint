@@ -35,7 +35,7 @@ export default function CTABanner({
 
           <button
             onClick={onButtonClick}
-            className={`mt-8 inline-flex items-center justify-center font-semibold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer ${buttonClasses}`}
+            className={`mt-8 inline-flex items-center justify-center font-semibold text-base md:text-lg px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-colors duration-200 cursor-pointer ${buttonClasses}`}
           >
             {buttonText}
           </button>

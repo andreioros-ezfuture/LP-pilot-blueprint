@@ -32,7 +32,7 @@ export default function DeliverablesSection() {
                 Minim 5
               </span>
 
-              <h3 className="font-heading font-bold text-2xl text-primary">
+              <h3 className="font-heading font-bold text-xl md:text-2xl text-primary">
                 {featured.title} - <strong>Minim 5</strong>
               </h3>
 

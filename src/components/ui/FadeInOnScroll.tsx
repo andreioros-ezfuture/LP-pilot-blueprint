@@ -5,14 +5,16 @@ interface FadeInOnScrollProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  threshold?: number;
 }
 
 export default function FadeInOnScroll({
   children,
   className = '',
   delay = 0,
+  threshold = 0.15,
 }: FadeInOnScrollProps) {
-  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.15 });
+  const { ref, isVisible } = useIntersectionObserver({ threshold });
 
   return (
     <div

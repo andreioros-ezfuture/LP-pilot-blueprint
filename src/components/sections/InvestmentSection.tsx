@@ -39,7 +39,7 @@ export default function InvestmentSection() {
       <div className="grid md:grid-cols-5 gap-10 lg:gap-16 items-start">
         {/* Left — Pricing card */}
         <FadeInOnScroll className="md:col-span-2">
-          <div className="bg-white border-2 border-border rounded-3xl p-8 lg:p-10 shadow-xl text-center sticky top-24">
+          <div className="bg-white border-2 border-border rounded-3xl p-8 lg:p-10 shadow-xl text-center md:sticky md:top-24">
             <Badge variant="accent">PILOT -50%</Badge>
 
             <p className="text-2xl text-muted line-through mt-4">€7.500</p>

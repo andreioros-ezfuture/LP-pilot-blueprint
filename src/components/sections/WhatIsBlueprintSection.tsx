@@ -63,7 +63,7 @@ export default function WhatIsBlueprintSection() {
         {cards.map((card, index) => (
           <FadeInOnScroll key={card.title} delay={index * 100}>
             <div
-              className="bg-light-gray rounded-2xl p-8 border-t-4"
+              className="bg-light-gray rounded-2xl p-6 md:p-8 border-t-4"
               style={{ borderTopColor: card.borderColor }}
             >
               <div className="mb-3" style={{ color: card.iconColor }}>{card.icon}</div>

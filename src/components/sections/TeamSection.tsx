@@ -151,7 +151,7 @@ export default function TeamSection() {
         </p>
       </FadeInOnScroll>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-0 mt-12">
         {teamMembers.map((member, index) => (
           <div
             key={member.name}

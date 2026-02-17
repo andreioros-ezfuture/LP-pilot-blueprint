@@ -94,7 +94,7 @@ export default function ExclusiveProgramSection() {
       </SectionWrapper>
 
       {/* Sub-section B: ~15 ore/saptamana (dark) */}
-      <section className="bg-gradient-to-br from-dark to-dark-end py-20">
+      <section className="bg-gradient-to-br from-dark to-dark-end py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-6">
           <FadeInOnScroll>
             {/* Stat headline */}

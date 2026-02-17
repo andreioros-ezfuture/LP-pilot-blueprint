@@ -20,24 +20,24 @@ export default function CreditSystemSection() {
       <FadeInOnScroll>
         <div className="rounded-2xl overflow-hidden border border-border mt-8 max-w-2xl mx-auto">
           {/* Header */}
-          <div className="bg-dark text-white px-6 py-4 font-semibold grid grid-cols-2">
+          <div className="bg-dark text-white px-4 md:px-6 py-4 font-semibold text-xs md:text-sm grid grid-cols-2">
             <span>Daca incepi implementarea cu noi in...</span>
             <span className="text-right">Credit aplicat</span>
           </div>
           {/* Row 1 */}
-          <div className="px-6 py-4 grid grid-cols-2 bg-white">
-            <span className="text-body">14 zile de la livrare</span>
-            <span className="text-right text-success font-bold">100% din valoarea Blueprint</span>
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-white">
+            <span className="text-body text-sm">14 zile de la livrare</span>
+            <span className="text-right text-success font-bold text-sm">100% din valoarea Blueprint</span>
           </div>
           {/* Row 2 */}
-          <div className="px-6 py-4 grid grid-cols-2 bg-light-gray">
-            <span className="text-body">15-30 zile de la livrare</span>
-            <span className="text-right text-warning font-bold">50% din valoarea Blueprint</span>
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-light-gray">
+            <span className="text-body text-sm">15-30 zile de la livrare</span>
+            <span className="text-right text-warning font-bold text-sm">50% din valoarea Blueprint</span>
           </div>
           {/* Row 3 */}
-          <div className="px-6 py-4 grid grid-cols-2 bg-white">
-            <span className="text-body">Din ziua 31</span>
-            <span className="text-right text-muted font-bold">Creditul expira</span>
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-white">
+            <span className="text-body text-sm">Din ziua 31</span>
+            <span className="text-right text-muted font-bold text-sm">Creditul expira</span>
           </div>
         </div>
       </FadeInOnScroll>

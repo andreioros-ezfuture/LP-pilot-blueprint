@@ -16,13 +16,13 @@ export default function OfferSection() {
         <p className="text-center text-body text-lg mb-6">
           Echipa noastra pune la bataie, cumulat:
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {[
             { number: '16+', label: 'ani de experienta' },
             { number: '100+', label: 'procese optimizate' },
             { number: '20+', label: 'piete globale' },
           ].map((stat) => (
-            <div key={stat.label} className="bg-light-gray rounded-2xl p-6 text-center">
+            <div key={stat.label} className="bg-light-gray rounded-2xl p-4 md:p-6 text-center">
               <p className="text-4xl font-extrabold text-accent">{stat.number}</p>
               <p className="text-body text-sm mt-1">{stat.label}</p>
             </div>
@@ -39,7 +39,7 @@ export default function OfferSection() {
 
       {/* Program Details Card */}
       <FadeInOnScroll>
-        <div className="max-w-xl mx-auto mt-8 bg-white border-2 border-border rounded-3xl p-10 shadow-lg text-center">
+        <div className="max-w-xl mx-auto mt-8 bg-white border-2 border-border rounded-3xl p-6 md:p-10 shadow-lg text-center">
           {/* Label */}
           <p className="uppercase text-xs tracking-widest text-muted font-semibold">
             Programul Pilot

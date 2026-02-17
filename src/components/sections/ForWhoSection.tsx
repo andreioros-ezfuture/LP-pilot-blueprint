@@ -32,7 +32,7 @@ export default function ForWhoSection() {
       <div className="grid md:grid-cols-5 gap-8 mt-12">
         {/* Left column - FOR YOU */}
         <FadeInOnScroll className="md:col-span-3">
-          <div className="bg-white rounded-2xl p-8 border border-border h-full">
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-border h-full">
             <h3 className="font-heading font-bold text-xl text-primary mb-6">
               Blueprint este pentru tine daca...
               <span className="inline-block w-2 h-2 rounded-full bg-success ml-2 align-middle" />
@@ -51,7 +51,7 @@ export default function ForWhoSection() {
 
         {/* Right column - NOT FOR YOU */}
         <FadeInOnScroll className="md:col-span-2" delay={150}>
-          <div className="bg-white rounded-2xl p-8 border border-border h-full">
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-border h-full">
             <h3 className="font-heading font-bold text-xl text-primary mb-6">
               Blueprint NU este pentru tine daca...
               <span className="inline-block w-2 h-2 rounded-full bg-danger ml-2 align-middle" />

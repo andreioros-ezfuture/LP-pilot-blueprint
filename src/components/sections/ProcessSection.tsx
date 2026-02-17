@@ -36,7 +36,7 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10">
             <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
                 Saptamana 1
               </span>
             </div>
@@ -82,7 +82,7 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10">
             <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
                 Saptamana 2
               </span>
             </div>
@@ -122,7 +122,7 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10">
             <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
                 Saptamana 3
               </span>
             </div>
