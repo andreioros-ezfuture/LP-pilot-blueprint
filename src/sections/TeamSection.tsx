@@ -1,38 +1,86 @@
-export function TeamSection() {
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+
+function ExpandableProfile({ children }: { children: React.ReactNode }) {
+  const [expanded, setExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+  const collapsedHeight = 180;
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(expanded ? contentRef.current.scrollHeight : collapsedHeight);
+    }
+  }, [expanded]);
+
+  useEffect(() => {
+    setHeight(collapsedHeight);
+  }, []);
+
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <div className="border border-gray-200/80 rounded-xl p-5 mb-6 md:mb-0">
+      <h4 className="text-lg font-bold text-gray-900 mb-3">Background</h4>
+      <div className="relative">
+        <div
+          style={{ height }}
+          className="overflow-hidden transition-[height] duration-500 ease-in-out"
+        >
+          <div ref={contentRef}>
+            {children}
+          </div>
+        </div>
+        {!expanded && (
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        )}
+      </div>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-3 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors duration-200 mx-auto"
+      >
+        {expanded ? 'Vezi mai puțin' : 'Vezi mai mult'}
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
+      </button>
+    </div>
+  );
+}
+
+export function TeamSection() {
+  const { ref, isVisible } = useScrollReveal();
+  return (
+    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div ref={ref} className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         {/* Header */}
-        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-12">
+        <div className="border border-gray-200/80 rounded-3xl p-8 md:p-12 shadow-soft">
           <div className="text-center mb-12">
             <span className="section-label">CU CINE VEI LUCRA</span>
-            <h2 className="section-title">Oamenii din spatele Blueprint-ului</h2>
+            <h2 className="section-title-gradient">Oamenii din spatele Blueprint-ului</h2>
             <p className="section-desc">
               Nu externalizăm. Nu delegăm. Lucrăm direct cu tine.
             </p>
           </div>
 
           {/* Two columns */}
-          <div className="grid md:grid-cols-2 md:grid-rows-[auto_1fr_auto_auto] gap-0 border-2 border-gray-200 rounded-2xl overflow-hidden">
+          <div className="grid md:grid-cols-2 md:grid-rows-[auto_1fr_auto] gap-0 border border-gray-200/80 rounded-2xl overflow-hidden">
             {/* LEFT COLUMN - Andrei Oros */}
-            <div className="border-b-2 md:border-b-0 md:border-r-2 border-gray-200 p-6 md:p-8 flex flex-col md:row-span-4 md:grid md:[grid-template-rows:subgrid] md:gap-6">
+            <div className="border-b md:border-b-0 md:border-r border-gray-200/60 p-6 md:p-8 flex flex-col md:row-span-3 md:grid md:[grid-template-rows:subgrid] md:gap-6">
               {/* Photo + Name + Role */}
               <div className="text-center mb-6 md:mb-0">
                 <img
-                  src="/andrei.png"
+                  src="/andrei.webp"
                   alt="Andrei Oros"
+                  loading="lazy"
                   className="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-2 border-gray-100"
                 />
                 <h3 className="text-2xl font-bold text-gray-900">Andrei Oros</h3>
                 <p className="text-base font-semibold text-primary mt-1">Founder</p>
-                <p className="text-gray-500 text-[15px] leading-relaxed mt-3">
+                <p className="text-gray-600 text-[15px] leading-relaxed mt-3">
                   Strategie de automatizare și implementare tehnică. Lucrează direct cu fiecare companie din pilot.
                 </p>
               </div>
 
-              {/* Background */}
-              <div className="border-2 border-gray-200 rounded-xl p-5 mb-6 md:mb-0 flex-1 md:flex-none">
-                <h4 className="text-lg font-bold text-gray-900 mb-3">Background</h4>
+              {/* Background + Testimonial - Collapsible */}
+              <ExpandableProfile>
                 <p className="text-sm italic text-gray-600 mb-4">
                   Founder, multiple businesses | 1 mil. € exit | Chief Executive Officer | Senior Consultant 3D Modeling, Scan to BIM &amp; Laser Scanning
                 </p>
@@ -65,34 +113,34 @@ export function TeamSection() {
                   Să iei ceva complex (strategia de automatizare), să îl faci accesibil (descoperire structurată) și să livrezi rezultate măsurabile (ROI documentat la fiecare pas).
                 </p>
 
-                <p className="text-sm italic text-gray-700 leading-relaxed border-t border-gray-200 pt-4">
+                <p className="text-sm italic text-gray-700 leading-relaxed border-t border-gray-200 pt-4 mb-6">
                   „Misiunea mea este să livrez rezultate excepționale care depășesc așteptările, respectând în același timp termene stricte și menținând standarde precise."
                 </p>
-              </div>
 
-              {/* Christopher Ball testimonial */}
-              <div className="border-2 border-gray-200 rounded-xl bg-gray-50 p-5 mb-6 md:mb-0">
-                <p className="text-sm italic text-gray-700 leading-relaxed mb-4">
-                  „Andrei este un CEO și antreprenor extraordinar. Lucrez îndeaproape cu el din 2017. Este onest, muncitor și corect. Are viziune și abilitatea de a o transforma în realitate. Nu aș fi putut găsi un partener de afaceri mai bun."
-                </p>
-                <p className="text-xs text-gray-400 mb-3">16 august 2022</p>
-                <div className="flex items-center gap-3">
-                  <img src="/christopher-ball.png" alt="Christopher Ball" className="w-10 h-10 rounded-full object-cover shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Christopher Ball</p>
-                    <p className="text-xs text-gray-500 leading-snug">
-                      Global Economics, Szechenyi Chair în Economie Internațională și Director al Central European Institute la Quinnipiac University
-                    </p>
+                {/* Christopher Ball testimonial */}
+                <div className="border border-gray-200/80 rounded-xl bg-gray-50 p-5">
+                  <p className="text-sm italic text-gray-700 leading-relaxed mb-4">
+                    „Andrei este un CEO și antreprenor extraordinar. Lucrez îndeaproape cu el din 2017. Este onest, muncitor și corect. Are viziune și abilitatea de a o transforma în realitate. Nu aș fi putut găsi un partener de afaceri mai bun."
+                  </p>
+                  <p className="text-xs text-gray-500 mb-3">16 august 2022</p>
+                  <div className="flex items-center gap-3">
+                    <img src="/christopher-ball.webp" alt="Christopher Ball" loading="lazy" className="w-10 h-10 rounded-full object-cover shrink-0" />
+                    <div>
+                      <p className="text-sm font-bold text-gray-900">Christopher Ball</p>
+                      <p className="text-xs text-gray-600 leading-snug">
+                        Global Economics, Szechenyi Chair în Economie Internațională și Director al Central European Institute la Quinnipiac University
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ExpandableProfile>
 
               {/* LinkedIn link */}
               <a
                 href="https://www.linkedin.com/in/arenacad/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 border-2 border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-gray-200/80 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-all duration-200"
               >
                 Vezi profil LinkedIn{' '}
                 <span className="text-primary">Andrei Oros</span>
@@ -103,24 +151,24 @@ export function TeamSection() {
             </div>
 
             {/* RIGHT COLUMN - Iuliana Ghioca */}
-            <div className="p-6 md:p-8 flex flex-col md:row-span-4 md:grid md:[grid-template-rows:subgrid] md:gap-6">
+            <div className="p-6 md:p-8 flex flex-col md:row-span-3 md:grid md:[grid-template-rows:subgrid] md:gap-6">
               {/* Photo + Name + Role */}
               <div className="text-center mb-6 md:mb-0">
                 <img
-                  src="/iuliana.png"
+                  src="/iuliana.webp"
                   alt="Iuliana Ghioca"
+                  loading="lazy"
                   className="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-2 border-gray-100"
                 />
                 <h3 className="text-2xl font-bold text-gray-900">Iuliana Ghioca</h3>
                 <p className="text-base font-semibold text-primary mt-1">Chief Automation Officer</p>
-                <p className="text-gray-500 text-[15px] leading-relaxed mt-3">
+                <p className="text-gray-600 text-[15px] leading-relaxed mt-3">
                   Transformare digitală, analiză de procese și livrabile strategice. Traduce complexitatea operațională în planuri clare de acțiune.
                 </p>
               </div>
 
-              {/* Background */}
-              <div className="border-2 border-gray-200 rounded-xl p-5 mb-6 md:mb-0 flex-1 md:flex-none">
-                <h4 className="text-lg font-bold text-gray-900 mb-3">Background</h4>
+              {/* Background + Testimonial - Collapsible */}
+              <ExpandableProfile>
                 <p className="text-sm italic text-gray-600 mb-4">
                   Global Digital Transformation Lead | Senior Process Improvement &amp; Automation Manager | Lean Six Sigma Black Belt
                 </p>
@@ -145,43 +193,43 @@ export function TeamSection() {
                   Experiența ei combină procesele, tehnologia și managementul schimbării, transformând inițiative complexe în soluții scalabile și adoptate operațional.
                 </p>
 
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mb-6">
                   Înainte de a se alătura EZ Future AI, a fost timp de un an <span className="font-bold">Chief of AI Automation</span> într-un business românesc de ~3 mil. € care crescuse de 4x în 4 ani. Acolo a contribuit la structurarea proceselor și pregătirea organizației pentru automatizare și scalare.
                 </p>
-              </div>
 
-              {/* Elizabeth Jacobson testimonial */}
-              <div className="border-2 border-gray-200 rounded-xl bg-gray-50 p-5 mb-6 md:mb-0">
-                <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
-                  „Iuliana a fost Global Business Service (GBS) Record to Report (RTR) Process Improvement Manager, în timp ce eu eram RTR Global Process Owner la Molson Coors Brewing Company.
-                </p>
-                <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
-                  A fost un performer de top și am colaborat la multiple implementări de tehnologii SaaS și proiecte de îmbunătățire a proceselor.
-                </p>
-                <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
-                  Am lucrat cu mulți profesioniști din zona de Finance Transformation și este rar să găsești pe cineva care să aibă expertiză atât în lucrul cu oamenii, cât și în procesele de contabilitate/finanțe și tehnologie.
-                </p>
-                <p className="text-sm italic text-gray-700 leading-relaxed mb-4">
-                  Am fost impresionată de etica ei de muncă și de abilitatea ei de a identifica și mobiliza resursele potrivite pentru a asigura succesul proiectelor."
-                </p>
-                <p className="text-xs text-gray-400 mb-3">2 noiembrie 2020</p>
-                <div className="flex items-center gap-3">
-                  <img src="/elizabeth-jacobson.png" alt="Elizabeth Jacobson" className="w-10 h-10 rounded-full object-cover shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Elizabeth Jacobson</p>
-                    <p className="text-xs text-gray-500 leading-snug">
-                      Consultant Finance Transformation la BlackLine
-                    </p>
+                {/* Elizabeth Jacobson testimonial */}
+                <div className="border border-gray-200/80 rounded-xl bg-gray-50 p-5">
+                  <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
+                    „Iuliana a fost Global Business Service (GBS) Record to Report (RTR) Process Improvement Manager, în timp ce eu eram RTR Global Process Owner la Molson Coors Brewing Company.
+                  </p>
+                  <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
+                    A fost un performer de top și am colaborat la multiple implementări de tehnologii SaaS și proiecte de îmbunătățire a proceselor.
+                  </p>
+                  <p className="text-sm italic text-gray-700 leading-relaxed mb-1">
+                    Am lucrat cu mulți profesioniști din zona de Finance Transformation și este rar să găsești pe cineva care să aibă expertiză atât în lucrul cu oamenii, cât și în procesele de contabilitate/finanțe și tehnologie.
+                  </p>
+                  <p className="text-sm italic text-gray-700 leading-relaxed mb-4">
+                    Am fost impresionată de etica ei de muncă și de abilitatea ei de a identifica și mobiliza resursele potrivite pentru a asigura succesul proiectelor."
+                  </p>
+                  <p className="text-xs text-gray-500 mb-3">2 noiembrie 2020</p>
+                  <div className="flex items-center gap-3">
+                    <img src="/elizabeth-jacobson.webp" alt="Elizabeth Jacobson" loading="lazy" className="w-10 h-10 rounded-full object-cover shrink-0" />
+                    <div>
+                      <p className="text-sm font-bold text-gray-900">Elizabeth Jacobson</p>
+                      <p className="text-xs text-gray-600 leading-snug">
+                        Consultant Finance Transformation la BlackLine
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ExpandableProfile>
 
               {/* LinkedIn link */}
               <a
                 href="https://www.linkedin.com/in/ghioca-iuliana-98b71aa0/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 border-2 border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-gray-200/80 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-all duration-200"
               >
                 Vezi profil LinkedIn{' '}
                 <span className="text-primary">Iuliana Ghioca</span>

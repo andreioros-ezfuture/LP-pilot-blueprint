@@ -1,9 +1,15 @@
+import { useScrollReveal } from '../hooks/useScrollReveal';
+
 export function ProcessSection() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Main bordered card */}
-        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10">
+    <section className="py-12 md:py-16 bg-white relative overflow-hidden">
+      {/* Subtle blob */}
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(91,106,232,0.03)_0%,transparent_60%)] pointer-events-none" aria-hidden="true" />
+
+      <div ref={ref} className={`max-w-6xl mx-auto px-6 relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        {/* Main card */}
+        <div className="border border-gray-200/80 rounded-3xl p-8 md:p-10 shadow-soft">
           {/* Header */}
           <div className="text-center mb-10">
             <span className="section-label">PROCESUL ÎN 21 DE ZILE</span>
@@ -14,15 +20,29 @@ export function ProcessSection() {
             <p className="text-lg text-gray-600">
               Timpul vostru total: <span className="font-bold text-gray-900">maxim 8-13 ore în 21 de zile.</span>
             </p>
-            <p className="text-base text-gray-500 max-w-2xl mx-auto mt-5 italic leading-relaxed">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto mt-5 italic leading-relaxed">
               Știm că ai mai trecut prin &bdquo;proiecte de analiză&rdquo; care s-au transformat în ședințe interminabile și documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit să fie exact opusul.
             </p>
           </div>
 
+          {/* Step indicators */}
+          <div className="hidden md:flex items-center justify-center mb-6">
+            {[1, 2, 3].map((step, i) => (
+              <div key={step} className="flex items-center">
+                <div className="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shadow-glow-primary">
+                  {step}
+                </div>
+                {i < 2 && (
+                  <div className="w-24 lg:w-32 h-px bg-gradient-to-r from-primary/40 to-primary/10 mx-2" />
+                )}
+              </div>
+            ))}
+          </div>
+
           {/* 3-column week table */}
-          <div className="grid md:grid-cols-3 border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
+          <div className="grid md:grid-cols-3 border border-gray-200/80 rounded-2xl overflow-hidden mb-8">
             {/* Week 1 */}
-            <div className="p-6 border-b-2 md:border-b-0 md:border-r-2 border-gray-200">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-gray-200/60">
               <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">Săptămâna 1</p>
               <p className="text-base font-bold text-gray-900 mb-5">&ldquo;Start și Analiză&rdquo;</p>
 
@@ -46,7 +66,7 @@ export function ProcessSection() {
             </div>
 
             {/* Week 2 */}
-            <div className="p-6 border-b-2 md:border-b-0 md:border-r-2 border-gray-200">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-gray-200/60">
               <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">Săptămâna 2</p>
               <p className="text-base font-bold text-gray-900 mb-5">&ldquo;Colectare date&rdquo;</p>
 
@@ -59,12 +79,12 @@ export function ProcessSection() {
               </div>
 
               <div className="space-y-3">
-                <div className="bg-primary/10 rounded-xl px-4 py-3">
+                <div className="bg-primary/[0.06] rounded-xl px-4 py-3">
                   <p className="text-xs font-medium text-primary leading-relaxed">
                     Noi oferim structura și tool-urile, iar ulterior facem analiza și mapăm automatizările.
                   </p>
                 </div>
-                <div className="bg-primary/10 rounded-xl px-4 py-3">
+                <div className="bg-primary/[0.06] rounded-xl px-4 py-3">
                   <p className="text-xs font-medium text-primary leading-relaxed">
                     Echipa ta doar colectează date interne și ni le transmite.
                   </p>
@@ -97,18 +117,16 @@ export function ProcessSection() {
             </p>
           </div>
 
-          {/* CONSTRUIM CU section */}
-          <div className="border-2 border-gray-200 rounded-2xl p-6">
+          {/* CONSTRUIM CU section — styled badges */}
+          <div className="bg-primary/[0.06] border border-primary/15 rounded-2xl p-6">
             <p className="text-center font-bold text-gray-900 uppercase tracking-wide text-sm mb-5">
               CONSTRUIM CU
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-0 border-2 border-gray-200 rounded-xl overflow-hidden mb-4">
+            <div className="flex flex-wrap justify-center items-center gap-3 mb-4">
               {['n8n', 'Make', 'OpenAI', 'Supabase', 'Google Workspace'].map((tech, i) => (
                 <div
                   key={i}
-                  className={`px-5 py-3 text-sm font-semibold text-gray-700 ${
-                    i < 4 ? 'border-r-2 border-gray-200' : ''
-                  } flex-1 text-center min-w-[120px]`}
+                  className="px-5 py-2.5 text-sm font-semibold text-gray-700 bg-gray-50 border border-gray-200/80 rounded-xl hover:border-primary/30 hover:text-primary transition-all duration-200"
                 >
                   {tech}
                 </div>

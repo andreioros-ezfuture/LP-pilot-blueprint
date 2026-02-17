@@ -17,7 +17,7 @@ export function Header() {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <nav aria-label="Navigare principală" className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Spacer for centering */}
         <div className="hidden md:flex items-center gap-3 w-[180px]" />
 
@@ -27,25 +27,27 @@ export function Header() {
         </a>
 
         {/* Sign Up + Log In */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="https://ezfuture-app.vercel.app/signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 text-sm font-bold text-white bg-black rounded-xl hover:bg-gray-800 transition-all hover:-translate-y-0.5"
+            className="px-4 sm:px-5 py-2.5 text-sm font-bold text-white bg-black rounded-xl hover:bg-gray-800 transition-all hover:-translate-y-0.5"
           >
             Sign Up
+            <span className="sr-only"> (se deschide în fereastră nouă)</span>
           </a>
           <a
             href="https://ezfuture-app.vercel.app/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all hover:-translate-y-0.5"
+            className="hidden sm:inline-flex px-4 sm:px-5 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all hover:-translate-y-0.5"
           >
             Log In
+            <span className="sr-only"> (se deschide în fereastră nouă)</span>
           </a>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

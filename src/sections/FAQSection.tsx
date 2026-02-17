@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Users } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface FAQSectionProps {
   remainingSpots: number;
@@ -49,15 +50,63 @@ const faqs = [
   },
 ];
 
+function FAQItem({
+  faq,
+  isOpen,
+  onToggle,
+}: {
+  faq: { q: string; a: React.ReactNode };
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <div>
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-5 px-4 min-h-[48px] text-left hover:bg-gray-50/50 rounded-lg transition-all duration-200"
+      >
+        <span className="font-bold text-gray-900 pr-4 text-base">
+          {faq.q}
+        </span>
+        <ChevronDown
+          className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+      <div
+        className="overflow-hidden transition-[height] duration-300 ease-out"
+        style={{ height }}
+      >
+        <div ref={contentRef} className="px-4 pb-5">
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            {faq.a}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function FAQSection({ remainingSpots, totalSpots }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const spotsPercentage = ((totalSpots - remainingSpots) / totalSpots) * 100;
 
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50/30">
+      <div ref={ref} className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className="border border-gray-200/80 rounded-3xl p-8 md:p-10 shadow-soft">
           {/* Header */}
           <div className="text-center mb-10">
             <span className="section-label">ÎNTREBĂRI FRECVENTE</span>
@@ -77,48 +126,32 @@ export function FAQSection({ remainingSpots, totalSpots }: FAQSectionProps) {
             </p>
           </div>
 
-          {/* FAQ Accordion */}
-          <div className="divide-y-2 divide-gray-200 border-y-2 border-gray-200">
+          {/* FAQ Accordion - smooth transitions */}
+          <div className="divide-y divide-gray-200 border-y border-gray-200">
             {faqs.map((faq, index) => (
-              <div key={index}>
-                <button
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                  className="w-full flex items-center justify-between py-5 px-2 text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-bold text-gray-900 pr-4 text-base">
-                    {faq.q}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openIndex === index && (
-                  <div className="px-2 pb-5 animate-fade-in">
-                    <p className="text-gray-600 text-[15px] leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                )}
-              </div>
+              <FAQItem
+                key={index}
+                faq={faq}
+                isOpen={openIndex === index}
+                onToggle={() =>
+                  setOpenIndex(openIndex === index ? null : index)
+                }
+              />
             ))}
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-10 bg-orange-50 border-2 border-orange-200 rounded-2xl p-8 text-center">
+          <div className="mt-10 bg-gradient-to-br from-cta/5 to-cta/[0.02] border border-cta/20 rounded-2xl p-8 text-center">
             <a
               href="#aplica"
               onClick={(e) => { e.preventDefault(); document.getElementById('aplica')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="btn-primary inline-flex items-center gap-2 mb-4"
+              className="btn-primary w-full sm:w-auto flex sm:inline-flex items-center gap-2 mb-4"
             >
               Rezervă-ți Locul &rarr;
             </a>
             <p className="text-gray-600 text-sm">
               Înscrierea durează sub 2 minute.{' '}
-              <span className="text-primary font-semibold underline">
+              <span className="text-primary font-bold">
                 Fără angajament
               </span>
               . Primești un răspuns în 48 de ore.
@@ -132,9 +165,9 @@ export function FAQSection({ remainingSpots, totalSpots }: FAQSectionProps) {
                   {remainingSpots} din {totalSpots} locuri rămase
                 </span>
               </div>
-              <div className="w-full max-w-xs h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="w-full max-w-xs h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-cta rounded-full transition-all duration-500"
+                  className="h-full bg-gradient-to-r from-cta to-cta-dark rounded-full transition-all duration-500"
                   style={{ width: `${spotsPercentage}%` }}
                 />
               </div>

@@ -1,9 +1,7 @@
 export function CreditSystemSection() {
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Main bordered card */}
-        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-6xl mx-auto px-6">
           <div className="mb-8">
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-4">
               SISTEMUL EZ CREDIT
@@ -11,14 +9,14 @@ export function CreditSystemSection() {
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
               Blueprint-ul devine gratuit dacă implementezi cu noi
             </h2>
-            <p className="text-lg text-gray-500 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed">
               Întreaga sumă investită în{' '}
               <span className="text-primary font-semibold">BLUEPRINT</span> se
               transformă în{' '}
-              <span className="text-primary font-semibold underline">
+              <span className="text-primary font-bold">
                 EZ CREDIT
               </span>{' '}
-              <span className="text-gray-400 text-sm">(se citește &ldquo;easy credit&rdquo;)</span>{' '}
+              <span className="text-gray-500 text-sm">(se citește &ldquo;easy credit&rdquo;)</span>{' '}
               aplicat direct pe prima automatizare din{' '}
               <span className="font-bold text-gray-900">BUILD</span>. Practic,
               plătești o dată și primești de 2 ori.
@@ -26,41 +24,41 @@ export function CreditSystemSection() {
           </div>
 
           {/* Credit table */}
-          <div className="border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
-            <div className="grid grid-cols-2 bg-gray-900 text-white">
+          <div className="border border-gray-200/80 rounded-2xl overflow-hidden mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 bg-gray-900 text-white">
               <div className="p-4 text-sm font-bold">
                 Dacă începi implementarea cu noi în...
               </div>
-              <div className="p-4 text-sm font-bold text-right">
+              <div className="p-4 text-sm font-bold sm:text-right">
                 Credit aplicat
               </div>
             </div>
-            <div className="grid grid-cols-2 border-b border-gray-200 bg-success/5">
-              <div className="p-4 text-sm text-gray-700">
+            <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-green-200/60 bg-green-50">
+              <div className="p-4 text-sm text-green-900 font-medium">
                 14 zile de la livrare
               </div>
-              <div className="p-4 text-sm text-right font-bold text-success">
+              <div className="p-4 text-sm sm:text-right font-bold text-green-700">
                 100% din valoarea Blueprint
               </div>
             </div>
-            <div className="grid grid-cols-2 border-b border-gray-200">
-              <div className="p-4 text-sm text-gray-700">
+            <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-amber-200/60 bg-amber-50">
+              <div className="p-4 text-sm text-amber-900 font-medium">
                 15-30 zile de la livrare
               </div>
-              <div className="p-4 text-sm text-right font-bold text-gray-900">
+              <div className="p-4 text-sm sm:text-right font-bold text-amber-700">
                 50% din valoarea Blueprint
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="p-4 text-sm text-gray-700">Din ziua 31</div>
-              <div className="p-4 text-sm text-right font-bold text-gray-900">
+            <div className="grid grid-cols-1 sm:grid-cols-2 bg-red-50">
+              <div className="p-4 text-sm text-red-900 font-medium">Din ziua 31</div>
+              <div className="p-4 text-sm sm:text-right font-bold text-red-600">
                 Creditul expiră
               </div>
             </div>
           </div>
 
           {/* Exemplu concret */}
-          <div className="border-2 border-gray-200 rounded-2xl p-6 md:p-8 mb-6">
+          <div className="border border-gray-200/80 rounded-2xl p-6 md:p-8 mb-6 bg-gray-50/50">
             <h3 className="text-lg font-bold text-gray-900 mb-3">
               Exemplu concret
             </h3>
@@ -113,7 +111,6 @@ export function CreditSystemSection() {
             Nu livrăm Blueprint-ul? Primești 100% banii înapoi. Livrăm și
             continui cu BUILD? Blueprint-ul a fost gratuit.
           </p>
-        </div>
       </div>
     </section>
   );

@@ -1,22 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
 import { useCases, UseCaseData } from '../data/useCasesData';
+import { supabase } from '../lib/supabase';
 import { Header } from './Header';
 import { OfferSection } from './OfferSection';
 import { Footer } from './Footer';
+import { StickyMobileCTA } from './StickyMobileCTA';
 
 const TOTAL_SPOTS = 10;
-
-function renderWithLineBreaks(text: string, highlightClass: string) {
-  const lines = text.split('\n');
-  return lines.map((line, i) => (
-    <span key={i}>
-      <span className={highlightClass}>{line}</span>
-      {i < lines.length - 1 && <br />}
-    </span>
-  ));
-}
 
 function renderPlainWithBreaks(text: string) {
   const lines = text.split('\n');
@@ -30,14 +21,14 @@ function renderPlainWithBreaks(text: string) {
 
 export function UseCaseDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const [remainingSpots, setRemainingSpots] = useState(TOTAL_SPOTS);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [remainingSpots, setRemainingSpots] = useState(TOTAL_SPOTS);
 
   const data: UseCaseData | undefined = useCases.find((uc) => uc.slug === slug);
 
   useEffect(() => {
-    supabase.rpc('get_pilot_spots_remaining').then(({ data }) => {
-      if (data !== null && data !== undefined) {
+    supabase.rpc('get_pilot_spots_remaining').then(({ data, error }) => {
+      if (!error && data !== null && data !== undefined) {
         setRemainingSpots(data as number);
       }
     });
@@ -110,16 +101,16 @@ export function UseCaseDetailPage() {
 
           {/* Hero highlight */}
           <p className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-            {renderWithLineBreaks(data.heroHighlight, 'bg-red-100/70 px-2 py-0.5')}
+            {renderPlainWithBreaks(data.heroHighlight)}
           </p>
 
           {/* Savings text */}
           <p className="text-2xl md:text-3xl font-extrabold text-gray-900">
-            {renderWithLineBreaks(data.savingsLine1, 'bg-green-100/70 px-2 py-0.5')}
+            {renderPlainWithBreaks(data.savingsLine1)}
           </p>
           {data.savingsLine2 && (
             <p className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-2">
-              {renderWithLineBreaks(data.savingsLine2, 'bg-green-100/70 px-2 py-0.5')}
+              {renderPlainWithBreaks(data.savingsLine2)}
             </p>
           )}
         </div>
@@ -158,10 +149,9 @@ export function UseCaseDetailPage() {
         />
       </section>
 
-      {/* Offer Section */}
       <OfferSection remainingSpots={remainingSpots} totalSpots={TOTAL_SPOTS} />
-
       <Footer />
+      <StickyMobileCTA />
     </div>
   );
 }

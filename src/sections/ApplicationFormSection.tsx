@@ -58,17 +58,31 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    // Client-side validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setError('Te rugăm să introduci o adresă de email validă.');
+      return;
+    }
+
+    const phoneClean = formData.phone.replace(/[\s\-()]/g, '');
+    if (phoneClean.length < 10) {
+      setError('Te rugăm să introduci un număr de telefon valid (minim 10 cifre).');
+      return;
+    }
+
     setSubmitting(true);
 
     try {
       const { error: insertError } = await supabase
         .from('pilot_applications')
         .insert({
-          contact_name: formData.contact_name,
-          email: formData.email,
-          phone: formData.phone,
-          company_name: formData.company_name,
-          pain_points: formData.pain_points,
+          contact_name: formData.contact_name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company_name: formData.company_name.trim(),
+          pain_points: formData.pain_points.trim(),
           gdpr_consent: formData.gdpr_consent,
         });
 
@@ -77,11 +91,11 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
       // Fire-and-forget email notification — don't block UX if it fails
       supabase.functions.invoke('notify-pilot-application', {
         body: {
-          contact_name: formData.contact_name,
-          email: formData.email,
-          phone: formData.phone,
-          company_name: formData.company_name,
-          pain_points: formData.pain_points,
+          contact_name: formData.contact_name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company_name: formData.company_name.trim(),
+          pain_points: formData.pain_points.trim(),
         },
       }).catch(err => console.error('Email notification failed:', err));
 
@@ -96,14 +110,14 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
   };
 
   return (
-    <section id={id} className="py-12 md:py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id={id} className="py-12 md:py-16 bg-gradient-to-b from-primary/[0.04] via-primary/[0.06] to-primary/[0.03] relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6 relative">
         {/* Section header */}
         <div className="text-center mb-12">
           <span className="section-label">APLICĂ ACUM</span>
           <h2 className="section-title">Înscrie-te în Programul Pilot</h2>
           <p className="section-desc">
-            Durează sub 2 minute să te înscrii. <span className="underline text-primary font-semibold">Fără angajament</span>. Primești un răspuns în 48 de ore.
+            Durează sub 2 minute să te înscrii. <span className="text-primary font-bold">Fără angajament</span>. Primești un răspuns în 48 de ore.
           </p>
         </div>
 
@@ -111,7 +125,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
           {steps.map((step, i) => (
             <div key={i} className="flex flex-col items-center text-center gap-2">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-glow-primary">
                 {step.number}
               </div>
               <span className="text-sm font-medium text-gray-700">{step.text}</span>
@@ -121,7 +135,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
 
         {/* Spots full state */}
         {!spotsAvailable && !submitted ? (
-          <div className="bg-gray-50 border-2 border-gray-200 rounded-3xl p-10 text-center">
+          <div className="bg-gray-50 border border-gray-200/80 rounded-3xl p-10 text-center shadow-soft">
             <AlertCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-900 mb-2">Toate locurile au fost ocupate</h3>
             <p className="text-gray-600">
@@ -135,7 +149,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
 
         ) : submitted ? (
           /* Success state */
-          <div className="bg-green-50 border-2 border-green-200 rounded-3xl p-10 text-center">
+          <div className="bg-green-50 border border-green-200/60 rounded-3xl p-10 text-center shadow-soft">
             <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Locul tău e rezervat!</h3>
 
@@ -148,13 +162,13 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                   )}
                   <div className="text-center min-w-[100px]">
                     <p className="text-sm font-bold text-gray-900">{item.label}</p>
-                    <p className="text-xs text-gray-500">({item.time})</p>
+                    <p className="text-xs text-gray-600">({item.time})</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-600">
               Dacă nu primești răspuns, scrie-ne la{' '}
               <a href="mailto:contact@ezfuture.ai" className="text-primary font-semibold hover:underline">
                 contact@ezfuture.ai
@@ -164,7 +178,8 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
 
         ) : (
           /* Form card */
-          <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 md:p-10 shadow-soft">
+          <div className="gradient-border-wrap">
+          <div className="bg-white rounded-3xl p-8 md:p-10">
             {/* Form title */}
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center mb-4">
               Vreau planul meu de automatizare
@@ -202,6 +217,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                     id="email"
                     name="email"
                     required
+                    inputMode="email"
                     value={formData.email}
                     onChange={handleChange}
                     className="input-field"
@@ -221,6 +237,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                     id="phone"
                     name="phone"
                     required
+                    inputMode="tel"
                     value={formData.phone}
                     onChange={handleChange}
                     className="input-field"
@@ -254,6 +271,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                   name="pain_points"
                   required
                   rows={4}
+                  maxLength={2000}
                   value={formData.pain_points}
                   onChange={handleChange}
                   className="textarea-field"
@@ -264,18 +282,21 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
               {/* GDPR consent */}
               <div className="mb-8">
                 <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="gdpr_consent"
-                    checked={formData.gdpr_consent}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 w-5 h-5 rounded-lg border-2 border-gray-300 text-primary focus:ring-primary/20"
-                  />
+                  <span className="relative flex items-center justify-center w-11 h-11 -m-3 flex-shrink-0">
+                    <input
+                      type="checkbox"
+                      name="gdpr_consent"
+                      checked={formData.gdpr_consent}
+                      onChange={handleChange}
+                      required
+                      className="w-5 h-5 rounded-lg border-2 border-gray-300 text-primary focus:ring-primary/20 cursor-pointer"
+                    />
+                  </span>
                   <span className="text-sm text-gray-600">
                     Sunt de acord ca EZ Prime SRL (EZFuture.ai) să prelucreze datele furnizate în scopul evaluării aplicației mele pentru programul Blueprint Pilot și contactării ulterioare, conform{' '}
-                    <a href="/legal/confidentialitate.html" target="_blank" className="text-primary hover:underline">
+                    <a href="/legal/confidentialitate.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                       Politicii de Confidențialitate
+                      <span className="sr-only"> (se deschide în fereastră nouă)</span>
                     </a>
                     . *
                   </span>
@@ -284,7 +305,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
 
               {/* Error message */}
               {error && (
-                <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+                <div role="alert" aria-live="polite" className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-red-700">{error}</p>
                 </div>
@@ -310,7 +331,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
               </button>
 
               {/* Trust badges */}
-              <div className="flex flex-wrap justify-center gap-6 mt-5 text-xs text-gray-400">
+              <div className="flex flex-wrap justify-center gap-6 mt-5 text-xs text-gray-500">
                 <span className="flex items-center gap-1.5">
                   <Lock className="w-3.5 h-3.5" /> Date securizate
                 </span>
@@ -322,6 +343,7 @@ export function ApplicationFormSection({ spotsAvailable, onSubmitSuccess, id = '
                 </span>
               </div>
             </form>
+          </div>
           </div>
         )}
       </div>

@@ -19,8 +19,8 @@ export function TrainingAddonSection() {
 
   return (
     <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="border-2 border-gray-200 rounded-3xl p-8 md:p-10 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border border-gray-200/80 rounded-3xl p-8 md:p-10 bg-white shadow-soft">
           {/* Header */}
           <div className="mb-8">
             <span className="section-label">ADD-ON OPȚIONAL</span>
@@ -28,20 +28,20 @@ export function TrainingAddonSection() {
               Training Plan
             </h2>
             <p className="text-3xl md:text-4xl font-extrabold text-cta mb-4">€997</p>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[15px] leading-relaxed">
               Pentru companiile care vor să construiască și capabilități interne, de durată.
             </p>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[15px] leading-relaxed">
               3 sesiuni, 6 ore total — maximizează valoarea Blueprint-ului și reduce rezistența la schimbare.
             </p>
           </div>
 
           {/* Sessions table */}
-          <div className="border-2 border-gray-200 rounded-2xl overflow-hidden mb-8">
+          <div className="border border-gray-200/80 rounded-2xl overflow-hidden mb-8">
             {sessions.map((session, i) => (
               <div
                 key={i}
-                className={`p-5 ${i < sessions.length - 1 ? 'border-b-2 border-gray-200' : ''}`}
+                className={`p-5 hover:bg-gray-50/50 transition-colors duration-200 ${i < sessions.length - 1 ? 'border-b border-gray-200/60' : ''}`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-bold text-gray-900">{session.name}</span>
@@ -49,7 +49,7 @@ export function TrainingAddonSection() {
                     {session.duration}
                   </span>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed">{session.desc}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{session.desc}</p>
               </div>
             ))}
           </div>
@@ -59,12 +59,12 @@ export function TrainingAddonSection() {
             <p className="font-bold text-gray-900 mb-2">
               Toate sesiunile sunt ținute de oameni seniori, cu experiență și track record.
             </p>
-            <p className="text-sm text-gray-500 mb-2">
+            <p className="text-sm text-gray-600 mb-2">
               <span className="text-primary font-semibold">EZ CREDIT</span> se aplică și aici.
             </p>
             <p className="text-sm text-gray-500 leading-relaxed">
               Menționează că dorești și trainingul când discutăm —
-              <br />
+              <br className="hidden md:block" />
               fie când te înscrii, fie ulterior, la telefon sau prin e-mail.
             </p>
           </div>

@@ -1,4 +1,5 @@
 import { CheckCircle2, XCircle } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function ForWhoSection() {
   const forYou = [
@@ -11,22 +12,22 @@ export function ForWhoSection() {
     'Ai buget realist pentru implementarea ulterioară (minim €10.000 pentru primele automatizări).',
   ];
 
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50/30">
+      <div ref={ref} className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="text-center mb-12">
           <span className="section-label">PENTRU CINE ESTE BLUEPRINT</span>
           <h2 className="section-title">
             Te regăsești
-            <br />
+            <br className="hidden md:block" />
             în cel puțin una dintre aceste situații?
           </h2>
         </div>
 
-        <div className="border-2 border-gray-200 rounded-3xl overflow-hidden">
-          <div className="grid md:grid-cols-2 divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 divide-gray-200">
+        <div className="grid md:grid-cols-2 gap-6">
             {/* Left column - For you */}
-            <div className="p-8">
+            <div className="bg-white border border-gray-200/80 rounded-2xl shadow-soft p-8">
               <h3 className="text-lg font-bold text-gray-900 mb-6">
                 <CheckCircle2 className="w-5 h-5 text-success inline-block" /> Blueprint este pentru
                 tine dacă...
@@ -37,13 +38,13 @@ export function ForWhoSection() {
                     key={i}
                     className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed"
                   >
-                    <span className="flex-shrink-0 mt-0.5">→</span>
+                    <span className="flex-shrink-0 mt-0.5 text-primary">→</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 bg-primary/10 border border-primary/20 rounded-2xl px-5 py-4">
-                <p className="text-primary text-[15px] font-medium leading-relaxed">
+              <div className="mt-6 bg-success/[0.06] border border-success/15 rounded-2xl px-5 py-4">
+                <p className="text-success text-[15px] font-medium leading-relaxed">
                   Banii investiți în Blueprint se scad din costul de
                   implementare dacă decizi să continui cu noi.
                 </p>
@@ -51,14 +52,14 @@ export function ForWhoSection() {
             </div>
 
             {/* Right column - Not for you */}
-            <div className="p-8">
+            <div className="bg-gray-50 border border-gray-200/80 rounded-2xl shadow-soft p-8">
               <h3 className="text-lg font-bold text-gray-900 mb-6">
                 <XCircle className="w-5 h-5 text-red-500 inline-block" /> Blueprint NU este
                 pentru tine dacă...
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed">
-                  <span className="flex-shrink-0 mt-0.5">→</span>
+                  <span className="flex-shrink-0 mt-0.5 text-gray-400">→</span>
                   <span>
                     Ai un singur workflow simplu de automatizat - serviciul
                     nostru{' '}
@@ -67,7 +68,7 @@ export function ForWhoSection() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-700 text-[15px] leading-relaxed">
-                  <span className="flex-shrink-0 mt-0.5">→</span>
+                  <span className="flex-shrink-0 mt-0.5 text-gray-400">→</span>
                   <span>
                     Cauți un parteneriat strategic pe termen lung -{' '}
                     <span className="text-primary font-semibold">
@@ -79,7 +80,6 @@ export function ForWhoSection() {
                 </li>
               </ul>
             </div>
-          </div>
         </div>
       </div>
     </section>
