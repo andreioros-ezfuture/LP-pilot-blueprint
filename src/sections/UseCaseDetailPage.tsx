@@ -87,32 +87,32 @@ export function UseCaseDetailPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-8 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="pt-28 pb-12 bg-white">
+        <div className="max-w-5xl mx-auto px-6 text-center space-y-2">
           {/* Category label */}
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-2">
             {data.category}
           </p>
 
           {/* Hero title */}
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-snug">
             {renderPlainWithBreaks(data.heroTitle)}
           </h1>
 
-          {/* Hero highlight */}
-          <p className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-            {renderPlainWithBreaks(data.heroHighlight)}
+          {/* Hero highlight - red marker */}
+          <p className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed">
+            <span className="bg-red-100 px-3 py-1.5 rounded-lg box-decoration-clone">
+              {renderPlainWithBreaks(data.heroHighlight)}
+            </span>
           </p>
 
-          {/* Savings text */}
-          <p className="text-2xl md:text-3xl font-extrabold text-gray-900">
-            {renderPlainWithBreaks(data.savingsLine1)}
+          {/* Savings text - green marker */}
+          <p className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed">
+            <span className="bg-emerald-100 px-3 py-1.5 rounded-lg box-decoration-clone">
+              {renderPlainWithBreaks(data.savingsLine1)}
+              {data.savingsLine2 && <><br />{renderPlainWithBreaks(data.savingsLine2)}</>}
+            </span>
           </p>
-          {data.savingsLine2 && (
-            <p className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-2">
-              {renderPlainWithBreaks(data.savingsLine2)}
-            </p>
-          )}
         </div>
       </section>
 
