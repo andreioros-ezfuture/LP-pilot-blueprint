@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/legal/:path*", "destination": "/legal/:path*" },
+    { "source": "/confidentialitate", "destination": "/legal/confidentialitate.html" },
+    { "source": "/termeni", "destination": "/legal/termeni.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

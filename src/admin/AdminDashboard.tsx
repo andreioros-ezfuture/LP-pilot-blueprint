@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { LogOut, CheckCircle, XCircle, Clock, RefreshCw, Mail, Phone, Trash2 } from 'lucide-react';
 
 interface Application {
   id: string;
@@ -98,9 +97,9 @@ export function AdminDashboard() {
 
   const statusIcon = (status: string) => {
     switch (status) {
-      case 'accepted': return <CheckCircle className="w-4 h-4 text-green-600" />;
-      case 'rejected': return <XCircle className="w-4 h-4 text-red-500" />;
-      default: return <Clock className="w-4 h-4 text-amber-500" />;
+      case 'accepted': return '✓';
+      case 'rejected': return '✗';
+      default: return '⏳';
     }
   };
 
@@ -138,13 +137,12 @@ export function AdminDashboard() {
               className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
               title="Reîncarcă"
             >
-              <RefreshCw className="w-5 h-5" />
+              ↻
             </button>
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              <LogOut className="w-4 h-4" />
               Logout
             </button>
           </div>
@@ -179,12 +177,10 @@ export function AdminDashboard() {
                     </div>
                     <div className="flex flex-wrap items-center gap-4 mb-3">
                       <a href={`mailto:${app.email}`} className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
-                        <Mail className="w-3.5 h-3.5" />
                         {app.email}
                       </a>
                       {app.phone && (
                         <a href={`tel:${app.phone}`} className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
-                          <Phone className="w-3.5 h-3.5" />
                           {app.phone}
                         </a>
                       )}
@@ -201,7 +197,6 @@ export function AdminDashboard() {
                           disabled={updating === app.id || remaining <= 0}
                           className="flex items-center gap-1.5 px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
                         >
-                          <CheckCircle className="w-4 h-4" />
                           Aprobă
                         </button>
                         <button
@@ -209,7 +204,6 @@ export function AdminDashboard() {
                           disabled={updating === app.id}
                           className="flex items-center gap-1.5 px-4 py-2 bg-white text-red-600 text-sm font-semibold rounded-lg border border-red-200 hover:bg-red-50 transition-colors disabled:opacity-50"
                         >
-                          <XCircle className="w-4 h-4" />
                           Respinge
                         </button>
                       </>
@@ -220,7 +214,6 @@ export function AdminDashboard() {
                         disabled={updating === app.id}
                         className="flex items-center gap-1.5 px-3 py-1.5 text-gray-500 text-xs font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
                       >
-                        <RefreshCw className="w-3.5 h-3.5" />
                         Anulează
                       </button>
                     )}
@@ -230,7 +223,7 @@ export function AdminDashboard() {
                       className="flex items-center gap-1.5 px-3 py-1.5 text-red-400 text-xs font-medium rounded-lg border border-red-100 hover:bg-red-50 hover:text-red-600 transition-colors disabled:opacity-50"
                       title="Șterge aplicația"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      Șterge
                     </button>
                   </div>
                 </div>
