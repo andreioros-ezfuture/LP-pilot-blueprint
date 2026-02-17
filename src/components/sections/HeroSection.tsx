@@ -63,6 +63,18 @@ export default function HeroSection() {
     }
   };
 
+  // Safety net: if onTransitionEnd doesn't fire (tab inactive, animation
+  // interrupted, etc.), force the snap-back via timeout so cards never vanish.
+  useEffect(() => {
+    if (index >= TOTAL && animate) {
+      const fallback = setTimeout(() => {
+        setAnimate(false);
+        setIndex((prev) => (prev >= TOTAL ? prev - TOTAL : prev));
+      }, 600); // slightly longer than 500ms CSS transition
+      return () => clearTimeout(fallback);
+    }
+  }, [index, animate]);
+
   const goNext = () => {
     setAnimate(true);
     setIndex((i) => i + 1);
@@ -98,7 +110,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="bg-gradient-to-b from-dark to-dark-end pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold leading-tight text-white text-center max-w-4xl mx-auto">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold leading-snug sm:leading-tight text-white text-center max-w-4xl mx-auto">
           Un business de 2&ndash;10 milioane €/an<br className="hidden md:block" />
           <em className="not-italic text-accent">care nu automatizeaza procesele manuale</em><br className="hidden md:block" />
           ar putea la fel de bine sa dea foc unei valize cu{' '}
@@ -116,7 +128,7 @@ export default function HeroSection() {
         <button
           onClick={goPrev}
           aria-label="Anterior"
-          className="hidden lg:flex absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-colors duration-200 backdrop-blur-sm"
+          className="flex absolute left-1 sm:left-2 lg:left-4 xl:left-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 lg:w-11 lg:h-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-colors duration-200 backdrop-blur-sm"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M12 5l-5 5 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -127,7 +139,7 @@ export default function HeroSection() {
         <button
           onClick={goNext}
           aria-label="Urmator"
-          className="hidden lg:flex absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-colors duration-200 backdrop-blur-sm"
+          className="flex absolute right-1 sm:right-2 lg:right-4 xl:right-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 lg:w-11 lg:h-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-colors duration-200 backdrop-blur-sm"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M8 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -135,7 +147,7 @@ export default function HeroSection() {
         </button>
 
         {/* Track container (overflow hidden) */}
-        <div ref={containerRef} className="overflow-hidden mx-6 lg:mx-20 xl:mx-28">
+        <div ref={containerRef} className="overflow-hidden mx-11 sm:mx-12 lg:mx-20 xl:mx-28">
           <div
             className={animate ? 'transition-transform duration-500 ease-in-out' : ''}
             style={{
