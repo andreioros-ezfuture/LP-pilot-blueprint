@@ -1,8 +1,14 @@
-import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+
+const gradients = [
+  'from-primary/15 to-primary/5',
+  'from-primary/15 to-primary/5',
+  'from-primary/15 to-primary/5',
+];
 
 const examples = [
   {
-    side: 'left' as const,
     category: 'Vânzări & Marketing',
     redTitle: 'O firma de servicii IT de 8 mil. \u20AC',
     description: 'care face follow-up manual pe leaduri',
@@ -11,7 +17,6 @@ const examples = [
     link: '/exemplu/vanzari-marketing',
   },
   {
-    side: 'right' as const,
     category: 'Customer Support',
     redTitle: 'Un magazin online de 3,5 mil. \u20AC',
     description: 'care răspunde manual la aceleași întrebări de la clienți',
@@ -20,7 +25,6 @@ const examples = [
     link: '/exemplu/customer-support',
   },
   {
-    side: 'left' as const,
     category: 'Operational / Delivery',
     redTitle: 'Un distribuitor de 6 mil. \u20AC',
     description:
@@ -30,7 +34,6 @@ const examples = [
     link: '/exemplu/operational-delivery',
   },
   {
-    side: 'right' as const,
     category: 'HR & Administrativ',
     redTitle: 'O agenție de marketing (5 mil. \u20AC)',
     description:
@@ -40,7 +43,6 @@ const examples = [
     link: '/exemplu/hr-administrativ',
   },
   {
-    side: 'left' as const,
     category: 'Management & Decision Intelligence',
     redTitle: 'Un furnizor B2B de 10 mil. \u20AC',
     description:
@@ -50,7 +52,6 @@ const examples = [
     link: '/exemplu/management-decision',
   },
   {
-    side: 'right' as const,
     category: 'Financiar & Contabilitate',
     redTitle: 'Un producător de mobilă (7 mil. \u20AC)',
     description: 'care face reconcilierea bancară manual, în Excel,',
@@ -67,6 +68,7 @@ function ExampleCard({
   loss,
   consequence,
   link,
+  gradient,
 }: {
   category: string;
   redTitle: string;
@@ -74,39 +76,31 @@ function ExampleCard({
   loss: string;
   consequence: string;
   link: string;
+  gradient: string;
 }) {
   return (
-    <div className="group relative overflow-hidden p-5 md:p-6 flex flex-col items-center justify-center text-center hover:bg-gray-50/50 transition-colors duration-300">
-      <span className="md:hidden font-medium text-primary/50 text-xs mb-3 inline-block">
+    <div className={`group relative bg-gradient-to-br ${gradient} border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:border-primary/30 hover:shadow-card transition-all duration-300`}>
+      <span className="font-medium text-primary/50 text-xs uppercase tracking-wider mb-4 inline-block">
         {category}
       </span>
-      <p className="text-primary font-extrabold text-2xl md:text-3xl mb-1">{redTitle}</p>
+      <p className="text-gray-900 font-extrabold text-2xl md:text-3xl mb-1">{redTitle}</p>
       <p className="text-gray-600 text-sm mb-3">{description}</p>
       <p className="text-red-600 font-extrabold text-2xl md:text-3xl leading-tight mb-1">
         poate pierde {loss}
       </p>
-      <p className="text-gray-600 text-sm mb-4">{consequence}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary hover:shadow-soft transition-all duration-200">
+      <p className="text-gray-600 text-sm mb-5">{consequence}</p>
+      <a href={link} className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary hover:shadow-soft transition-all duration-200 mt-auto">
         Vezi Exemplul Detaliat
-        <span className="sr-only"> (se deschide în fereastră nouă)</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
       </a>
-      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-    </div>
-  );
-}
-
-function CategoryLabel({ label }: { label: string }) {
-  return (
-    <div className="hidden md:flex p-5 md:p-6 items-center justify-center h-full">
-      <span className="font-medium text-primary/50 text-sm md:text-base text-center">
-        {label}
-      </span>
     </div>
   );
 }
 
 export function HeroSection() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleExamples = showAll ? examples : examples.slice(0, 2);
+
   return (
     <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-b from-[#ECEFFE] via-[#F5F6FE] to-white relative overflow-hidden">
       {/* Dot pattern with fade-out mask */}
@@ -145,48 +139,37 @@ export function HeroSection() {
           </h1>
         </div>
 
-        {/* Grid of 6 business examples */}
-        <div className="border border-gray-200/80 rounded-2xl overflow-hidden mb-10 shadow-soft bg-white/80 backdrop-blur-sm">
-          {examples.map((item, idx) => (
-            <div
-              key={idx}
-              className={`grid grid-cols-1 md:grid-cols-2 ${
-                idx !== examples.length - 1 ? 'border-b border-gray-200/60' : ''
-              }`}
+        {/* Grid of business examples */}
+        <div className="mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {visibleExamples.map((item, idx) => (
+              <ExampleCard
+                key={idx}
+                category={item.category}
+                redTitle={item.redTitle}
+                description={item.description}
+                loss={item.loss}
+                consequence={item.consequence}
+                link={item.link}
+                gradient={gradients[idx % gradients.length]}
+              />
+            ))}
+          </div>
+
+          {/* Toggle button */}
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary hover:shadow-soft transition-all duration-200 bg-white"
             >
-              {item.side === 'left' ? (
-                <>
-                  <div className="md:border-r border-gray-200/60">
-                    <ExampleCard
-                      category={item.category}
-                      redTitle={item.redTitle}
-                      description={item.description}
-                      loss={item.loss}
-                      consequence={item.consequence}
-                      link={item.link}
-                    />
-                  </div>
-                  <CategoryLabel label={item.category} />
-                </>
+              {showAll ? 'Vezi mai puține' : 'Vezi mai multe exemple'}
+              {showAll ? (
+                <ChevronUp className="w-4 h-4" />
               ) : (
-                <>
-                  <div className="hidden md:block md:border-r border-gray-200/60">
-                    <CategoryLabel label={item.category} />
-                  </div>
-                  <div>
-                    <ExampleCard
-                      category={item.category}
-                      redTitle={item.redTitle}
-                      description={item.description}
-                      loss={item.loss}
-                      consequence={item.consequence}
-                      link={item.link}
-                    />
-                  </div>
-                </>
+                <ChevronDown className="w-4 h-4" />
               )}
-            </div>
-          ))}
+            </button>
+          </div>
         </div>
 
         {/* Bottom text */}
