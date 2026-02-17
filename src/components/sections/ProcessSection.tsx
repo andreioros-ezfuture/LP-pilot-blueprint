@@ -172,12 +172,23 @@ export default function ProcessSection() {
               {
                 name: 'n8n',
                 icon: (
-                  <svg className="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none">
-                    <circle cx="7" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="17" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M10 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <circle cx="7" cy="12" r="1.2" fill="currentColor"/>
-                    <circle cx="17" cy="12" r="1.2" fill="currentColor"/>
+                  <svg className="w-7 h-7" viewBox="0 0 28 14" fill="none">
+                    {/* Lines connecting nodes */}
+                    <path d="M6 7h4" stroke="#EA4B71" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M14 7h4" stroke="#EA4B71" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M22 7h4" stroke="#EA4B71" strokeWidth="1.3" strokeLinecap="round" strokeDasharray="1.5 1.5"/>
+                    {/* Node 1 */}
+                    <circle cx="4" cy="7" r="3.2" stroke="#EA4B71" strokeWidth="1.3"/>
+                    <circle cx="4" cy="7" r="1.2" fill="#EA4B71"/>
+                    {/* Node 2 */}
+                    <circle cx="12" cy="7" r="3.2" stroke="#EA4B71" strokeWidth="1.3"/>
+                    <circle cx="12" cy="7" r="1.2" fill="#EA4B71"/>
+                    {/* Node 3 */}
+                    <circle cx="20" cy="7" r="3.2" stroke="#EA4B71" strokeWidth="1.3"/>
+                    <circle cx="20" cy="7" r="1.2" fill="#EA4B71"/>
+                    {/* Node 4 (smaller, trailing) */}
+                    <circle cx="27" cy="7" r="2.2" stroke="#EA4B71" strokeWidth="1.3" opacity="0.6"/>
+                    <circle cx="27" cy="7" r="0.8" fill="#EA4B71" opacity="0.6"/>
                   </svg>
                 ),
               },

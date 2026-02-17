@@ -111,8 +111,25 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
             </button>
           </nav>}
 
-          {/* Right side: Hamburger (mobile) + Log In + Sign Up */}
-          <div className="flex items-center gap-4">
+          {/* Right side: Log In + Sign Up + Hamburger */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://app.ezfuture.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`hidden md:inline-flex text-sm font-medium transition-colors duration-300 hover:opacity-80 ${
+                isScrolled ? 'text-primary' : 'text-white'
+              }`}
+            >
+              Log In
+            </a>
+            <button
+              onClick={() => scrollToSection('aplica')}
+              className="bg-accent hover:bg-accent-hover text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200"
+            >
+              Sign Up
+            </button>
+
             {/* Hamburger button — mobile only */}
             {showNav && (
               <button
@@ -140,23 +157,6 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
                 />
               </button>
             )}
-
-            <a
-              href="https://app.ezfuture.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-sm font-medium transition-colors duration-300 hover:opacity-80 ${
-                isScrolled ? 'text-primary' : 'text-white'
-              }`}
-            >
-              Log In
-            </a>
-            <button
-              onClick={() => scrollToSection('aplica')}
-              className="bg-accent hover:bg-accent-hover text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200"
-            >
-              Sign Up
-            </button>
           </div>
         </div>
       </header>
@@ -179,20 +179,27 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
             : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
-        {NAV_ITEMS.map((item, idx) => (
+        {NAV_ITEMS.map((item) => (
           <button
             key={item.target}
             onClick={() => handleMobileNav(item.target)}
-            className={`block w-full text-left py-3 text-primary font-semibold text-base transition-colors duration-150 hover:text-accent ${
-              idx < NAV_ITEMS.length - 1 ? 'border-b border-border' : ''
-            }`}
+            className="block w-full text-left py-3 text-primary font-semibold text-base transition-colors duration-150 hover:text-accent border-b border-border"
           >
             {item.label}
           </button>
         ))}
+        <a
+          href="https://app.ezfuture.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+          className="block w-full text-left py-3 text-primary font-semibold text-base transition-colors duration-150 hover:text-accent border-b border-border"
+        >
+          Log In
+        </a>
         <button
           onClick={() => handleMobileNav('aplica')}
-          className="block w-full bg-accent hover:bg-accent-hover text-white rounded-xl py-3 text-center font-semibold mt-2 transition-colors duration-200"
+          className="block w-full bg-accent hover:bg-accent-hover text-white rounded-xl py-3 text-center font-semibold mt-3 transition-colors duration-200"
         >
           Aplica Acum
         </button>

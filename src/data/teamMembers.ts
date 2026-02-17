@@ -7,7 +7,7 @@ export const teamMembers: TeamMember[] = [
     description:
       'Strategie de automatizare si implementare tehnica. Lucreaza direct cu fiecare companie din pilot.',
     photo: '/images/team/andrei.webp',
-    linkedIn: '#',
+    linkedIn: 'https://www.linkedin.com/in/arenacad/',
     background: [
       'Founder, multiple businesses | 1 mil. € exit | Chief Executive Officer | Senior Consultant 3D Modeling, Scan to BIM & Laser Scanning',
       'Peste 14 ani experienta de conducere in companii de tehnologie la intersectia dintre capabilitati tehnice complexe si clienti non-tehnici.',
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     description:
       'Transformare digitala, analiza de procese si livrabile strategice. Traduce complexitatea operationala in planuri clare de actiune.',
     photo: '/images/team/iuliana.webp',
-    linkedIn: '#',
+    linkedIn: 'https://www.linkedin.com/in/ghioca-iuliana-98b71aa0/',
     background: [
       'Global Digital Transformation Lead | Senior Process Improvement & Automation Manager | Lean Six Sigma Black Belt',
       'Peste 16 ani experienta in transformarea operatiunilor de business prin automatizare inteligenta si excelenta in procese, in cadrul corporatiilor multinationale.',

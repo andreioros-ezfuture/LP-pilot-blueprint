@@ -28,20 +28,20 @@ export default function CTABanner({
   return (
     <section className={sectionClasses}>
       <FadeInOnScroll>
-        <div className="max-w-3xl mx-auto py-16 px-6 text-center">
-          <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed">
+        <div className="max-w-3xl mx-auto py-8 md:py-10 px-6 text-center">
+          <p className="text-lg md:text-xl font-semibold text-white leading-relaxed">
             {text}
           </p>
 
           <button
             onClick={onButtonClick}
-            className={`mt-8 inline-flex items-center justify-center font-semibold text-base md:text-lg px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-colors duration-200 cursor-pointer ${buttonClasses}`}
+            className={`mt-5 inline-flex items-center justify-center font-semibold text-base md:text-lg px-6 py-3 md:px-8 md:py-3.5 rounded-xl transition-colors duration-200 cursor-pointer ${buttonClasses}`}
           >
             {buttonText}
           </button>
 
           {caption && (
-            <p className="text-sm text-white/70 mt-3">{caption}</p>
+            <p className="text-sm text-white/70 mt-2">{caption}</p>
           )}
         </div>
       </FadeInOnScroll>
