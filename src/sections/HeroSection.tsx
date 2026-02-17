@@ -77,12 +77,12 @@ function ExampleCard({
 }) {
   return (
     <div className="group relative overflow-hidden p-5 md:p-6 flex flex-col items-center justify-center text-center hover:bg-gray-50/50 transition-colors duration-300">
-      <span className="md:hidden font-bold bg-primary/10 text-primary px-3 py-1 rounded-lg border-b-2 border-primary/30 text-xs mb-3 inline-block">
+      <span className="md:hidden font-medium text-primary/50 text-xs mb-3 inline-block">
         {category}
       </span>
-      <p className="text-primary font-extrabold text-lg md:text-xl mb-1">{redTitle}</p>
+      <p className="text-primary font-extrabold text-2xl md:text-3xl mb-1">{redTitle}</p>
       <p className="text-gray-600 text-sm mb-3">{description}</p>
-      <p className="text-red-600 font-extrabold text-2xl md:text-3xl leading-tight mb-1 whitespace-nowrap">
+      <p className="text-red-600 font-extrabold text-2xl md:text-3xl leading-tight mb-1">
         poate pierde {loss}
       </p>
       <p className="text-gray-600 text-sm mb-4">{consequence}</p>
@@ -99,7 +99,7 @@ function ExampleCard({
 function CategoryLabel({ label }: { label: string }) {
   return (
     <div className="hidden md:flex p-5 md:p-6 items-center justify-center h-full">
-      <span className="font-bold bg-primary/10 text-primary px-3 py-1.5 rounded-lg border-b-2 border-primary/30 text-sm md:text-base text-center">
+      <span className="font-medium text-primary/50 text-sm md:text-base text-center">
         {label}
       </span>
     </div>
@@ -128,7 +128,7 @@ export function HeroSection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-primary/[0.06] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.2] mb-0">
             <span className="text-gray-900">Un business de</span>
-            <br className="hidden md:block" />
+            {' '}<br className="hidden md:block" />
             <span className="text-gray-900">2-10 milioane de euro/an</span>
             <br />
             <span className="text-red-600">
@@ -138,7 +138,7 @@ export function HeroSection() {
             <span className="text-gray-900">
               ar putea la fel de bine
             </span>
-            <br className="hidden md:block" />
+            {' '}<br className="hidden md:block" />
             <span className="text-gray-900">
               să dea foc unei valize cu &euro;100.000
             </span>
