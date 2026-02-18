@@ -1,4 +1,5 @@
 import React from 'react';
+import { sanitizeHtml } from '../../lib/sanitize';
 
 interface CheckboxProps {
   label: string;
@@ -51,7 +52,7 @@ export default function Checkbox({
         </div>
         <span
           className="text-sm text-body leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: label }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(label) }}
         />
       </label>
       {error && (

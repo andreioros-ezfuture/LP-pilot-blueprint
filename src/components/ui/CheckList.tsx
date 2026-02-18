@@ -1,3 +1,5 @@
+import { sanitizeHtml } from '../../lib/sanitize';
+
 interface CheckListProps {
   items: string[];
   variant: 'success' | 'danger';
@@ -39,7 +41,7 @@ export default function CheckList({ items, variant }: CheckListProps) {
           {variant === 'success' ? <CheckIcon /> : <XIcon />}
           <span
             className="text-body leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: item }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(item) }}
           />
         </li>
       ))}

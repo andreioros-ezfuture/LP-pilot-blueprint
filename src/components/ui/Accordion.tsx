@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { sanitizeHtml } from '../../lib/sanitize';
 
 interface AccordionProps {
   question: string;
@@ -45,7 +46,7 @@ export default function Accordion({ question, answer }: AccordionProps) {
       >
         <div
           className="px-6 pb-5 text-body leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: answer }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(answer) }}
         />
       </div>
     </div>

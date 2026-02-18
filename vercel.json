@@ -4,5 +4,13 @@
     { "source": "/confidentialitate", "destination": "/legal/confidentialitate.html" },
     { "source": "/termeni", "destination": "/legal/termeni.html" },
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/404",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    }
   ]
 }

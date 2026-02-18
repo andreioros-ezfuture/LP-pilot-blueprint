@@ -19,6 +19,7 @@ function TeamMemberCard({ member, delay }: { member: (typeof teamMembers)[number
             <img
               src={member.photo}
               alt={member.name}
+              loading="lazy"
               className="w-full h-full rounded-full object-cover bg-light-gray"
             />
           </div>
@@ -102,6 +103,7 @@ function TeamMemberCard({ member, delay }: { member: (typeof teamMembers)[number
                 <img
                   src={member.testimonial.photo}
                   alt={member.testimonial.author}
+                  loading="lazy"
                   className="w-10 h-10 rounded-full object-cover"
                 />
               )}
