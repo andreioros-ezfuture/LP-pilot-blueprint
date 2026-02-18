@@ -39,8 +39,8 @@ export default function LandingPage() {
       <HeroSection />
       <OfferSection />
       <WhyOfferSection />
-      <ApplicationFormSection id="aplica" />
       <TeamSection />
+      <ApplicationFormSection id="aplica" />
       <ExclusiveProgramSection />
       <WhatIsBlueprintSection />
       <ForWhoSection />

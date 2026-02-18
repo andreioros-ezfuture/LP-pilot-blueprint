@@ -3,7 +3,7 @@ import FadeInOnScroll from '../ui/FadeInOnScroll';
 import { deliverables } from '../../data/deliverables';
 
 export default function DeliverablesSection() {
-  const [detailOpen, setDetailOpen] = useState(false);
+  const [detailOpen, setDetailOpen] = useState(true);
 
   const featured = deliverables[0];
   const rest = deliverables.slice(1);

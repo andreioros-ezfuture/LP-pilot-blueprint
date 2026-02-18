@@ -34,15 +34,13 @@ export default function ProcessSection() {
 
         {/* Week 1 */}
         <FadeInOnScroll>
-          <div className="relative pl-12 md:pl-20 mb-10">
-            <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-                Saptamana 1
-              </span>
-            </div>
-            <p className="text-sm text-muted font-medium pt-12">
-              &ldquo;Start si Analiza&rdquo;
-            </p>
+          <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
+            <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              Saptamana 1
+            </span>
+            <span className="text-sm text-muted font-medium">
+              Start si Analiza
+            </span>
           </div>
         </FadeInOnScroll>
 
@@ -80,15 +78,13 @@ export default function ProcessSection() {
 
         {/* Week 2 */}
         <FadeInOnScroll>
-          <div className="relative pl-12 md:pl-20 mb-10">
-            <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-                Saptamana 2
-              </span>
-            </div>
-            <p className="text-sm text-muted font-medium pt-12">
-              &ldquo;Colectare date&rdquo;
-            </p>
+          <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
+            <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              Saptamana 2
+            </span>
+            <span className="text-sm text-muted font-medium">
+              Colectare date
+            </span>
           </div>
         </FadeInOnScroll>
 
@@ -120,15 +116,13 @@ export default function ProcessSection() {
 
         {/* Week 3 */}
         <FadeInOnScroll>
-          <div className="relative pl-12 md:pl-20 mb-10">
-            <div className="absolute left-0 md:left-4 top-0">
-              <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-                Saptamana 3
-              </span>
-            </div>
-            <p className="text-sm text-muted font-medium pt-12">
-              &ldquo;Validare si Livrare&rdquo;
-            </p>
+          <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
+            <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
+              Saptamana 3
+            </span>
+            <span className="text-sm text-muted font-medium">
+              Validare si Livrare
+            </span>
           </div>
         </FadeInOnScroll>
 

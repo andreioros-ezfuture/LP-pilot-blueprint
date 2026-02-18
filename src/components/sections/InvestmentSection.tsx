@@ -3,12 +3,9 @@ import FadeInOnScroll from '../ui/FadeInOnScroll';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 import CheckList from '../ui/CheckList';
-import SpotsCounter from '../ui/SpotsCounter';
-import { useAppContext } from '../../AppContext';
 import { scrollToSection } from '../../hooks/useScrollToSection';
 
 export default function InvestmentSection() {
-  const { spots } = useAppContext();
 
   const checklistItems = [
     'Toate cele 10 livrabile profesionale',
@@ -58,10 +55,6 @@ export default function InvestmentSection() {
             <Button size="lg" className="w-full mt-6" onClick={() => scrollToSection('aplica')}>
               Vreau Planul Meu
             </Button>
-
-            <div className="mt-4 flex justify-center">
-              <SpotsCounter remaining={spots.remaining} total={spots.total} />
-            </div>
           </div>
         </FadeInOnScroll>
 

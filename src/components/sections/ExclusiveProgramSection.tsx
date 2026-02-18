@@ -100,7 +100,7 @@ export default function ExclusiveProgramSection() {
             {/* Stat headline */}
             <div className="text-center">
               <h2 className="font-heading font-extrabold text-white text-4xl md:text-6xl">
-                ~15 ore/saptamana
+                ~52 ore/saptamana
               </h2>
               <p className="text-xl md:text-2xl font-semibold text-white/80 mt-3">
                 pierdute pe taskuri repetitive
@@ -114,7 +114,7 @@ export default function ExclusiveProgramSection() {
             <div className="max-w-3xl mx-auto text-center space-y-5">
               <p className="text-white/80 text-lg">
                 Intr-o echipa de 10 persoane, asta inseamna peste{' '}
-                <span className="text-accent font-bold">€35.000/an</span> in productivitate pierduta.
+                <span className="text-accent font-bold">€105.000/an</span> in productivitate pierduta.
               </p>
 
               <p className="text-white text-lg font-medium">

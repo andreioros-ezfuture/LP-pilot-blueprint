@@ -189,6 +189,8 @@ export default function HeroSection() {
 
                 <Link
                   to={`/exemplu/${uc.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-auto pt-5 inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-semibold transition-colors duration-200"
                 >
                   Vezi mai mult

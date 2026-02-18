@@ -1,6 +1,6 @@
-import { Component } from 'react';
+import { Component, useEffect } from 'react';
 import type { ReactNode, ErrorInfo } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './AppContext';
 import LandingPage from './pages/LandingPage';
 import UseCasePage from './pages/UseCasePage';
@@ -48,11 +48,18 @@ class ErrorBoundary extends Component<
   }
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <ErrorBoundary>
       <AppProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/exemplu/:slug" element={<UseCasePage />} />

@@ -2,13 +2,10 @@ import SectionWrapper from '../layout/SectionWrapper';
 import FadeInOnScroll from '../ui/FadeInOnScroll';
 import Accordion from '../ui/Accordion';
 import Button from '../ui/Button';
-import SpotsCounter from '../ui/SpotsCounter';
 import { faqItems } from '../../data/faqItems';
-import { useAppContext } from '../../AppContext';
 import { scrollToSection } from '../../hooks/useScrollToSection';
 
 export default function FAQSection() {
-  const { spots } = useAppContext();
 
   return (
     <SectionWrapper id="faq" variant="light" maxWidth="medium">
@@ -47,9 +44,6 @@ export default function FAQSection() {
             <p className="text-sm text-muted mt-3">
               Inscrierea dureaza sub 2 minute. <strong>Fara angajament</strong>. Primesti un raspuns in 48 de ore.
             </p>
-            <div className="mt-4 flex justify-center">
-              <SpotsCounter remaining={spots.remaining} total={spots.total} />
-            </div>
           </div>
         </FadeInOnScroll>
       </div>
