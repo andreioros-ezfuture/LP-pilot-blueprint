@@ -17,7 +17,7 @@ export const deliverables: Deliverable[] = [
     number: 2,
     title: 'Plan de Implementare',
     description:
-      'Ordinea recomandata, dependinte, timeline pe 90 de zile si 12 luni, ROI agregat pe etape.',
+      'Ordinea recomandata, dependente, timeline pe 90 de zile si 12 luni, ROI agregat pe etape.',
   },
   {
     number: 3,

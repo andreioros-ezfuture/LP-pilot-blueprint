@@ -40,7 +40,7 @@ export const teamMembers: TeamMember[] = [
       'Peste 16 ani experienta in transformarea operatiunilor de business prin automatizare inteligenta si excelenta in procese, in cadrul corporatiilor multinationale.',
       'Printre altele, a gestionat implementari ServiceNow pentru clienti Fortune 500, inclusiv NXP si Mass Mutual.',
       'Expertiza ei consta in conectarea proceselor de business cu solutiile tehnologice. Conduce initiative de transformare digitala care livreaza rezultate masurabile si eficienta operationala la nivel organizational.',
-      'De-a lungul carierei a coordonat peste 15 implementari majore de sisteme pe piete globale, inclusiv SAP, ServiceNow, Anaplan si BlackLine, obtinand reduceri de 30-50% ale timpilor de procesare prin initiative de automatizare si optimizare a proceselor.',
+      'De-a lungul carierei a coordonat peste 15 implementari majore de sisteme pe piete globale, inclusiv SAP, ServiceNow, Anaplan si BlackLine, obtinand reduceri de 30-50% ale timpurilor de procesare prin initiative de automatizare si optimizare a proceselor.',
       'Experienta ei combina procesele, tehnologia si managementul schimbarii, transformand initiative complexe in solutii scalabile si adoptate operational.',
       'Inainte de a se alatura EZ Future AI, a fost timp de un an Chief of AI Automation intr-un business romanesc de ~3 mil. € care crescuse de 4x in 4 ani. Acolo a contribuit la structurarea proceselor si pregatirea organizatiei pentru automatizare si scalare.',
     ],

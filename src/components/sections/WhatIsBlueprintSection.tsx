@@ -51,7 +51,7 @@ export default function WhatIsBlueprintSection() {
           Analiza si planificare strategica a automatizarilor
         </h2>
         <p className="text-body mt-4 text-lg max-w-4xl">
-          In 21 de zile, <strong>analizem procesele</strong> tale operationale pe care decidem sa ne
+          In 21 de zile, <strong>analizam procesele</strong> tale operationale pe care decidem sa ne
           concentram, <strong>identificam oportunitatile de automatizare</strong> cu cel mai mare
           potential de impact si <strong>livram un plan complet</strong> (cu minim 5 automatizari
           personalizate, mapate riguros la nivel de proces), cu preturi fixe, timpi estimati si ROI
