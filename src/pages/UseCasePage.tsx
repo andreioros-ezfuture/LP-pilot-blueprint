@@ -56,7 +56,7 @@ export default function UseCasePage() {
       <Header showNav={false} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-dark to-dark-end pt-28 pb-14 md:pb-24 text-center text-white">
+      <section className="bg-gradient-to-b from-dark to-dark-end pt-28 pb-14 md:pb-24 text-left text-white">
         <div className="max-w-4xl mx-auto px-6">
           <FadeInOnScroll>
             <Badge variant="accent" className="mb-6">
