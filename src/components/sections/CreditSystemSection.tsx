@@ -11,31 +11,31 @@ export default function CreditSystemSection() {
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
           Blueprint-ul devine gratuit daca implementezi cu noi
         </h2>
-        <p className="text-body mt-4 max-w-2xl mx-auto">
+        <p className="text-body mt-4 max-w-3xl mx-auto">
           Intreaga suma investita in <strong>BLUEPRINT</strong> se transforma in <strong>EZ CREDIT</strong> (se citeste &ldquo;easy credit&rdquo;) aplicat direct pe prima automatizare din <strong>BUILD</strong>. Practic, platesti o data si primesti de 2 ori.
         </p>
       </div>
 
       {/* Credit Table */}
       <FadeInOnScroll>
-        <div className="rounded-2xl overflow-hidden border border-border mt-8 max-w-2xl mx-auto">
+        <div className="rounded-2xl overflow-hidden border border-border mt-8 max-w-3xl mx-auto">
           {/* Header */}
           <div className="bg-dark text-white px-4 md:px-6 py-4 font-semibold text-xs md:text-sm grid grid-cols-2">
             <span>Daca incepi implementarea cu noi in...</span>
             <span className="text-right">Credit aplicat</span>
           </div>
           {/* Row 1 */}
-          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-white">
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-success/10">
             <span className="text-body text-sm">14 zile de la livrare</span>
             <span className="text-right text-success font-bold text-sm">100% din valoarea Blueprint</span>
           </div>
           {/* Row 2 */}
-          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-light-gray">
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-warning/10">
             <span className="text-body text-sm">15-30 zile de la livrare</span>
             <span className="text-right text-warning font-bold text-sm">50% din valoarea Blueprint</span>
           </div>
           {/* Row 3 */}
-          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-white">
+          <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-red-500/10">
             <span className="text-body text-sm">Din ziua 31</span>
             <span className="text-right text-muted font-bold text-sm">Creditul expira</span>
           </div>

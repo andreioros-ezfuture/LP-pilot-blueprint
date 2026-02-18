@@ -49,7 +49,7 @@ const requirementItems = [
   {
     title: 'Folosirea platformei noastre',
     description:
-      'completati datele direct in tool-urile pe care vi le punem la dispozitie (100% confidential — asumat prin contract — si enterprise-level data security).',
+      'completati datele direct in tool-urile pe care vi le punem la dispozitie (100% confidential, asumat prin contract, si enterprise-level data security).',
   },
   {
     title: 'Feedback onest',
@@ -152,7 +152,7 @@ export default function ExclusiveProgramSection() {
                 <div className="w-3 h-3 rounded-full bg-accent shrink-0 mt-1.5" />
                 <div>
                   <span className="font-bold text-primary">{item.title}</span>
-                  <span className="text-body"> — {item.description}</span>
+                  <span className="text-body">: {item.description}</span>
                 </div>
               </div>
             </FadeInOnScroll>

@@ -58,7 +58,7 @@ export const useCases: UseCase[] = [
       'Livreaza lunar materiale de birou catre +200 de clienti corporate. Folosesc ERP-ul intern, Excel pentru tracking si verifica statusul comenzilor pe site-urile a 2 curieri.',
       'Pentru fiecare dintre cele 40-60 de livrari/zi echipa verifica manual AWB-urile, copiaza statusul in Excel si notifica clientii doar cand apar probleme sau acestia intreaba.',
       'Se pierd ore intregi pe verificari repetitive, iar clientii suna echipa de vanzari sa intrebe \'unde e coletul meu?\' Au pierdut si un contract de 50.000 €/an pentru ca 3 livrari consecutive au fost intarziate si nimeni nu i-a comunicat proactiv clientului. A aflat singur si a schimbat furnizorul.',
-      'Firma pierde timp zi de zi, pierde increderea clientilor existenti si rateaza contracte importante — doar acel contract pierdut inseamna aproape 1% din cifra de afaceri anuala.',
+      'Firma pierde timp zi de zi, pierde increderea clientilor existenti si rateaza contracte importante. Doar acel contract pierdut inseamna aproape 1% din cifra de afaceri anuala.',
     ],
   },
   {
@@ -111,7 +111,7 @@ export const useCases: UseCase[] = [
     heroTitle: 'Un producator de mobila (7 mil. €)',
     heroHighlight: 'care pierde 40.000 €/an din reconciliere bancara manuala',
     savingsLine1: 'poate reduce considerabil riscul',
-    savingsLine2: 'de pierderi cauzate de erori umane — si de 4 ori timpul de verificare',
+    savingsLine2: 'de pierderi cauzate de erori umane si de 4 ori timpul de verificare',
     execSummaryTitle: 'Producator de mobila',
     execSummarySubtitle: '7 mil. € cifra de afaceri, 65 de angajati',
     paragraphs: [

@@ -54,7 +54,7 @@ export default function WhatIsBlueprintSection() {
           In 21 de zile, <strong>analizem procesele</strong> tale operationale pe care decidem sa ne
           concentram, <strong>identificam oportunitatile de automatizare</strong> cu cel mai mare
           potential de impact si <strong>livram un plan complet</strong> (cu minim 5 automatizari
-          personalizate, mapate riguros la nivel de proces) — cu preturi fixe, timpi estimati si ROI
+          personalizate, mapate riguros la nivel de proces), cu preturi fixe, timpi estimati si ROI
           calculat pentru fiecare automatizare.
         </p>
       </FadeInOnScroll>

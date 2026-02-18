@@ -41,7 +41,7 @@ export default function TrainingAddonSection() {
             Pentru companiile care vor sa construiasca si capabilitati interne, de durata.
           </p>
           <p className="text-body mt-2">
-            3 sesiuni, 6 ore total &mdash; maximizeaza valoarea Blueprint-ului si reduce rezistenta la schimbare.
+            3 sesiuni, 6 ore total. Maximizeaza valoarea Blueprint-ului si reduce rezistenta la schimbare.
           </p>
         </div>
       </FadeInOnScroll>
@@ -80,7 +80,7 @@ export default function TrainingAddonSection() {
             <strong>EZ CREDIT</strong> se aplica si aici.
           </p>
           <p className="text-body text-sm mt-3">
-            Mentioneaza ca doresti si trainingul cand discutam &mdash; fie cand te inscrii, fie ulterior, la telefon sau prin e-mail.
+            Mentioneaza ca doresti si trainingul cand discutam: fie cand te inscrii, fie ulterior, la telefon sau prin e-mail.
           </p>
         </div>
       </FadeInOnScroll>

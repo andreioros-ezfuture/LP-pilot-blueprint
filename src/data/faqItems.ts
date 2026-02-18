@@ -4,12 +4,12 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Blueprint e doar un raport?',
     answer:
-      'Nu. <strong>BLUEPRINT</strong> este un pachet de 10 documente interconectate, fiecare cu un rol specific. Cardurile de automatizare, de exemplu, contin preturi fixe si garantate — iar pe baza lor poti construi solutiile tehnice la inceputul etapei de implementare.',
+      'Nu. <strong>BLUEPRINT</strong> este un pachet de 10 documente interconectate, fiecare cu un rol specific. Cardurile de automatizare, de exemplu, contin preturi fixe si garantate, iar pe baza lor poti construi solutiile tehnice la inceputul etapei de implementare.',
   },
   {
     question: 'Ce se intampla daca nu vreau sa implementez cu voi?',
     answer:
-      'Livrabilele sunt ale tale. Le poti folosi intern, cu alt vendor sau le poti pune pe raft. Nu exista obligatie de continuare. Dar creditul expira — deci daca vrei sa implementezi, ai avantaj sa o faci repede.',
+      'Livrabilele sunt ale tale. Le poti folosi intern, cu alt vendor sau le poti pune pe raft. Nu exista obligatie de continuare. Dar creditul expira. Deci daca vrei sa implementezi, ai avantaj sa o faci repede.',
   },
   {
     question: 'Cat timp imi ia din zi?',
@@ -24,11 +24,11 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Pot aplica daca am doar 1-2 automatizari in minte?',
     answer:
-      '<strong>BLUEPRINT</strong> e optimizat pentru 3+ procese. Daca ai 1-2 automatizari clare, serviciul nostru <strong>CHAT</strong> (€197/workflow) este mai potrivit — iar <strong>EZ CREDIT</strong> se aplica si acolo.',
+      '<strong>BLUEPRINT</strong> e optimizat pentru 3+ procese. Daca ai 1-2 automatizari clare, serviciul nostru <strong>CHAT</strong> (€197/workflow) este mai potrivit, iar <strong>EZ CREDIT</strong> se aplica si acolo.',
   },
   {
     question: 'Ce sisteme trebuie sa am?',
     answer:
-      'Orice combinatie de sisteme digitale (CRM, ERP, email, contabilitate, project management etc). Nu este necesar un tech stack specific — ne adaptam la ce folosesti.',
+      'Orice combinatie de sisteme digitale (CRM, ERP, email, contabilitate, project management etc). Nu este necesar un tech stack specific. Ne adaptam la ce folosesti.',
   },
 ];

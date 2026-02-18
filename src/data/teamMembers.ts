@@ -14,7 +14,7 @@ export const teamMembers: TeamMember[] = [
       'A lucrat cu clienti din Europa, SUA, Australia, Noua Zeelanda, Canada si nu numai.',
       'In 2011 a fondat ArenaCAD si a condus compania ca CEO pana in 2025, cand a facut exit de 1 mil. €. Ulterior a ramas ca Senior Consultant part-time in perioada de tranzitie.',
       'Acolo a construit o practica in jurul modelarii 2D/3D, Scan to BIM si scanarii laser 3D, deservind arhitecti, companii de constructii si ingineri la nivel international.',
-      'Transformarea unor servicii extrem de tehnice in oferte structurate si repetabile pentru clienti care aveau nevoie de rezultate — nu de jargon — l-a invatat exact ce lipseste astazi din zona de consultanta in automatizare.',
+      'Transformarea unor servicii extrem de tehnice in oferte structurate si repetabile pentru clienti care aveau nevoie de rezultate, nu de jargon, l-a invatat exact ce lipseste astazi din zona de consultanta in automatizare.',
       'Acelasi principiu sta la baza EZ Future AI:',
       'Sa iei ceva complex (strategia de automatizare), sa il faci accesibil (descoperire structurata) si sa livrezi rezultate masurabile (ROI documentat la fiecare pas).',
       '"Misiunea mea este sa livrez rezultate exceptionale care depasesc asteptarile, respectand in acelasi timp termene stricte si mentinand standarde precise."',

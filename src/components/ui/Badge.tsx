@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface BadgeProps {
-  variant?: 'accent' | 'success' | 'danger' | 'warning' | 'dark' | 'neutral';
+  variant?: 'accent' | 'success' | 'danger' | 'warning' | 'dark' | 'neutral' | 'info';
   children: React.ReactNode;
   className?: string;
 }
@@ -13,6 +13,7 @@ const variantClasses: Record<string, string> = {
   warning: 'bg-warning-light text-warning',
   dark: 'bg-dark text-white',
   neutral: 'bg-light-gray text-body',
+  info: 'bg-blue-50 text-blue-600',
 };
 
 export default function Badge({

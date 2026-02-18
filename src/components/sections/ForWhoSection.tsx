@@ -6,15 +6,15 @@ const forYouItems = [
   'Ai 3 sau mai multe procese pe care ai vrea sa le automatizezi, dar nu stii cu care sa incepi sau cat de sigur poti fi ca nu strici ce merge (chiar daca e mai ineficient).',
   'Echipa ta pierde ore intregi in fiecare saptamana pe sarcini repetitive: data entry, raportare, procesare documente, sincronizare sisteme etc.',
   'Ai incercat solutii punctuale, dar nu ai o strategie coerenta de automatizare.',
-  'Vrei sa intelegi si sa poti cuantifica impactul in mod realist — timp recuperat, bani economisiti, erori eliminate — INAINTE sa investesti in implementare.',
+  'Vrei sa intelegi si sa poti cuantifica impactul in mod realist (timp recuperat, bani economisiti, erori eliminate) INAINTE sa investesti in implementare.',
   'Ai nevoie de un plan clar pe care sa-l prezinti echipei de management.',
   'Ai cel putin un decision maker disponibil pentru cele 3 sesiuni de analiza (4h in total).',
   'Ai buget realist pentru implementarea ulterioara (minim €10.000 pentru primele automatizari).',
 ];
 
 const notForYouItems = [
-  'Ai un singur workflow simplu de automatizat — serviciul nostru <strong class="text-primary">CHAT</strong> (€197/workflow) e mai potrivit.',
-  'Cauti un parteneriat strategic pe termen lung — <strong class="text-primary">AI STRATEGY</strong> (Chief-Automation-Officer-as-a-Service) e solutia. Putem discuta in orice moment.',
+  'Ai un singur workflow simplu de automatizat. Serviciul nostru <strong class="text-primary">CHAT</strong> (€197/workflow) e mai potrivit.',
+  'Cauti un parteneriat strategic pe termen lung. <strong class="text-primary">AI STRATEGY</strong> (Chief-Automation-Officer-as-a-Service) e solutia. Putem discuta in orice moment.',
 ];
 
 export default function ForWhoSection() {

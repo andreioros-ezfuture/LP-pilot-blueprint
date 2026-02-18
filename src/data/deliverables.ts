@@ -23,13 +23,13 @@ export const deliverables: Deliverable[] = [
     number: 3,
     title: 'Process Map AS IS',
     description:
-      'Diagrame vizuale ale proceselor actuale — pasi, decizii, exceptii si bottleneck-uri.',
+      'Diagrame vizuale ale proceselor actuale: pasi, decizii, exceptii si bottleneck-uri.',
   },
   {
     number: 4,
     title: 'Process Map TO BE',
     description:
-      'Procesele automatizate — ce face automatizarea si unde ramane interventia umana.',
+      'Procesele automatizate: ce face automatizarea si unde ramane interventia umana.',
   },
   {
     number: 5,

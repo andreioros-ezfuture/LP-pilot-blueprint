@@ -19,7 +19,7 @@ export default function InvestmentSection() {
     'Plan de actiune 90 de zile + 12 luni',
     'ROI calculat pentru fiecare automatizare',
     'Garantie 100% money back',
-    '100% credit catre BUILD — <strong>Blueprint devine gratuit</strong>',
+    '100% credit catre BUILD. <strong>Blueprint devine gratuit</strong>',
     'Acces direct la fondator',
     'Prioritate la implementare',
   ];

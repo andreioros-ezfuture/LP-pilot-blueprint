@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-8 pt-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-white/50 text-sm">
-              &copy; 2026 EZFuture.ai &mdash; Toate drepturile rezervate.
+              &copy; 2026 EZFuture.ai. Toate drepturile rezervate.
             </p>
             <p className="text-white/40 text-xs">
               Numarul de locuri este limitat la 10. Aplicarile sunt procesate in ordinea primirii.

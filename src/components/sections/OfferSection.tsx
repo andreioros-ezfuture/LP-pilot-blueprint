@@ -70,7 +70,7 @@ export default function OfferSection() {
           <CheckList
             variant="success"
             items={[
-              'In 21 de zile primesti un <strong>Plan Complet de Automatizare</strong> (cu minim 5 automatizari personalizate, mapate la nivel de proces) &mdash; cu <strong>preturi fixe</strong> si <strong>ROI calculat</strong> (economii de €100.000/an nu sunt atipice pentru afaceri de €2-10 mil).',
+              'In 21 de zile primesti un <strong>Plan Complet de Automatizare</strong> (cu minim 5 automatizari personalizate, mapate la nivel de proces), cu <strong>preturi fixe</strong> si <strong>ROI calculat</strong> (economii de €100.000/an nu sunt atipice pentru afaceri de €2-10 mil).',
               'Investitie: <strong>€3.750</strong> in loc de <s>€7.500</s> (pret standard dupa incheierea pilotului).',
               'Garantie dubla: daca nu livram, ai 100% banii inapoi. Daca livram, suma platita pe <strong>BLUEPRINT</strong> se scade din <strong>BUILD</strong> daca decizi in 14 zile sa implementezi cu noi (ai optiunea, nu si obligatia).',
             ]}

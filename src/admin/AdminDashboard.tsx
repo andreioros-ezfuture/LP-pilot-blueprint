@@ -123,7 +123,7 @@ export function AdminDashboard() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold text-gray-900">Blueprint Pilot — Aplicații</h1>
+            <h1 className="text-lg font-bold text-gray-900">Blueprint Pilot - Aplicatii</h1>
             <div className="flex gap-4 mt-1 text-sm">
               <span className="text-gray-500">{applications.length} total</span>
               <span className="text-amber-600 font-medium">{pending} în așteptare</span>
@@ -168,7 +168,7 @@ export function AdminDashboard() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2">
                       <h3 className="font-bold text-gray-900">{app.contact_name}</h3>
-                      <span className="text-sm text-gray-500">—</span>
+                      <span className="text-sm text-gray-500">-</span>
                       <span className="font-semibold text-gray-700">{app.company_name}</span>
                       <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100">
                         {statusIcon(app.status)}
