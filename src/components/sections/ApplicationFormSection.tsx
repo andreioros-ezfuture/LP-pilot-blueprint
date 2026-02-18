@@ -6,6 +6,7 @@ import SpotsCounter from '../ui/SpotsCounter';
 import { useAppContext } from '../../AppContext';
 import { validateEmail, validatePhone, validateRequired, validateGdpr } from '../../lib/validators';
 import { supabase } from '../../lib/supabase';
+import { trackFormSubmission } from '../../lib/tracking';
 import type { FormValues } from '../../types';
 
 interface ApplicationFormSectionProps {
@@ -219,6 +220,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
 
       setFormStatus('success');
       decrementSpot();
+      trackFormSubmission();
     } catch (err) {
       console.error('Submission error:', err);
       setFormStatus('error');

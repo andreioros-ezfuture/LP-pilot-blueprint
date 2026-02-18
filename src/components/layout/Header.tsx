@@ -114,7 +114,7 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
           {/* Right side: Log In + Sign Up + Hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href="https://app.ezfuture.ai"
+              href="https://ezfuture-app.vercel.app/login"
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden md:inline-flex text-sm font-medium transition-colors duration-300 hover:opacity-80 ${
@@ -123,12 +123,14 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
             >
               Log In
             </a>
-            <button
-              onClick={() => scrollToSection('aplica')}
+            <a
+              href="https://ezfuture-app.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-accent hover:bg-accent-hover text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200"
             >
               Sign Up
-            </button>
+            </a>
 
             {/* Hamburger button — mobile only */}
             {showNav && (
@@ -189,7 +191,7 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
           </button>
         ))}
         <a
-          href="https://app.ezfuture.ai"
+          href="https://ezfuture-app.vercel.app/login"
           target="_blank"
           rel="noopener noreferrer"
           onClick={closeMenu}
@@ -197,12 +199,15 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
         >
           Log In
         </a>
-        <button
-          onClick={() => handleMobileNav('aplica')}
+        <a
+          href="https://ezfuture-app.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
           className="block w-full bg-accent hover:bg-accent-hover text-white rounded-xl py-3 text-center font-semibold mt-3 transition-colors duration-200"
         >
-          Aplica Acum
-        </button>
+          Sign Up
+        </a>
       </nav>
     </>
   );

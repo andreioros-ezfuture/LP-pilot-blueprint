@@ -5,6 +5,7 @@ import UseCasePage from './pages/UseCasePage';
 import NotFoundPage from './pages/NotFoundPage';
 import { AdminLogin } from './admin/AdminLogin';
 import { AdminDashboard } from './admin/AdminDashboard';
+import CookieConsent from './components/layout/CookieConsent';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </AppProvider>
   );
