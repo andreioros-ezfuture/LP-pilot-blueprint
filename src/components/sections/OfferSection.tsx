@@ -4,21 +4,22 @@ import Badge from '../ui/Badge';
 import CheckList from '../ui/CheckList';
 import Button from '../ui/Button';
 import { scrollToSection } from '../../hooks/useScrollToSection';
+import { Link } from 'react-router-dom';
 
-export default function OfferSection() {
+export default function OfferSection({ showDetailsLink = false }: { showDetailsLink?: boolean }) {
 
   return (
     <SectionWrapper id="oferta" variant="white">
       {/* Credibility Stats */}
       <FadeInOnScroll>
         <p className="text-center text-body text-lg mb-6">
-          Echipa noastra pune la bataie, cumulat:
+          Echipa noastră pune la bătaie, cumulat:
         </p>
         <div className="grid grid-cols-3 gap-4">
           {[
-            { number: '16+', label: 'ani de experienta in automatizarea de procese' },
+            { number: '16+', label: 'ani de experiență în automatizarea de procese' },
             { number: '100+', label: 'procese optimizate' },
-            { number: '20+', label: 'piete globale' },
+            { number: '20+', label: 'piețe globale' },
           ].map((stat) => (
             <div key={stat.label} className="bg-light-gray rounded-2xl p-4 md:p-6 text-center">
               <p className="text-4xl font-extrabold text-accent">{stat.number}</p>
@@ -32,14 +33,14 @@ export default function OfferSection() {
           <span className="text-accent font-bold">&rarr;</span>
           <span className="font-semibold text-primary">Implementare</span>
           <span className="text-accent font-bold">&rarr;</span>
-          <span className="font-semibold text-primary">Mentenanta</span>
+          <span className="font-semibold text-primary">Mentenanță</span>
         </p>
       </FadeInOnScroll>
 
       {/* Big Offer H2 */}
       <FadeInOnScroll>
         <h2 className="text-center mt-12 text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-primary">
-          Si facem o oferta pe care probabil nu o vom mai repeta niciodata:
+          Și facem o ofertă pe care probabil nu o vom mai repeta niciodată:
         </h2>
       </FadeInOnScroll>
 
@@ -76,9 +77,9 @@ export default function OfferSection() {
           <CheckList
             variant="success"
             items={[
-              'In 21 de zile <strong>mapam la nivel de proces minim 5 automatizari</strong> pentru afacerea ta. Pentru implementare ne asumam prin contract <strong>preturi fixe</strong> (nu estimari). <strong>Si calculam ROI</strong> pe fiecare automatizare (economii de €100.000/an nu sunt atipice pentru afaceri de €2-10 mil).',
-              'Investitie: <strong>€3.750</strong> in loc de <s>€7.500</s> (pret standard dupa incheierea pilotului).',
-              'Garantie dubla: daca nu livram, ai 100% banii inapoi. Daca livram, suma platita pe planificare <strong>(BLUEPRINT)</strong> se scade din implementare <strong>(BUILD)</strong> daca decizi in 14 zile sa implementam noi pentru tine (ai optiunea, nu si obligatia).',
+              'În 21 de zile <strong>mapăm la nivel de proces minim 5 automatizări</strong> pentru afacerea ta. Pentru implementare ne asumăm prin contract <strong>prețuri fixe</strong> (nu estimări). <strong>Și calculăm ROI</strong> pe fiecare automatizare (economii de €100.000/an nu sunt atipice pentru afaceri de €2-10 mil).',
+              'Investiție: <strong>€3.750</strong> în loc de <s>€7.500</s> (preț standard după încheierea pilotului).',
+              'Garanție dublă: dacă nu livrăm, ai 100% banii înapoi. Dacă livrăm, suma plătită pe planificare <strong>(BLUEPRINT)</strong> se scade din implementare <strong>(BUILD)</strong> dacă decizi în 14 zile să implementăm noi pentru tine (ai opțiunea, nu și obligația).',
             ]}
           />
         </div>
@@ -87,12 +88,22 @@ export default function OfferSection() {
       {/* CTA */}
       <FadeInOnScroll>
         <div className="text-center mt-10">
-          <Button size="lg" onClick={() => scrollToSection('aplica')}>
-            Rezerva-ti Locul
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button size="lg" onClick={() => scrollToSection('aplica')}>
+              Rezervă-ți Locul
+            </Button>
+            {showDetailsLink && (
+              <Link
+                to="/#proces"
+                className="inline-flex items-center px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold text-base hover:bg-primary hover:text-white transition-colors duration-200"
+              >
+                Vezi mai multe detalii
+              </Link>
+            )}
+          </div>
           <p className="text-muted text-sm mt-4">
-            Inscrierea dureaza sub 2 minute.{' '}
-            <span className="font-semibold">Fara angajament</span>. Primesti un raspuns in 48 de ore.
+            Înscrierea durează sub 2 minute.{' '}
+            <span className="font-semibold">Fără angajament</span>. Primești un răspuns în 48 de ore.
           </p>
         </div>
       </FadeInOnScroll>

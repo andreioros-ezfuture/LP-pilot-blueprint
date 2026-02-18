@@ -4,22 +4,22 @@ import FadeInOnScroll from '../ui/FadeInOnScroll';
 export default function TrainingAddonSection() {
   const sessions = [
     {
-      name: 'Pregatire pentru Analiza',
+      name: 'Pregătire pentru Analiză',
       duration: '2h',
       description:
-        'Cum sa se pregateasca echipa pentru sesiunile de analiza, ce documente sa furnizeze pentru a maximiza valoarea planului de automatizari care rezulta.',
+        'Cum să se pregătească echipa pentru sesiunile de analiză, ce documente să furnizeze pentru a maximiza valoarea planului de automatizări care rezultă.',
     },
     {
-      name: 'Pregatire Interna #1',
+      name: 'Pregătire Internă #1',
       duration: '2h',
       description:
-        'Cum sa identifice singuri procese automatizabile si cum sa le documenteze.',
+        'Cum să identifice singuri procese automatizabile și cum să le documenteze.',
     },
     {
-      name: 'Pregatire Interna #2',
+      name: 'Pregătire Internă #2',
       duration: '2h',
       description:
-        'Cum sa masoare si sa raporteze rezultatele automatizarilor.',
+        'Cum să măsoare și să raporteze rezultatele automatizărilor.',
     },
   ];
 
@@ -38,10 +38,10 @@ export default function TrainingAddonSection() {
       <FadeInOnScroll>
         <div className="mt-8 text-center">
           <p className="text-body">
-            Pentru companiile care vor sa construiasca si capabilitati interne, de durata.
+            Pentru companiile care vor să construiască și capabilități interne, de durată.
           </p>
           <p className="text-body mt-2">
-            3 sesiuni, 6 ore total. Maximizeaza valoarea Blueprint-ului si reduce rezistenta la schimbare.
+            3 sesiuni, 6 ore total. Maximizează valoarea Blueprint-ului și reduce rezistența la schimbare.
           </p>
         </div>
       </FadeInOnScroll>
@@ -52,7 +52,7 @@ export default function TrainingAddonSection() {
           {/* Header */}
           <div className="bg-dark text-white px-6 py-4 font-semibold hidden md:grid grid-cols-[1fr_80px_2fr] gap-4 text-sm">
             <span>Sesiune</span>
-            <span>Durata</span>
+            <span>Durată</span>
             <span>Descriere</span>
           </div>
           {sessions.map((session, index) => (
@@ -74,13 +74,13 @@ export default function TrainingAddonSection() {
       <FadeInOnScroll>
         <div className="mt-8 text-center">
           <p className="text-body font-bold">
-            Toate sesiunile sunt tinute de oameni seniori, cu experienta si track record.
+            Toate sesiunile sunt ținute de oameni seniori, cu experiență și track record.
           </p>
           <p className="text-body mt-3">
-            <strong>EZ CREDIT</strong> se aplica si aici.
+            <strong>EZ CREDIT</strong> se aplică și aici.
           </p>
           <p className="text-body text-sm mt-3">
-            Mentioneaza ca doresti si trainingul cand discutam: fie cand te inscrii, fie ulterior, la telefon sau prin e-mail.
+            Menționează că dorești și trainingul când discutăm: fie când te înscrii, fie ulterior, la telefon sau prin e-mail.
           </p>
         </div>
       </FadeInOnScroll>

@@ -7,23 +7,23 @@ export default function ProcessSection() {
     <SectionWrapper id="proces" variant="white" maxWidth="standard">
       <div className="text-center">
         <p className="uppercase text-xs tracking-[0.2em] font-bold text-accent mb-4">
-          PROCESUL IN 21 DE ZILE
+          PROCESUL ÎN 21 DE ZILE
         </p>
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
-          Structurat, eficient, fara pierderi de timp
+          Structurat, eficient, fără pierderi de timp
         </h2>
       </div>
 
       <FadeInOnScroll>
         <div className="mt-8 text-center">
           <p className="text-lg text-body">
-            3 sesiuni cu tine, restul e treaba noastra.
+            3 sesiuni cu tine, restul e treaba noastră.
           </p>
           <p className="text-lg text-body mt-2">
-            Timpul vostru total: <strong>maxim 8-13 ore in 21 de zile.</strong>
+            Timpul vostru total: <strong>maxim 8-13 ore în 21 de zile.</strong>
           </p>
           <p className="text-body italic mt-4 max-w-3xl mx-auto">
-            Stim ca ai mai trecut prin &ldquo;proiecte de analiza&rdquo; care s-au transformat in sedinte interminabile si documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit sa fie exact opusul.
+            Știm că ai mai trecut prin &ldquo;proiecte de analiză&rdquo; care s-au transformat în ședințe interminabile și documente pe care nimeni nu le-a mai deschis. Blueprint-ul e construit să fie exact opusul.
           </p>
         </div>
       </FadeInOnScroll>
@@ -36,10 +36,10 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
             <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-              Saptamana 1
+              Săptămâna 1
             </span>
             <span className="text-sm text-muted font-medium">
-              Start si Analiza
+              Start și Analiză
             </span>
           </div>
         </FadeInOnScroll>
@@ -50,11 +50,11 @@ export default function ProcessSection() {
             <div className="absolute left-[12px] md:left-[28px] top-3 w-3 h-3 bg-accent rounded-full border-2 border-white" />
             <div className="bg-white border border-border rounded-2xl p-6">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge variant="accent">1 ora</Badge>
+                <Badge variant="accent">1 oră</Badge>
                 <h3 className="font-heading font-bold text-primary text-lg">Sesiunea 1: Start</h3>
               </div>
               <p className="text-body text-sm leading-relaxed">
-                Aliniem asteptarile, stabilim echipa, planificam sesiunile de analiza.
+                Aliniem așteptările, stabilim echipa, planificăm sesiunile de analiză.
               </p>
             </div>
           </div>
@@ -67,10 +67,10 @@ export default function ProcessSection() {
             <div className="bg-white border border-border rounded-2xl p-6">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <Badge variant="accent">2 ore</Badge>
-                <h3 className="font-heading font-bold text-primary text-lg">Sesiunea 2: Analiza detaliata</h3>
+                <h3 className="font-heading font-bold text-primary text-lg">Sesiunea 2: Analiză detaliată</h3>
               </div>
               <p className="text-body text-sm leading-relaxed">
-                Analizam fiecare proces: pasi, decizii, date, sisteme, exceptii.
+                Analizăm fiecare proces: pași, decizii, date, sisteme, excepții.
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
             <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-              Saptamana 2
+              Săptămâna 2
             </span>
             <span className="text-sm text-muted font-medium">
               Colectare date
@@ -95,19 +95,19 @@ export default function ProcessSection() {
             <div className="bg-white border border-border rounded-2xl p-6">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <Badge variant="warning">4-9 ore (intern)</Badge>
-                <h3 className="font-heading font-bold text-primary text-lg">Echipa ta colecteaza date</h3>
+                <h3 className="font-heading font-bold text-primary text-lg">Echipa ta colectează date</h3>
               </div>
               <p className="text-body text-sm leading-relaxed mb-3">
-                Pe baza tool-urilor si directiilor primite de la noi, echipa ta colecteaza date, documenteaza procesele si pregateste materialele.
+                Pe baza tool-urilor și direcțiilor primite de la noi, echipa ta colectează date, documentează procesele și pregătește materialele.
               </p>
               <ul className="space-y-2 text-body text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-0.5">&#8226;</span>
-                  Noi oferim structura si tool-urile, iar ulterior facem analiza si mapam automatizarile.
+                  Noi oferim structura și tool-urile, iar ulterior facem analiza și mapăm automatizările.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-0.5">&#8226;</span>
-                  Echipa ta doar colecteaza date interne si ni le transmite.
+                  Echipa ta doar colectează date interne și ni le transmite.
                 </li>
               </ul>
             </div>
@@ -118,10 +118,10 @@ export default function ProcessSection() {
         <FadeInOnScroll>
           <div className="relative pl-12 md:pl-20 mb-10 flex items-center gap-3">
             <span className="bg-dark text-white px-4 md:px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap">
-              Saptamana 3
+              Săptămâna 3
             </span>
             <span className="text-sm text-muted font-medium">
-              Validare si Livrare
+              Validare și Livrare
             </span>
           </div>
         </FadeInOnScroll>
@@ -132,11 +132,11 @@ export default function ProcessSection() {
             <div className="absolute left-[12px] md:left-[28px] top-3 w-3 h-3 bg-accent rounded-full border-2 border-white" />
             <div className="bg-white border border-border rounded-2xl p-6">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge variant="accent">1 ora</Badge>
+                <Badge variant="accent">1 oră</Badge>
                 <h3 className="font-heading font-bold text-primary text-lg">Sesiunea 3: Validare</h3>
               </div>
               <p className="text-body text-sm leading-relaxed">
-                Prezentam livrabilele, validam cu decidentii, ajustam prioritatile, stabilim pasii urmatori.
+                Prezentăm livrabilele, validăm cu decidenții, ajustăm prioritățile, stabilim pașii următori.
               </p>
             </div>
           </div>
@@ -147,10 +147,10 @@ export default function ProcessSection() {
       <FadeInOnScroll>
         <div className="bg-warning-light border border-warning/30 rounded-2xl p-6 text-center font-semibold mt-8">
           <p className="text-body">
-            Timpul vostru total: <strong>maxim 8-13 ore in 21 de zile</strong>
+            Timpul vostru total: <strong>maxim 8-13 ore în 21 de zile</strong>
           </p>
           <p className="text-sm text-muted mt-1">
-            (4 ore pentru cele trei sesiuni + posibil alte 4-9 ore ca sa ne dati offline rapoarte, exemple, acces la date etc)
+            (4 ore pentru cele trei sesiuni + posibil alte 4-9 ore ca să ne dați offline rapoarte, exemple, acces la date etc)
           </p>
         </div>
       </FadeInOnScroll>
@@ -289,7 +289,7 @@ export default function ProcessSection() {
             ))}
           </div>
           <p className="text-body italic mt-6 text-sm">
-            Si (aproape) orice alta solutie tehnica necesara ca sa automatizam procesele manuale.
+            Și (aproape) orice altă soluție tehnică necesară ca să automatizăm procesele manuale.
           </p>
         </div>
       </FadeInOnScroll>

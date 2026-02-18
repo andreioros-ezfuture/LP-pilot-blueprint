@@ -17,13 +17,13 @@ export default function AboutSection() {
       <FadeInOnScroll>
         <div className="mt-8 space-y-4 text-body leading-relaxed">
           <p>
-            EZ Future AI este o agentie de automatizare si strategie AI construita pentru companii care vor <strong>rezultate masurabile</strong>. Modelul nostru este simplu: prima data intelegem si planificam (<strong>BLUEPRINT</strong>), apoi construim (<strong>BUILD</strong>), iar pe urma sustinem pe termen lung (<strong>RUN &amp; CARE</strong>).
+            EZ Future AI este o agenție de automatizare și strategie AI construită pentru companii care vor <strong>rezultate măsurabile</strong>. Modelul nostru este simplu: prima dată înțelegem și planificăm (<strong>BLUEPRINT</strong>), apoi construim (<strong>BUILD</strong>), iar pe urmă susținem pe termen lung (<strong>RUN &amp; CARE</strong>).
           </p>
           <p>
-            Fiecare etapa vine cu preturi fixe, garantii clare si livrabile concrete. Nu vindem ore.
+            Fiecare etapă vine cu prețuri fixe, garanții clare și livrabile concrete. Nu vindem ore.
           </p>
           <p>
-            Nu vindem &ldquo;consulting&rdquo;. Vindem <strong>transformare operationala pe care o poti masura</strong>.
+            Nu vindem &ldquo;consulting&rdquo;. Vindem <strong>transformare operațională pe care o poți măsura</strong>.
           </p>
         </div>
       </FadeInOnScroll>
@@ -34,7 +34,7 @@ export default function AboutSection() {
             onClick={() => scrollToSection('aplica')}
             className="text-accent font-semibold hover:underline cursor-pointer"
           >
-            Aplica pentru BLUEPRINT &rarr;
+            Aplică pentru BLUEPRINT &rarr;
           </button>
         </div>
       </FadeInOnScroll>

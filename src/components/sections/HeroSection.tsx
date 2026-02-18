@@ -114,10 +114,10 @@ export default function HeroSection() {
           Un business de 2&ndash;10 milioane €/an
           <br />
           <em className="not-italic text-accent inline-block my-1 sm:my-2 md:inline md:my-0">
-            care nu automatizeaza procesele manuale
+            care nu automatizează procesele manuale
           </em>
           <br />
-          ar putea la fel de bine sa dea foc unei valize cu{' '}
+          ar putea la fel de bine să dea foc unei valize cu{' '}
           <span className="text-white">€100.000</span>
         </h1>
       </div>
@@ -142,7 +142,7 @@ export default function HeroSection() {
         {/* Arrow — next */}
         <button
           onClick={goNext}
-          aria-label="Urmator"
+          aria-label="Următor"
           className="flex absolute right-1 sm:right-2 lg:right-4 xl:right-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 lg:w-11 lg:h-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-colors duration-200 backdrop-blur-sm"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -223,7 +223,7 @@ export default function HeroSection() {
       {/* Bottom text + CTA */}
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-white/80 italic mt-10 text-center max-w-3xl mx-auto text-lg">
-          Cand tragi linie s-ar putea sa realizezi ca arzi (prea) multe astfel de
+          Când tragi linie s-ar putea să realizezi că arzi (prea) multe astfel de
           &ldquo;valize cu bani&rdquo;.
         </p>
 
@@ -232,10 +232,10 @@ export default function HeroSection() {
             onClick={() => scrollToSection('aplica')}
             className="bg-accent hover:bg-accent-hover text-white font-semibold text-lg px-8 py-4 rounded-xl transition-colors duration-200"
           >
-            Rezerva-ti Locul
+            Rezervă-ți Locul
           </button>
           <p className="text-white/60 text-sm mt-4">
-            Inscrierea dureaza sub 2 minute. Fara angajament.
+            Înscrierea durează sub 2 minute. Fără angajament.
           </p>
         </div>
       </div>

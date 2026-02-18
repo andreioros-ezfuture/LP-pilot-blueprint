@@ -9,10 +9,10 @@ export default function CreditSystemSection() {
           SISTEMUL EZ CREDIT
         </p>
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
-          Blueprint-ul devine gratuit daca implementezi cu noi
+          Blueprint-ul devine gratuit dacă implementezi cu noi
         </h2>
         <p className="text-body mt-4 max-w-3xl mx-auto">
-          Intreaga suma investita in <strong>BLUEPRINT</strong> se transforma in <strong>EZ CREDIT</strong> (se citeste &ldquo;easy credit&rdquo;) aplicat direct pe prima automatizare din <strong>BUILD</strong>. Practic, platesti o data si primesti de 2 ori.
+          Întreaga sumă investită în <strong>BLUEPRINT</strong> se transformă în <strong>EZ CREDIT</strong> (se citește &ldquo;easy credit&rdquo;) aplicat direct pe prima automatizare din <strong>BUILD</strong>. Practic, plătești o dată și primești de 2 ori.
         </p>
       </div>
 
@@ -21,7 +21,7 @@ export default function CreditSystemSection() {
         <div className="rounded-2xl overflow-hidden border border-border mt-8 max-w-3xl mx-auto">
           {/* Header */}
           <div className="bg-dark text-white px-4 md:px-6 py-4 font-semibold text-xs md:text-sm grid grid-cols-2">
-            <span>Daca incepi implementarea cu noi in...</span>
+            <span>Dacă începi implementarea cu noi în...</span>
             <span className="text-right">Credit aplicat</span>
           </div>
           {/* Row 1 */}
@@ -37,7 +37,7 @@ export default function CreditSystemSection() {
           {/* Row 3 */}
           <div className="px-4 md:px-6 py-4 grid grid-cols-2 bg-red-500/10">
             <span className="text-body text-sm">Din ziua 31</span>
-            <span className="text-right text-muted font-bold text-sm">Creditul expira</span>
+            <span className="text-right text-muted font-bold text-sm">Creditul expiră</span>
           </div>
         </div>
       </FadeInOnScroll>
@@ -49,16 +49,16 @@ export default function CreditSystemSection() {
             Exemplu concret
           </h3>
           <p className="text-body text-sm mb-6">
-            Sa zicem ca Blueprint-ul se livreaza pe 31 martie (dupa cele 21 de zile). Unul dintre cardurile de automatizare are pret de implementare (<strong>BUILD</strong>) de €10.000. Creditul se calculeaza din momentul livrarii:
+            Să zicem că Blueprint-ul se livrează pe 31 martie (după cele 21 de zile). Unul dintre cardurile de automatizare are preț de implementare (<strong>BUILD</strong>) de €10.000. Creditul se calculează din momentul livrării:
           </p>
 
           {/* Scenario 1 */}
           <div className="bg-light-gray rounded-xl p-5 mb-3">
             <p className="text-body text-sm font-medium mb-2">
-              <strong>Semnezi in 14 zile</strong> (pana pe 14 aprilie):
+              <strong>Semnezi în 14 zile</strong> (până pe 14 aprilie):
             </p>
             <p className="text-body text-sm">
-              €10.000 - <span className="text-success font-semibold">€3.750 credit</span> = mai platesti{' '}
+              €10.000 - <span className="text-success font-semibold">€3.750 credit</span> = mai plătești{' '}
               <span className="font-bold text-xl text-primary">€6.250</span>
             </p>
           </div>
@@ -66,10 +66,10 @@ export default function CreditSystemSection() {
           {/* Scenario 2 */}
           <div className="bg-light-gray rounded-xl p-5 mb-3">
             <p className="text-body text-sm font-medium mb-2">
-              <strong>Semnezi in 15-30 zile</strong> (pana pe 30 aprilie):
+              <strong>Semnezi în 15-30 zile</strong> (până pe 30 aprilie):
             </p>
             <p className="text-body text-sm">
-              €10.000 - <span className="text-success font-semibold">€1.875 credit</span> = mai platesti{' '}
+              €10.000 - <span className="text-success font-semibold">€1.875 credit</span> = mai plătești{' '}
               <span className="font-bold text-xl text-primary">€8.125</span>
             </p>
           </div>
@@ -77,10 +77,10 @@ export default function CreditSystemSection() {
           {/* Scenario 3 */}
           <div className="bg-light-gray rounded-xl p-5 mb-3">
             <p className="text-body text-sm font-medium mb-2">
-              <strong>Semnezi dupa 30 de zile</strong> (din 1 mai):
+              <strong>Semnezi după 30 de zile</strong> (din 1 mai):
             </p>
             <p className="text-body text-sm">
-              €10.000 - <span className="text-success font-semibold">€0 credit</span> = mai platesti{' '}
+              €10.000 - <span className="text-success font-semibold">€0 credit</span> = mai plătești{' '}
               <span className="font-bold text-xl text-primary">€10.000</span>
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function CreditSystemSection() {
       {/* Bottom Note */}
       <FadeInOnScroll>
         <p className="text-muted italic text-sm mt-8 text-center">
-          Nu livram Blueprint-ul? Primesti 100% banii inapoi. Livram si continui cu BUILD? Blueprint-ul a fost gratuit.
+          Nu livrăm Blueprint-ul? Primești 100% banii înapoi. Livrăm și continui cu BUILD? Blueprint-ul a fost gratuit.
         </p>
       </FadeInOnScroll>
     </SectionWrapper>

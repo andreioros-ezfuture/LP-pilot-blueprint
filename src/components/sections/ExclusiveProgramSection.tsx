@@ -9,9 +9,9 @@ const exclusiveCards = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
       </svg>
     ),
-    title: 'Atentie Dedicata',
+    title: 'Atenție Dedicată',
     description:
-      'O echipa de seniori lucreaza direct pe fiecare proiect, fara delegare. Cu focus pe calitate maxima, nu pe volum.',
+      'O echipă de seniori lucrează direct pe fiecare proiect, fără delegare. Cu focus pe calitate maximă, nu pe volum.',
   },
   {
     icon: (
@@ -21,7 +21,7 @@ const exclusiveCards = [
     ),
     title: 'Acces Direct la Fondator',
     description:
-      'Comunicam fara intermediari pe durata intregului proces. Decizii rapide, fara birocratie.',
+      'Comunicăm fără intermediari pe durata întregului proces. Decizii rapide, fără birocrație.',
   },
   {
     icon: (
@@ -29,9 +29,9 @@ const exclusiveCards = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
       </svg>
     ),
-    title: 'Imbunatatire Continua',
+    title: 'Îmbunătățire Continuă',
     description:
-      'Sugestiile tale influenteaza direct rezultatul final. Esti partener, nu simplu client.',
+      'Sugestiile tale influențează direct rezultatul final. Ești partener, nu simplu client.',
   },
 ];
 
@@ -39,21 +39,21 @@ const requirementItems = [
   {
     title: 'Disponibilitate',
     description:
-      'cele 3 sesiuni programate (4 ore in total) si raspunsuri in maximum 48 de ore.',
+      'cele 3 sesiuni programate (4 ore în total) și răspunsuri în maximum 48 de ore.',
   },
   {
     title: 'Lucru intern',
     description:
-      'echipa ta colecteaza date si documenteaza procesele (alte 4-9 ore, plus-minus, cu tool-urile si directiile noastre).',
+      'echipa ta colectează date și documentează procesele (alte 4-9 ore, plus-minus, cu tool-urile și direcțiile noastre).',
   },
   {
     title: 'Folosirea platformei noastre',
     description:
-      'completati datele direct in tool-urile pe care vi le punem la dispozitie (100% confidential, asumat prin contract, si enterprise-level data security).',
+      'completați datele direct în tool-urile pe care vi le punem la dispoziție (100% confidențial, asumat prin contract, și enterprise-level data security).',
   },
   {
     title: 'Feedback onest',
-    description: 'ne spui franc ce functioneaza pentru tine si ce nu (we can take it).',
+    description: 'ne spui franc ce funcționează pentru tine și ce nu (we can take it).',
   },
   {
     title: 'Permisiunea de a folosi rezultatele ca studiu de caz',
@@ -71,12 +71,12 @@ export default function ExclusiveProgramSection() {
             DE CE DOAR 10 LOCURI
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">
-            Un program exclusiv, nu un produs de masa
+            Un program exclusiv, nu un produs de masă
           </h2>
           <p className="text-body mt-4 text-lg max-w-4xl">
-            Cat de seriosi am fi daca am da &ldquo;la liber&rdquo; o reducere atat de mare pentru un
-            serviciu cu un asemenea impact? 10 studii de caz sunt suficiente ca sa demonstram ce
-            putem face. In plus:
+            Cât de serioși am fi dacă am da &ldquo;la liber&rdquo; o reducere atât de mare pentru un
+            serviciu cu un asemenea impact? 10 studii de caz sunt suficiente ca să demonstrăm ce
+            putem face. În plus:
           </p>
         </FadeInOnScroll>
 
@@ -100,7 +100,7 @@ export default function ExclusiveProgramSection() {
             {/* Stat headline */}
             <div className="text-center">
               <h2 className="font-heading font-extrabold text-white text-4xl md:text-6xl">
-                ~52 ore/saptamana
+                ~52 ore/săptămână
               </h2>
               <p className="text-xl md:text-2xl font-semibold text-white/80 mt-3">
                 pierdute pe taskuri repetitive
@@ -113,12 +113,12 @@ export default function ExclusiveProgramSection() {
             {/* Body - each sentence on its own line */}
             <div className="max-w-3xl mx-auto text-center space-y-5">
               <p className="text-white/80 text-lg">
-                Intr-o echipa de 10 persoane, asta inseamna peste{' '}
-                <span className="text-accent font-bold">€105.000/an</span> in productivitate pierduta.
+                Într-o echipă de 10 persoane, asta înseamnă peste{' '}
+                <span className="text-accent font-bold">€105.000/an</span> în productivitate pierdută.
               </p>
 
               <p className="text-white text-lg font-medium">
-                <strong>Blueprint-ul EZ Future AI</strong> iti arata exact unde se duc aceste ore - si cum le recuperezi.
+                <strong>Blueprint-ul EZ Future AI</strong> îți arată exact unde se duc aceste ore - și cum le recuperezi.
               </p>
 
               <p className="text-white/60 text-base">
@@ -126,7 +126,7 @@ export default function ExclusiveProgramSection() {
               </p>
 
               <p className="text-white/40 italic text-base">
-                Sunt orele in care echipa ta face copy-paste intre sisteme, trimite sute de emailuri manual si completeaza rapoarte pe care nimeni nu le citeste.
+                Sunt orele în care echipa ta face copy-paste între sisteme, trimite sute de emailuri manual și completează rapoarte pe care nimeni nu le citește.
               </p>
             </div>
           </FadeInOnScroll>
@@ -137,7 +137,7 @@ export default function ExclusiveProgramSection() {
       <SectionWrapper variant="white" maxWidth="medium">
         <FadeInOnScroll>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">
-            Ce iti cerem in schimb
+            Ce îți cerem în schimb
           </h2>
         </FadeInOnScroll>
 

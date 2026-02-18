@@ -74,7 +74,7 @@ function TeamMemberCard({ member, delay }: { member: (typeof teamMembers)[number
                 onClick={() => setExpanded(!expanded)}
                 className="text-sm text-accent font-semibold hover:underline mt-3 cursor-pointer inline-flex items-center gap-1"
               >
-                {expanded ? 'Vezi mai putin' : 'Vezi mai mult'}
+                {expanded ? 'Vezi mai puțin' : 'Vezi mai mult'}
                 <svg
                   className={`w-4 h-4 transition-transform duration-300 ${
                     expanded ? 'rotate-180' : ''
@@ -149,7 +149,7 @@ export default function TeamSection() {
           Oamenii din spatele Blueprint-ului
         </h2>
         <p className="text-body mt-4 text-lg text-center">
-          Nu externalizam. Nu delegam. Lucram direct cu tine.
+          Nu externalizăm. Nu delegăm. Lucrăm direct cu tine.
         </p>
       </FadeInOnScroll>
 

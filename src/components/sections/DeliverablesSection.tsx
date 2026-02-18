@@ -16,10 +16,10 @@ export default function DeliverablesSection() {
             10 LIVRABILE PROFESIONALE
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">
-            Tot ce ai nevoie ca sa iei decizii informate
+            Tot ce ai nevoie ca să iei decizii informate
           </h2>
           <p className="text-body mt-4 text-lg max-w-3xl">
-            Fiecare <strong className="text-primary">BLUEPRINT</strong> livreaza un pachet complet de 10 documente,
+            Fiecare <strong className="text-primary">BLUEPRINT</strong> livrează un pachet complet de 10 documente,
             personalizate pe compania ta.
           </p>
         </FadeInOnScroll>
@@ -44,7 +44,7 @@ export default function DeliverablesSection() {
                     onClick={() => setDetailOpen(!detailOpen)}
                     className="text-sm text-accent font-semibold hover:underline cursor-pointer flex items-center gap-1"
                   >
-                    {detailOpen ? 'Inchide' : 'Afla mai multe'}
+                    {detailOpen ? 'Închide' : 'Află mai multe'}
                     <svg
                       className={`w-4 h-4 transition-transform duration-300 ${
                         detailOpen ? 'rotate-180' : ''

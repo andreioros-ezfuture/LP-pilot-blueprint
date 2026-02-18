@@ -7,13 +7,13 @@ export default function GuaranteeSection() {
     <SectionWrapper id="garantie" variant="light" maxWidth="standard">
       <div className="text-center">
         <p className="uppercase text-xs tracking-[0.2em] font-bold text-accent mb-4">
-          GARANTIE DUBLA
+          GARANȚIE DUBLĂ
         </p>
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
-          Nu poti pierde.
+          Nu poți pierde.
         </h2>
         <p className="text-body mt-4 max-w-2xl mx-auto">
-          Planul tau complet de automatizare (Blueprint-ul) e protejat din 2 directii. Oricare ar fi rezultatul, investitia ta e acoperita.
+          Planul tău complet de automatizare (Blueprint-ul) e protejat din 2 direcții. Oricare ar fi rezultatul, investiția ta e acoperită.
         </p>
       </div>
 
@@ -27,10 +27,10 @@ export default function GuaranteeSection() {
               </svg>
             </div>
             <h3 className="text-xl font-heading font-bold text-primary mb-3">
-              Nu livram? Ai banii inapoi.
+              Nu livrăm? Ai banii înapoi.
             </h3>
             <p className="text-body text-sm leading-relaxed flex-1">
-              Daca <strong>in 21 de zile</strong> nu primesti <strong>minim 5 Carduri de Automatizare</strong> (adica minim 5 automatizari mapate riguros la nivel de proces, pe baza carora pot fi construite solutii tehnice eficiente si sigure in etapa de implementare) iti returnam <em>100% din suma platita</em>. Fara discutii.
+              Dacă <strong>în 21 de zile</strong> nu primești <strong>minim 5 Carduri de Automatizare</strong> (adică minim 5 automatizări mapate riguros la nivel de proces, pe baza cărora pot fi construite soluții tehnice eficiente și sigure în etapa de implementare) îți returnăm <em>100% din suma plătită</em>. Fără discuții.
             </p>
             <div className="mt-6">
               <Badge variant="warning">100% money back garantat</Badge>
@@ -47,16 +47,16 @@ export default function GuaranteeSection() {
               </svg>
             </div>
             <h3 className="text-xl font-heading font-bold text-primary mb-3">
-              Livram? Devine credit in BUILD.
+              Livrăm? Devine credit în BUILD.
             </h3>
             <p className="text-body text-sm leading-relaxed flex-1">
-              Daca in 14 zile dupa ce-ti livram Blueprint-ul decizi sa continui cu noi, <strong>intreaga suma devine credit</strong> aplicat pe implementarea primei automatizari.
+              Dacă în 14 zile după ce-ți livrăm Blueprint-ul decizi să continui cu noi, <strong>întreaga sumă devine credit</strong> aplicat pe implementarea primei automatizări.
             </p>
             <p className="text-body text-sm leading-relaxed mt-3">
-              Practic, Blueprint-ul a fost gratuit <em>(intre 15-30 zile e 50%, iar din ziua 31 creditul expira)</em>.
+              Practic, Blueprint-ul a fost gratuit <em>(între 15-30 zile e 50%, iar din ziua 31 creditul expiră)</em>.
             </p>
             <div className="mt-6">
-              <Badge variant="success">€3.750 credit catre implementare</Badge>
+              <Badge variant="success">€3.750 credit către implementare</Badge>
             </div>
           </div>
         </FadeInOnScroll>
@@ -66,18 +66,18 @@ export default function GuaranteeSection() {
       <FadeInOnScroll>
         <div className="mt-12 text-center">
           <p className="text-xl font-heading font-bold text-primary">
-            Oricum ar fi, nu poti pierde.
+            Oricum ar fi, nu poți pierde.
           </p>
           <p className="text-body text-sm mt-3">
-            Singura conditie: participi la cele 3 sesiuni si raspunzi la solicitari in timp util.
+            Singura condiție: participi la cele 3 sesiuni și răspunzi la solicitări în timp util.
           </p>
           <p className="text-body text-sm mt-1">
-            Restul e responsabilitatea noastra.
+            Restul e responsabilitatea noastră.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mt-6">
             <Badge variant="success">100% money back</Badge>
-            <Badge variant="success">100% credit in BUILD</Badge>
-            <Badge variant="accent">Risc asumat impreuna</Badge>
+            <Badge variant="success">100% credit în BUILD</Badge>
+            <Badge variant="accent">Risc asumat împreună</Badge>
           </div>
         </div>
       </FadeInOnScroll>

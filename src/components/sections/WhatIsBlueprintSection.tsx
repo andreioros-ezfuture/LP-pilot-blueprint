@@ -3,9 +3,9 @@ import FadeInOnScroll from '../ui/FadeInOnScroll';
 
 const cards = [
   {
-    title: 'Analiza Profunda',
+    title: 'Analiza Profundă',
     description:
-      'Intelegem fiecare proces ales: pasi, decizii, exceptii, bottleneck-uri. Facem o radiografie completa, nu un audit superficial.',
+      'Înțelegem fiecare proces ales: pași, decizii, excepții, bottleneck-uri. Facem o radiografie completă, nu un audit superficial.',
     borderColor: '#3B82F6',
     iconColor: '#3B82F6',
     icon: (
@@ -15,9 +15,9 @@ const cards = [
     ),
   },
   {
-    title: 'Harta Detaliata',
+    title: 'Harta Detaliată',
     description:
-      'Adaptata 100% la realitatea companiei tale: sistemele tale, procesele tale, volumele tale, obiectivele tale.',
+      'Adaptată 100% la realitatea companiei tale: sistemele tale, procesele tale, volumele tale, obiectivele tale.',
     borderColor: '#4CAF50',
     iconColor: '#4CAF50',
     icon: (
@@ -29,7 +29,7 @@ const cards = [
   {
     title: 'ROI Calculat',
     description:
-      'Fiecare automatizare vine cu un business case: ore economisite, bani recuperati, timp de amortizare.',
+      'Fiecare automatizare vine cu un business case: ore economisite, bani recuperați, timp de amortizare.',
     borderColor: '#E8531E',
     iconColor: '#E8531E',
     icon: (
@@ -48,13 +48,13 @@ export default function WhatIsBlueprintSection() {
           CE ESTE BLUEPRINT
         </p>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">
-          Analiza si planificare strategica a automatizarilor
+          Analiză și planificare strategică a automatizărilor
         </h2>
         <p className="text-body mt-4 text-lg max-w-4xl">
-          In 21 de zile, <strong>analizam procesele</strong> tale operationale pe care decidem sa ne
-          concentram, <strong>identificam oportunitatile de automatizare</strong> cu cel mai mare
-          potential de impact si <strong>livram un plan complet</strong> (cu minim 5 automatizari
-          personalizate, mapate riguros la nivel de proces), cu preturi fixe, timpi estimati si ROI
+          În 21 de zile, <strong>analizăm procesele</strong> tale operaționale pe care decidem să ne
+          concentrăm, <strong>identificăm oportunitățile de automatizare</strong> cu cel mai mare
+          potențial de impact și <strong>livrăm un plan complet</strong> (cu minim 5 automatizări
+          personalizate, mapate riguros la nivel de proces), cu prețuri fixe, timpi estimați și ROI
           calculat pentru fiecare automatizare.
         </p>
       </FadeInOnScroll>

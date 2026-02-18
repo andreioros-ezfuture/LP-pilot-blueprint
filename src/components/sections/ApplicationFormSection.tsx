@@ -19,10 +19,10 @@ interface ApplicationFormSectionProps {
 
 function ProgressSteps() {
   const steps = [
-    'Completeaza formularul',
-    'Raspuns in 48 de ore',
+    'Completează formularul',
+    'Răspuns în 48 de ore',
     'Apel scurt (15 min)',
-    'Incepem colaborarea',
+    'Începem colaborarea',
   ];
 
   return (
@@ -65,7 +65,7 @@ function TrustBadges() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
           </svg>
         }
-        label="Fara spam"
+        label="Fără spam"
       />
       <TrustBadgeItem
         icon={
@@ -73,7 +73,7 @@ function TrustBadges() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         }
-        label="Raspuns in 48h"
+        label="Răspuns în 48h"
       />
     </div>
   );
@@ -167,7 +167,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
     // Validate all fields
     const errors: Partial<Record<keyof FormValues, string>> = {};
 
-    const nameError = validateRequired(form.values.name, 'Nume si prenume');
+    const nameError = validateRequired(form.values.name, 'Nume și prenume');
     if (nameError) errors.name = nameError;
 
     const emailError = validateEmail(form.values.email);
@@ -237,11 +237,11 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
               Toate locurile au fost ocupate
             </h2>
             <p className="text-body mt-4 text-lg">
-              Programul pilot a fost completat. Contacteaza-ne la{' '}
+              Programul pilot a fost completat. Contactează-ne la{' '}
               <a href="mailto:contact@ezfuture.ai" className="text-accent hover:underline font-semibold">
                 contact@ezfuture.ai
               </a>{' '}
-              pentru urmatoarele oportunitati.
+              pentru următoarele oportunități.
             </p>
           </div>
         </FadeInOnScroll>
@@ -263,7 +263,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
             </div>
 
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary">
-              Locul tau e rezervat!
+              Locul tău e rezervat!
             </h2>
 
             {/* Timeline */}
@@ -284,12 +284,12 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
               </svg>
               <div className="bg-light-gray rounded-xl px-5 py-3 text-center">
                 <p className="text-xs text-muted uppercase tracking-wide">Start Blueprint</p>
-                <p className="font-semibold text-primary text-sm">Saptamana 1</p>
+                <p className="font-semibold text-primary text-sm">Săptămâna 1</p>
               </div>
             </div>
 
             <p className="text-muted text-sm mt-8">
-              Daca nu primesti raspuns, scrie-ne la{' '}
+              Dacă nu primești răspuns, scrie-ne la{' '}
               <a href="mailto:contact@ezfuture.ai" className="text-accent hover:underline">
                 contact@ezfuture.ai
               </a>
@@ -308,14 +308,14 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
         <div className="md:col-span-2">
           <FadeInOnScroll>
             <p className="text-accent font-semibold text-sm uppercase tracking-widest">
-              APLICA ACUM
+              APLICĂ ACUM
             </p>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary mt-3">
-              Inscrie-te in Programul Pilot
+              Înscrie-te în Programul Pilot
             </h2>
             <p className="text-body mt-4 leading-relaxed">
-              Dureaza sub 2 minute sa te inscrii.{' '}
-              <span className="font-semibold">Fara angajament</span>. Primesti un raspuns in 48 de ore.
+              Durează sub 2 minute să te înscrii.{' '}
+              <span className="font-semibold">Fără angajament</span>. Primești un răspuns în 48 de ore.
             </p>
 
             <ProgressSteps />
@@ -328,7 +328,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                 </svg>
                 <div>
                   <p className="text-sm font-bold text-primary">100% money back</p>
-                  <p className="text-xs text-muted mt-0.5">Nu livram in 21 zile? Banii inapoi.</p>
+                  <p className="text-xs text-muted mt-0.5">Nu livrăm în 21 zile? Banii înapoi.</p>
                 </div>
               </div>
 
@@ -338,7 +338,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                 </svg>
                 <div>
                   <p className="text-sm font-bold text-primary">€3.750 credit BUILD</p>
-                  <p className="text-xs text-muted mt-0.5">Livram si continui? Blueprint devine gratuit.</p>
+                  <p className="text-xs text-muted mt-0.5">Livrăm și continui? Blueprint devine gratuit.</p>
                 </div>
               </div>
             </div>
@@ -361,7 +361,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
               {/* Red notice box */}
               <div className="bg-danger-light border-l-4 border-danger rounded-r-lg p-4 mt-5">
                 <p className="text-sm text-primary">
-                  Doar 10 locuri in Programul Pilot cu 50% reducere. Aplicarile sunt procesate in ordinea primirii.
+                  Doar 10 locuri în Programul Pilot cu 50% reducere. Aplicările sunt procesate în ordinea primirii.
                 </p>
               </div>
 
@@ -370,7 +370,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                 {/* Row 1: Nume + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <InputField
-                    label="Nume si prenume"
+                    label="Nume și prenume"
                     name="name"
                     placeholder="Mihai Popescu"
                     value={form.values.name}
@@ -391,7 +391,7 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                 {/* Row 2: Telefon + CUI */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <InputField
-                    label="Numar de telefon"
+                    label="Număr de telefon"
                     name="phone"
                     type="tel"
                     placeholder="07xx xxx xxx"
@@ -410,9 +410,9 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                 </div>
 
                 <TextareaField
-                  label="Descrie in cateva propozitii: Ce procese va consuma cel mai mult timp?"
+                  label="Descrie în câteva propoziții: Ce procese vă consumă cel mai mult timp?"
                   name="processes"
-                  placeholder="Descrie pe scurt ce procese repetitive consuma cele mai multe resurse in compania pe care o conduci."
+                  placeholder="Descrie pe scurt ce procese repetitive consumă cele mai multe resurse în compania pe care o conduci."
                   value={form.values.processes}
                   error={form.errors.processes}
                   onChange={handleFieldChange}
@@ -428,11 +428,11 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
                       className="mt-1 w-4 h-4 rounded border-border text-accent focus:ring-accent/30 shrink-0 accent-accent"
                     />
                     <span className="text-xs text-body leading-relaxed">
-                      Sunt de acord ca EZ Prime SRL (EZFuture.ai) sa prelucreze datele furnizate in scopul
-                      evaluarii aplicatiei mele pentru programul Blueprint Pilot si contactarii ulterioare,
+                      Sunt de acord că EZ Prime SRL (EZFuture.ai) să prelucreze datele furnizate în scopul
+                      evaluării aplicației mele pentru programul Blueprint Pilot și contactării ulterioare,
                       conform{' '}
                       <a href="/legal/confidentialitate.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                        Politicii de Confidentialitate
+                        Politicii de Confidențialitate
                       </a>.{' '}
                       <span className="text-accent">*</span>
                     </span>

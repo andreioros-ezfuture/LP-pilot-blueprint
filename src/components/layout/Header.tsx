@@ -2,10 +2,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { scrollToSection } from '../../hooks/useScrollToSection';
 
 const NAV_ITEMS = [
-  { label: 'Ce Primesti', target: 'livrabile' },
-  { label: 'Cum Functioneaza', target: 'proces' },
-  { label: 'Investitie', target: 'investitie' },
-  { label: 'Garantie', target: 'garantie' },
+  { label: 'Ce Primești', target: 'livrabile' },
+  { label: 'Cum Funcționează', target: 'proces' },
+  { label: 'Investiție', target: 'investitie' },
+  { label: 'Garanție', target: 'garantie' },
+  { label: 'Echipa', target: 'echipa' },
 ];
 
 export default function Header({ showNav = true }: { showNav?: boolean }) {
@@ -107,7 +108,7 @@ export default function Header({ showNav = true }: { showNav?: boolean }) {
               onClick={() => scrollToSection('aplica')}
               className="px-3 py-1.5 rounded-full text-sm font-semibold bg-accent text-white hover:bg-accent-hover transition-colors duration-200"
             >
-              Aplica Acum
+              Aplică Acum
             </button>
           </nav>}
 

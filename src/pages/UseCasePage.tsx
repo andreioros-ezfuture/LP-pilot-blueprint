@@ -120,7 +120,7 @@ export default function UseCasePage() {
       )}
 
       {/* Offer Section */}
-      <OfferSection />
+      <OfferSection showDetailsLink />
 
       <Footer />
     </>

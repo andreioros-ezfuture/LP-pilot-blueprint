@@ -4,31 +4,31 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Blueprint e doar un raport?',
     answer:
-      'Nu. <strong>BLUEPRINT</strong> este un pachet de 10 documente interconectate, fiecare cu un rol specific. Cardurile de automatizare, de exemplu, contin preturi fixe si garantate, iar pe baza lor poti construi solutiile tehnice la inceputul etapei de implementare.',
+      'Nu. <strong>BLUEPRINT</strong> este un pachet de 10 documente interconectate, fiecare cu un rol specific. Cardurile de automatizare, de exemplu, conțin prețuri fixe și garantate, iar pe baza lor poți construi soluțiile tehnice la începutul etapei de implementare.',
   },
   {
-    question: 'Ce se intampla daca nu vreau sa implementez cu voi?',
+    question: 'Ce se întâmplă dacă nu vreau să implementez cu voi?',
     answer:
-      'Livrabilele sunt ale tale. Le poti folosi intern, cu alt vendor sau le poti pune pe raft. Nu exista obligatie de continuare. Dar creditul expira. Deci daca vrei sa implementezi, ai avantaj sa o faci repede.',
+      'Livrabilele sunt ale tale. Le poți folosi intern, cu alt vendor sau le poți pune pe raft. Nu există obligație de continuare. Dar creditul expiră. Deci dacă vrei să implementezi, ai avantaj să o faci repede.',
   },
   {
-    question: 'Cat timp imi ia din zi?',
+    question: 'Cât timp îmi ia din zi?',
     answer:
-      'Sunt doar 3 intalniri (1h + 2h + 1h) + ceva pregatire (~4-9h cu oameni din echipa ta, pentru documente, acces la sisteme etc). Total: maxim 8-13 ore pentru voi pe parcursul celor 21 de zile. Restul lucram noi.',
+      'Sunt doar 3 întâlniri (1h + 2h + 1h) + ceva pregătire (~4-9h cu oameni din echipa ta, pentru documente, acces la sisteme etc). Total: maxim 8-13 ore pentru voi pe parcursul celor 21 de zile. Restul lucrăm noi.',
   },
   {
-    question: 'Ce garantii am?',
+    question: 'Ce garanții am?',
     answer:
-      'Garantie 100% money back daca in 21 de zile nu livram minim 5 carduri de automatizare (adica 5 automatizari mapate riguros la nivel de proces). Plus pret fix garantat pe fiecare card de implementare.',
+      'Garanție 100% money back dacă în 21 de zile nu livrăm minim 5 carduri de automatizare (adică 5 automatizări mapate riguros la nivel de proces). Plus preț fix garantat pe fiecare card de implementare.',
   },
   {
-    question: 'Pot aplica daca am doar 1-2 automatizari in minte?',
+    question: 'Pot aplica dacă am doar 1-2 automatizări în minte?',
     answer:
-      '<strong>BLUEPRINT</strong> e optimizat pentru 3+ procese. Daca ai 1-2 automatizari clare, serviciul nostru <strong>CHAT</strong> (€197/workflow) este mai potrivit, iar <strong>EZ CREDIT</strong> se aplica si acolo.',
+      '<strong>BLUEPRINT</strong> e optimizat pentru 3+ procese. Dacă ai 1-2 automatizări clare, serviciul nostru <strong>CHAT</strong> (€197/workflow) este mai potrivit, iar <strong>EZ CREDIT</strong> se aplică și acolo.',
   },
   {
-    question: 'Ce sisteme trebuie sa am?',
+    question: 'Ce sisteme trebuie să am?',
     answer:
-      'Orice combinatie de sisteme digitale (CRM, ERP, email, contabilitate, project management etc). Nu este necesar un tech stack specific. Ne adaptam la ce folosesti.',
+      'Orice combinație de sisteme digitale (CRM, ERP, email, contabilitate, project management etc). Nu este necesar un tech stack specific. Ne adaptăm la ce folosești.',
   },
 ];

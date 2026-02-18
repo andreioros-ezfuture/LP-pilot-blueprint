@@ -16,7 +16,7 @@ export default function Footer() {
               href="/legal/confidentialitate.html"
               className="text-white/70 text-sm hover:text-white transition-colors duration-200"
             >
-              Confidentialitate
+              Confidențialitate
             </a>
             <a
               href="/legal/termeni.html"
@@ -40,7 +40,7 @@ export default function Footer() {
               &copy; 2026 EZFuture.ai. Toate drepturile rezervate.
             </p>
             <p className="text-white/40 text-xs">
-              Numarul de locuri este limitat la 10. Aplicarile sunt procesate in ordinea primirii.
+              Numărul de locuri este limitat la 10. Aplicările sunt procesate în ordinea primirii.
             </p>
           </div>
         </div>
