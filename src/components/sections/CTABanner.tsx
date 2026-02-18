@@ -11,7 +11,7 @@ interface CTABannerProps {
 export default function CTABanner({
   text,
   buttonText,
-  caption = 'Inscrierea dureaza sub 2 minute. Fara angajament.',
+  caption = 'Înscrierea durează sub 2 minute. Fără angajament.',
   variant,
   onButtonClick,
 }: CTABannerProps) {

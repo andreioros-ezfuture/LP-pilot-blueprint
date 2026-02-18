@@ -7,10 +7,10 @@ export default function AfterBlueprintSection() {
     <SectionWrapper id="dupa-blueprint" variant="white" maxWidth="standard">
       <div className="text-center">
         <p className="uppercase text-xs tracking-[0.2em] font-bold text-accent mb-4">
-          DUPA BLUEPRINT
+          DUPĂ BLUEPRINT
         </p>
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
-          Blueprint iti da claritate. Ce faci cu ea, e decizia ta.
+          Blueprint îți dă claritate. Ce faci cu ea, e decizia ta.
         </h2>
       </div>
 
@@ -23,7 +23,7 @@ export default function AfterBlueprintSection() {
               Implementezi cu noi (<strong>BUILD</strong>)
             </h3>
             <p className="text-body text-sm leading-relaxed mt-3 flex-1">
-              Fiecare card (automatizare mapata la nivel de proces) are pret fix, suport garantat 30 zile pe bug fixes si documentatie completa. <strong>EZ CREDIT</strong> aplicat pe <strong>BLUEPRINT</strong> reduce costul.
+              Fiecare card (automatizare mapată la nivel de proces) are preț fix, suport garantat 30 zile pe bug fixes și documentație completă. <strong>EZ CREDIT</strong> aplicat pe <strong>BLUEPRINT</strong> reduce costul.
             </p>
           </div>
         </FadeInOnScroll>
@@ -36,7 +36,7 @@ export default function AfterBlueprintSection() {
               Implementezi intern sau cu alt vendor
             </h3>
             <p className="text-body text-sm leading-relaxed mt-3 flex-1">
-              Livrabilele sunt ale tale, complete si suficient de detaliate pentru oricine le-ar folosi.
+              Livrabilele sunt ale tale, complete și suficient de detaliate pentru oricine le-ar folosi.
             </p>
           </div>
         </FadeInOnScroll>
@@ -49,7 +49,7 @@ export default function AfterBlueprintSection() {
               Treci la <strong>AI STRATEGY</strong>
             </h3>
             <p className="text-body text-sm leading-relaxed mt-3 flex-1">
-              Daca ai nevoie de un partener strategic pe termen lung, <strong>BLUEPRINT</strong> devine fundatia programului. <strong>EZ CREDIT</strong> se aplica si aici.
+              Dacă ai nevoie de un partener strategic pe termen lung, <strong>BLUEPRINT</strong> devine fundația programului. <strong>EZ CREDIT</strong> se aplică și aici.
             </p>
           </div>
         </FadeInOnScroll>

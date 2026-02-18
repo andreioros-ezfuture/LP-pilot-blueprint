@@ -29,16 +29,16 @@ class ErrorBoundary extends Component<
         <div className="min-h-screen bg-warm-white flex items-center justify-center px-6">
           <div className="text-center max-w-lg">
             <h1 className="text-3xl font-heading font-extrabold text-primary">
-              A aparut o eroare
+              A apărut o eroare
             </h1>
             <p className="text-body mt-4 text-lg">
-              Ne pare rau, ceva nu a functionat corect.
+              Ne pare rău, ceva nu a funcționat corect.
             </p>
             <button
               onClick={() => window.location.reload()}
               className="mt-8 inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accent/90 transition-colors cursor-pointer"
             >
-              Reincarca pagina
+              Reîncarcă pagina
             </button>
           </div>
         </div>

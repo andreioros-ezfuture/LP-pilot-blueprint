@@ -13,16 +13,16 @@ export default function WhyOfferSection() {
       <FadeInOnScroll>
         <div className="mt-8 space-y-6">
           <p className="text-lg leading-relaxed text-body">
-            Vrem sa demonstram ce impact poate avea pe piata din Romania o strategie de automatizare
-            bine facuta. Si sa construim studii de caz autentice, cu rezultate masurabile.
+            Vrem să demonstrăm ce impact poate avea pe piața din România o strategie de automatizare
+            bine făcută. Și să construim studii de caz autentice, cu rezultate măsurabile.
           </p>
 
           <p className="text-lg leading-relaxed text-body">
-            Tu ne ajuti pe noi, noi te ajutam pe tine. E un schimb cat se poate de echitabil.
+            Tu ne ajuți pe noi, noi te ajutăm pe tine. E un schimb cât se poate de echitabil.
           </p>
 
           <p className="text-muted italic">
-            Numarul de locuri este limitat la 10. Aplicarile sunt procesate in ordinea primirii.
+            Numărul de locuri este limitat la 10. Aplicările sunt procesate în ordinea primirii.
           </p>
         </div>
       </FadeInOnScroll>

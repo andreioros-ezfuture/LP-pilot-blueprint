@@ -47,9 +47,9 @@ export default function LandingPage() {
       <DeliverablesSection />
 
       <CTABanner
-        text="Ai vazut cele 10 livrabile. Vrei sa le primesti pe ale tale?"
+        text="Ai văzut cele 10 livrabile. Vrei să le primești pe ale tale?"
         buttonText="Vreau Planul Meu"
-        caption="Inscrierea dureaza sub 2 minute. Fara angajament."
+        caption="Înscrierea durează sub 2 minute. Fără angajament."
         variant="accent"
         onButtonClick={handleScrollToApply}
       />
@@ -57,9 +57,9 @@ export default function LandingPage() {
       <ProcessSection />
 
       <CTABanner
-        text="21 de zile. 3 sesiuni. Restul e treaba noastra."
-        buttonText="Rezerva-ti Locul"
-        caption="Inscrierea dureaza sub 2 minute. Fara angajament."
+        text="21 de zile. 3 sesiuni. Restul e treaba noastră."
+        buttonText="Rezervă-ți Locul"
+        caption="Înscrierea durează sub 2 minute. Fără angajament."
         variant="dark"
         onButtonClick={handleScrollToApply}
       />
@@ -69,9 +69,9 @@ export default function LandingPage() {
       <InvestmentSection />
 
       <CTABanner
-        text="Money back daca nu livram. Credit integral in BUILD daca livram. Risc asumat impreuna."
-        buttonText="Rezerva-ti Locul"
-        caption="Inscrierea dureaza sub 2 minute. Fara angajament."
+        text="Money back dacă nu livrăm. Credit integral în BUILD dacă livrăm. Risc asumat împreună."
+        buttonText="Rezervă-ți Locul"
+        caption="Înscrierea durează sub 2 minute. Fără angajament."
         variant="accent"
         onButtonClick={handleScrollToApply}
       />

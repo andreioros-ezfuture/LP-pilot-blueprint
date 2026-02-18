@@ -2,7 +2,7 @@ import { type FormEvent } from 'react';
 import SectionWrapper from '../layout/SectionWrapper';
 import FadeInOnScroll from '../ui/FadeInOnScroll';
 import Button from '../ui/Button';
-import SpotsCounter from '../ui/SpotsCounter';
+
 import { useAppContext } from '../../AppContext';
 import { validateEmail, validatePhone, validateRequired, validateGdpr } from '../../lib/validators';
 import { supabase } from '../../lib/supabase';
@@ -343,9 +343,14 @@ export default function ApplicationFormSection({ id = 'aplica' }: ApplicationFor
               </div>
             </div>
 
-            {/* Spots counter */}
-            <div className="mt-6">
-              <SpotsCounter remaining={spots.remaining} total={spots.total} />
+            {/* Time commitment */}
+            <div className="bg-warning-light border border-warning/30 rounded-2xl p-5 mt-6 text-center">
+              <p className="text-body font-semibold">
+                Timpul vostru total: <strong>maxim 8-13 ore în 21 de zile</strong>
+              </p>
+              <p className="text-sm text-muted mt-1">
+                (4 ore pentru cele trei sesiuni + posibil alte 4-9 ore ca să ne dați offline rapoarte, exemple, acces la date etc)
+              </p>
             </div>
           </FadeInOnScroll>
         </div>

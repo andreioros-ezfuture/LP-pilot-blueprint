@@ -34,14 +34,14 @@ export default function UseCasePage() {
         <main className="min-h-screen bg-warm-white flex items-center justify-center px-6">
           <div className="text-center max-w-lg">
             <h1 className="text-3xl md:text-4xl font-heading font-extrabold text-primary">
-              Pagina nu a fost gasita
+              Pagina nu a fost găsită
             </h1>
             <p className="text-body mt-4 text-lg">
-              Use case-ul cautat nu exista.
+              Use case-ul căutat nu există.
             </p>
             <div className="mt-8">
               <Link to="/">
-                <Button>Inapoi la pagina principala</Button>
+                <Button>Înapoi la pagina principală</Button>
               </Link>
             </div>
           </div>

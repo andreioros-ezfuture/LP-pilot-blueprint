@@ -113,7 +113,7 @@ export default function ExclusiveProgramSection() {
             {/* Body - each sentence on its own line */}
             <div className="max-w-3xl mx-auto text-center space-y-5">
               <p className="text-white/80 text-lg">
-                Într-o echipă de 10 persoane, asta înseamnă peste{' '}
+                Într-o echipă de 30 persoane, asta înseamnă peste{' '}
                 <span className="text-accent font-bold">€105.000/an</span> în productivitate pierdută.
               </p>
 
